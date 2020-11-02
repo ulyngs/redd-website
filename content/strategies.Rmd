@@ -4,4 +4,92 @@ title: Śākta
 menu: main
 ---
 
-# TODO
+::: {.strategy-page}
+
+::: {.row .top-matter}
+::: {.col-sm-9}
+This is the fantastic strategy page bla bla bla
+:::
+
+::: {.col-sm-3}
+::: {.embed-responsive .embed-responsive-16by9}
+<iframe class='embed-responsive-item featured-work-graphic' src='https://www.youtube.com/embed/GCOnzStHQcM' allowfullscreen></iframe>
+:::
+:::
+
+<!-- end row with top matter -->
+:::
+
+::: {.remove-distractions-section}
+::: {.row}
+::: {.col-sm-12}
+# Remove distractions
+:::
+
+::: {.col-sm-9}
+Yada yada yada it is amazing to block or remove distractions
+:::
+
+::: {.col-sm-3}
+::: {.embed-responsive .embed-responsive-16by9}
+<iframe class='embed-responsive-item featured-work-graphic' src='https://www.youtube.com/embed/GCOnzStHQcM' allowfullscreen></iframe>
+:::
+:::
+
+::: {.col-sm-4}
+::: {.card}
+<img class="card-img-top" src="https://ulriklyngs.com/images/headshot_small.jpg" alt="Card image cap">
+
+::: {.card-body}
+<h5 class="card-title">Block distracting websites or apps</h5>
+<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+<a href="#" class="btn btn-primary">Read more</a>
+:::
+:::
+:::
+
+::: {.col-sm-4}
+::: {.card}
+<img class="card-img-top" src="https://ulriklyngs.com/images/headshot_small.jpg" alt="Card image cap">
+
+::: {.card-body}
+<h5 class="card-title">Lock yourself into only those apps you need</h5>
+<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+<a href="#" class="btn btn-primary">Read more</a>
+:::
+:::
+:::
+
+::: {.col-sm-4}
+::: {.card}
+<img class="card-img-top" src="https://ulriklyngs.com/images/headshot_small.jpg" alt="Card image cap">
+
+::: {.card-body}
+<h5 class="card-title">Remove distracting features from websites</h5>
+<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+<a href="#" class="btn btn-primary">Read more</a>
+:::
+:::
+:::
+
+::: {.col-sm-4}
+::: {.card}
+<img class="card-img-top" src="https://ulriklyngs.com/images/headshot_small.jpg" alt="Card image cap">
+
+::: {.card-body}
+<h5 class="card-title">Use focus mode</h5>
+<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+<a href="#" class="btn btn-primary">Read more</a>
+:::
+:::
+:::
+
+
+
+:::
+
+<!-- end section -->
+:::
+
+<!-- end strategy page -->
+:::
