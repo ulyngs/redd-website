@@ -1,6 +1,6 @@
 ---
 exclude_jquery: true
-title: Śākta
+#title: Strategies
 menu: main
 ---
 
