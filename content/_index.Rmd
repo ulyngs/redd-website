@@ -249,3 +249,15 @@ title: Home
 
 <!-- close row -->
 :::
+
+::: {.row}
+::: {.col-sm-12}
+# Contact
+:::
+
+::: {.col-sm-12}
+Email us at <a href="mailto:redd.oxford@gmail.com">redd.oxford\@gmail.com</a> 
+:::
+
+<!-- close row -->
+:::
