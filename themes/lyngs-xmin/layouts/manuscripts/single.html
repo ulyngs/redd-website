@@ -1,0 +1,69 @@
+{{ partial "header.html" . }}
+
+
+<div class="main-container container">
+  <main class="manuscript-page">
+    <div class="row manuscript-info">
+      <div class="col-sm-1 back-to-list"> 
+        <a href="/sakta/"><i class="fa fa-backward fa-3x"></i></a>
+      </div>
+  
+      <div class="col-sm-8">
+        <h2 data-toc-skip><span class="title">{{ .Title | markdownify }}</span></h2>
+        {{ if .Params.sanskritTitle }} <p>Sanskrit title: {{ .Params.sanskritTitle }}</p> {{ end }}
+        {{ if .Params.transliteratedTitle }} <p>Transliterated title: {{ .Params.transliteratedTitle }}</p> {{ end }}
+        {{ if .Params.englishTitle }} <p>English title: {{ .Params.englishTitle }}</p> {{ end }}
+        {{ if .Params.subject }} <p>Subject: {{ .Params.subject }}</p> {{ end }}
+        {{ if .Params.approximateDating }} <p>Approximate dating: {{ .Params.approximateDating }} (<a href="https://danam.cats.uni-heidelberg.de/date-conversion-chart/">Date conversion chart</a>)</p> {{ end }}
+        {{ if .Params.physicalLocation }} <p>Physical location: {{ .Params.physicalLocation }}</p> {{ end }}
+        {{ if .Params.originPlace }} <p>Place of origin: {{ .Params.originPlace }}</p> {{ end }}
+        {{ if .Params.author }} <p>Author: {{ .Params.author }}</p> {{ end }}
+        {{ if .Params.provenance }} <p>Provenance: {{ .Params.provenance }}</p> {{ end }}
+        {{ if .Params.manuscriptLanguage }} <p>Manuscript language: {{ .Params.manuscriptLanguage }}</p> {{ end }}
+        {{ if .Params.script }} <p>Script: {{ .Params.script }}</p> {{ end }}
+        {{ if .Params.material }} <p>Material: {{ .Params.material }}</p> {{ end }}
+        {{ if .Params.condition }} <p>Condition: {{ .Params.condition }}</p> {{ end }}
+        {{ if .Params.folios }} <p>Folios: {{ .Params.folios }}</p> {{ end }}
+        {{ if .Params.codices }} <p>Codices: {{ .Params.codices }}</p> {{ end }}
+        {{ if .Params.bibliographyNote }} <p>Bibliography: {{ .Params.bibliographyNote }}</p> {{ end }}
+        {{ if .Params.transliterators }} <p>Transliterated by: {{ .Params.transliterators }}</p> {{ end }}
+        {{ if .Params.translationEnglish }} <p>English translation by: {{ .Params.translationEnglish }}</p> {{ end }}
+        {{ if .Params.translationDanish }} <p>Danish translation by: {{ .Params.translationDanish }}</p> {{ end }}
+      </div>
+      
+      <div class="col-sm-3">
+        <div class="text-buttons">
+        {{ if .Params.hasText }} <a href="/manuscripts/{{ .Params.catalogueId }}.csv" role="button" class="btn btn-light btn-md" download><i class="fa fa-download"></i> Download text</a> <br> <a href={{ .Params.googlesheet }} class="btn btn-light btn-md" role="button"><i class="fa fa-pencil"></i> Comment on text</a>  {{ end }}
+        {{ if and .Params.hasText .Params.hasPhotos .Params.textOnlyVersion}}
+          <br> <a href="/manuscripts/{{ .Params.catalogueId }}/" role="button" class="btn btn-light btn-md"><i class="fa fa-file-picture-o"></i> View manuscript photos</a>
+        {{ end }}
+        {{ if and .Params.hasText .Params.hasPhotos (not .Params.textOnlyVersion)}}
+          <br> <a href="/manuscripts/{{ .Params.catalogueId }}-text-only/" role="button" class="btn btn-light btn-md"><i class="fa fa-file-text-o"></i> View text only</a>
+        {{ end }}
+        </div>
+        {{ if and .Params.hasPhotos (not .Params.textOnlyVersion)}}
+        <div class="photo-buttons"><button type="button" class="btn btn-light btn-md"><i class="fa fa-download"></i> Download images</button></div> 
+        {{ end }}
+        
+        {{ if and .Params.hasText .Params.hasPhotos (not .Params.textOnlyVersion)}}
+        <div class="alert alert-info text-navigation-info" role="alert">
+          To zoom in on the text or place it on top of the photo, hold down the Option (&#8997;; Mac) or Alt key and scroll or drag on the text. Reset with the <strong>Reset text</strong> button.
+        </div>
+        {{ end }}
+        
+      </div>
+        
+    </div>
+    
+    <div class="row manuscript-content">
+      <div class="col-sm-12">
+        <div class="post-content">
+          {{ .Content }}
+        </div>
+      </div>
+    </div>
+    
+  </main>
+</div>
+
+{{ partial "footer.html" . }}

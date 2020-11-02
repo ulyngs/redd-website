@@ -1,0 +1,31 @@
+baseurl: "https://thirsty-mirzakhani-15dc39.netlify.app"
+languageCode: "en-us"
+title: "Reducing Digital Distraction"
+theme: "lyngs-xmin"
+googleAnalytics: "UA-84972342-1"
+ignoreFiles: ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+footnotereturnlinkcontents: "↩"
+
+permalinks:
+    post: "/post/:year/:month/:day/:slug/"
+    note: "/note/:year/:month/:day/:slug/"
+
+menu:
+  main:
+    - name: "Strategies"
+      url: "/strategies/"
+      weight: 1
+    - name: "Research"
+      url: "/research/"
+      weight: 2
+    - name: "Resources"
+      url: "/resources/"
+      weight: 3
+    - name: "About / FAQ"
+      url: "/about/"
+      weight: 4
+
+params:
+    description: "Reducing Digital Distraction project website."
+    footer: |
+        &copy; 2020 Ulrik Lyngs & Maureen Freed. 

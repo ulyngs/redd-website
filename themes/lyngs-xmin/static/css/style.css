@@ -1,0 +1,474 @@
+:root {
+  --main-page-padding: 0 3em 0 3em;
+}
+
+.header-container .navbar {
+    background-color: white !important;
+    border-bottom: 1px solid rgba(0,0,0,0.2)
+}
+.header-container .navbar-nav a.nav-link.active {
+  /*border-bottom: 1px dashed rgba(0,0,0,0.2);*/
+  padding-bottom: 0;
+  font-weight: 400;
+}
+
+/* style the appearance and disappearance of the header */
+.headroom {
+    will-change: transform;
+    transition: transform 250ms linear;
+}
+.headroom--pinned {
+    transform: translateY(0%);
+}
+.headroom--unpinned {
+    transform: translateY(-100%);
+}
+
+.navbar-nav a {
+  color: black !important;
+}
+
+.navbar-hide {
+    top: -56px;
+}
+
+
+
+/* font */
+body {
+  /*font-family: 'Open Sans', "Muli", "Helvetica Neue", helvetica, arial, sans-serif;*/
+  font-family: "Muli", "Helvetica Neue", helvetica, arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
+h1, h2, h3, h4 {
+  font-weight: 300;
+}
+h5 {
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 1.75em;
+}
+body .main-container p {
+  font-size: 1em;
+  line-height: 170%; 
+}
+
+code {
+  font-family: Consolas, Courier, "Courier New", 'STKaiti', 'KaiTi', 'SimKai', monospace;
+  /*background: #f9f9f9;*/
+  color: black;
+}
+
+/**** HYPERLINKS ******/
+/* by default black, underlined and no line on hover */
+a {
+  color: black;
+  border-bottom: 1px solid lightgray;
+}
+a:hover {
+  text-decoration: none;
+  color: black;
+  border-bottom: none;
+}
+
+/* for these, don't have them underline, but make them lighter on hover */
+.posts-sidebar a,
+.blog-post #toc a,
+.featured-work-entry .teaser a,
+.pub-title a,
+.blog-title a,
+.cv-navbar a,
+.navbar a,
+.link-wrapper a,
+a.email,
+.project-work-entry-title a {
+  border-bottom: none;
+  opacity: 1.0;
+  color: black;
+}
+.posts-sidebar a:hover,
+.pub-title a:hover,
+.blog-title a:hover,
+.navbar a.nav-link:hover,
+a.email:hover,
+.row.project-entries .project-work-entry-title a:hover {
+  /*text-decoration: underline;*/
+  color: black;
+  opacity: 0.65;
+}
+
+
+/* NAVBAR */
+.navbar-brand {
+  font-size: 2.3em;
+  font-weight: 200;
+  color: #777 !important;
+  line-height: 20px;
+}
+/* push content down below the sticky navbar */
+.main-container {
+  padding-top: 7.5em;
+}
+
+
+/***** FRONT PAGE ******/
+.front-page-how-to-use,
+.front-page-how-it-works {
+  margin-top: 4.5em;
+}
+
+h2 {
+  margin-top: 1.5em;
+}
+
+.donate {
+  text-align: center;
+  vertical-align: middle;
+}
+.btn-donate
+{
+  width: 50%;
+  margin-top: 15%;
+  font-size: 1.5em;
+}
+
+.contact-info {
+  padding-left: 1em;
+}
+.link-wrapper {
+  margin-top: 0.5em;
+}
+#recent-work {
+  margin-bottom: 0.5em;
+}
+.featured-work {
+  margin-top: 5em;
+}
+.featured-work-entry {
+  margin-bottom: 2em;
+}
+/* this fixes spacing on mobile */
+.featured-work-entry iframe {
+  padding-bottom: 0.8em;
+}
+.featured-work-graphic {
+  padding-right: 2em;
+  padding-bottom: 0.8em;
+}
+
+blockquote p {
+  font-style: italic;
+}
+
+blockquote p.quote-footer {
+  text-align: right;
+}
+
+
+/* footer */
+footer {
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+footer hr {
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+
+/* SAKTA PAGE */
+.manuscript-list-page-header {
+  margin-bottom: 1em;
+}
+
+.manuscript-list {
+  padding: var(--main-page-padding);
+}
+
+.manuscript-list .dataTables_scrollBody thead tr:nth-child(2) {
+  display: none;
+}
+
+.manuscript-list td {
+  max-width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: text-top !important;
+}
+.manuscript-list .dataTables_scrollBody td:hover {
+  white-space: pre-wrap;
+}
+.manuscript-list td:first-child {
+  max-width: 200px;
+  overflow: hidden;
+  font-weight: bold;
+  white-space: nowrap;
+  background-color: lightgray;
+  vertical-align: text-top !important;
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+  z-index: 2;
+}
+.manuscript-list .pop-identifier {
+  background-color: lightgray;
+  padding: 6px;
+  border-radius: 2px;
+}
+
+.manuscript-list td:first-child:hover {
+  overflow: visible;
+  white-space: nowrap;
+}
+
+.manuscript-list thead th:first-child {
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  background-color: white;
+}
+
+.manuscript-list td a:hover {
+  color: white;
+  text-shadow: 1px 1px black;
+}
+
+
+/* ---- MANUSCRIPT PAGES ---- */
+
+.manuscript-page #sanskrit-dictionary {
+  position: fixed;
+  top: 30px;
+  width: 90%;
+  z-index: 4;
+  visibility: hidden;
+}
+.manuscript-page #sanskrit-dictionary iframe {
+  height: 300px;
+  width: 100%;
+}
+.make-visible {
+  visibility: visible !important;
+}
+.manuscript-page #sanskrit-dictionary p {
+  text-align: right;
+  font-style: italic;
+}
+
+.manuscript-page .photo-title {
+  font-style: italic;
+  color: darkgray;
+  margin-top: 0.2em;
+}
+
+.manuscript-text-only {
+  margin-top: 5em;
+}
+
+.manuscript-text-only .dt-buttons {
+  margin-left: 1em;
+}
+
+.manuscript-text-only .no-images-notice,
+.manuscript-page .no-text-notice {
+  padding: 2em;
+}
+
+.manuscript-page .text-buttons a {
+  margin-bottom: .5em;
+}
+
+.manuscript-page .text-buttons {
+  margin-bottom: 1.5em;
+}
+
+.manuscript-photo {
+  overflow: hidden;
+}
+
+.manuscript-page .panzoomContainer {
+  z-index: 1;
+  position: relative;
+}
+
+.manuscript-page .zoomButtons {
+  margin-bottom: 0.1em;
+  z-index: 2;
+  position: relative;
+}
+
+.manuscript-page .zoomButtonsFullScreen, .showTextbtn {
+  margin-bottom: 0.1em;
+  z-index: 2;
+  position: relative;
+}
+
+.manuscript-page .zoomButtonsFullScreen {
+  padding: 10px;
+}
+
+.manuscript-page .zoomButtonsFullScreen button {
+  background-color: #606060;
+  border: none;
+  color: white;
+  text-align: center;
+}
+
+.manuscript-page .datatables {
+  z-index: 3;
+  position: relative;
+}
+
+.bring-to-foreground {
+  z-index: 1040 !important;
+}
+
+.hide-on-pan {
+  display: none;
+}
+
+.manuscript-page .dataTables_wrapper.no-footer .dataTables_scrollBody {
+  border-bottom: none !important;
+}
+
+.manuscript-page {
+  padding: var(--main-page-padding);
+}
+
+.manuscript-page .back-to-list a {
+  border: none;
+}
+
+.manuscript-page h2 {
+  margin-top: 0;
+}
+
+.manuscript-info p {
+  margin-bottom: 0.1rem;
+}
+
+.manuscript-photo-and-text {
+  margin-top: 6em;
+}
+
+.manuscript-page .manuscript-text td {
+  vertical-align: top !important;
+}
+
+.text-navigation-info {
+  position : absolute !important;
+  bottom   : 0 !important;
+}
+
+.manuscript-page .manuscript-text .html-widget {
+  height: 600px !important;
+}
+
+.manuscript-page .manuscript-text tr {
+  background-color: transparent !important;
+}
+
+.add-background {
+  background-color: rgba(0, 0, 30, 0.3);
+}
+
+.white-font {
+  color: whitesmoke;
+}
+
+
+
+
+
+
+/* The Overlay (background) */
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */    
+  height: 100%;
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 1035; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0,0,0); /* Black fallback color */
+  background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.3s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 0%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+  border-bottom: none;
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  font-size: 60px;
+  z-index: 1040;
+  color: red;
+}
+
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+
+/***** NEW FOR REDD ******/
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgba(142, 145, 149, 0.7);
+  padding: 5px;
+  border-radius: 2px;
+  font-size: 1.7em;
+  font-style: bold;
+}
+
+.callout button {
+  margin: 2em;
+}
+
+.card {
+  margin-bottom: 1em;
+}
+
+.bottom-site-footer {
+  text-align: center;
+}

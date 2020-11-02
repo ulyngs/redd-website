@@ -1,0 +1,251 @@
+---
+title: Home
+
+---
+
+::: {.row .front-page-top}
+::: {.col-sm-4}
+> "the second there is that academic intellectual pain then I move immediately to digital media"
+>
+> "I check Twitter as escape from a moment of high cognitive work - digital distraction is a way out of that"
+>
+> <cite>--- ReDD workshop participants</cite>
+
+:::
+
+::: {.col-sm-4}
+<div class="container">
+<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<div class="centered">Take control of your digital life at university</div>
+</div>
+
+:::
+
+::: {.col-sm-4}
+> "It’s easy to get a little bit pessimistic about how good my self-discipline can be, given that there’s a billion-dollar economy in making sure I am as addicted as possible"
+>
+> <cite>--- ReDD workshop participants</cite>
+:::
+
+<!-- end row -->
+:::
+
+::: {.row .callout}
+::: {.col-sm-12 .text-center}
+<button type="button" class="btn btn-primary">Take the 'How am I doing?' quiz</button>
+:::
+:::
+
+
+<!-- ####### create information cards ######### -->
+::: {.row}
+::: {.col-sm-4}
+::: {.card}
+::: {.card-body}
+<h5 class="card-title">What's the problem?</h5>
+<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+<a href="#" class="btn btn-primary">Read more</a>
+:::
+:::
+
+::: {.card}
+::: {.card-body}
+<h5 class="card-title">Our philosophy</h5>
+<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+<a href="#" class="btn btn-primary">Read more</a>
+:::
+:::
+
+<!-- end col -->
+:::
+
+::: {.col-sm-4}
+::: {.card}
+::: {.card-body}
+<h5 class="card-title">How can we help?</h5>
+<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+<a href="#" class="btn btn-primary">Read more</a>
+:::
+:::
+
+::: {.card}
+::: {.card-body}
+<h5 class="card-title">What makes us different?</h5>
+<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+<a href="#" class="btn btn-primary">Read more</a>
+:::
+:::
+<!-- end col -->
+:::
+
+::: {.col-sm-4}
+::: {.embed-responsive .embed-responsive-16by9}
+<iframe class='embed-responsive-item featured-work-graphic' src='https://www.youtube.com/embed/GCOnzStHQcM' allowfullscreen></iframe>
+:::
+<!-- end col -->
+:::
+
+<!-- end row -->  
+:::
+
+
+
+<!-- ####### create solution package cards ######### -->
+::: {.row}
+::: {.col-sm-12}
+# Standard solution packages
+:::
+
+::: {.col-sm-4}
+::: {.card}
+<img class="card-img-top" src="https://ulriklyngs.com/images/headshot_small.jpg" alt="Card image cap">
+
+::: {.card-body}
+<h5 class="card-title">The Impulsive</h5>
+<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+<a href="#" class="btn btn-primary">Read more</a>
+:::
+:::
+:::
+
+::: {.col-sm-4}
+::: {.card}
+<img class="card-img-top" src="https://ulriklyngs.com/images/headshot_small.jpg" alt="Card image cap">
+
+::: {.card-body}
+<h5 class="card-title">The Overwhelmed</h5>
+<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+<a href="#" class="btn btn-primary">Read more</a>
+:::
+:::
+:::
+
+::: {.col-sm-4}
+::: {.card}
+<img class="card-img-top" src="https://ulriklyngs.com/images/headshot_small.jpg" alt="Card image cap">
+
+::: {.card-body}
+<h5 class="card-title">The Worried</h5>
+<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+<a href="#" class="btn btn-primary">Read more</a>
+:::
+:::
+<!-- end col -->
+:::
+
+
+<!-- end row -->  
+:::
+
+
+<!-- ####### create 'what people say' section ######### -->
+::: {.row}
+::: {.col-sm-12}
+# What people say
+:::
+
+::: {.col-sm-4}
+<blockquote class="blockquote">
+<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+<footer class="blockquote-footer">ReDD Workshop participant</footer>
+</blockquote>
+:::
+
+::: {.col-sm-4}
+<blockquote class="blockquote">
+<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+<footer class="blockquote-footer">ReDD Workshop participant</footer>
+</blockquote>
+:::
+
+::: {.col-sm-4}
+<blockquote class="blockquote">
+<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+<footer class="blockquote-footer">ReDD Workshop participant</footer>
+</blockquote>
+:::
+
+:::
+
+
+<!-- ####### create 'our team' section ######### -->
+::: {.row}
+::: {.col-sm-12}
+# Our team
+:::
+
+::: {.col-sm-2}
+:::
+
+::: {.col-sm-4}
+::: {.card}
+<img class="card-img-top" src="https://ulriklyngs.com/images/headshot_small.jpg" alt="Card image cap">
+
+::: {.card-body}
+<h5 class="card-title">Ulrik Lyngs</h5>
+<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+:::
+:::
+:::
+
+::: {.col-sm-4}
+::: {.card}
+<img class="card-img-top" src="/images/maureen.jpg" alt="Card image cap">
+
+::: {.card-body}
+<h5 class="card-title">Maureen Freed</h5>
+<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+:::
+:::
+:::
+
+::: {.col-sm-2}
+:::
+
+<!-- close row -->
+:::
+
+
+
+
+<!-- ####### create 'sponsors' section ######### -->
+::: {.row}
+::: {.col-sm-12}
+# Our sponsors
+:::
+
+::: {.col-sm-4}
+::: {.card}
+<img class="card-img-top" src="/images/oxford-logo.png" alt="Card image cap">
+
+::: {.card-body}
+<h5 class="card-title">University of Oxford Counselling Service</h5>
+:::
+
+:::
+:::
+
+::: {.col-sm-4}
+::: {.card}
+<img class="card-img-top" src="/images/epsrc-logo.png" alt="Card image cap">
+
+::: {.card-body}
+<h5 class="card-title">Engineering and Physical Sciences Research Council</h5>
+:::
+:::
+:::
+
+::: {.col-sm-4}
+::: {.card}
+<img class="card-img-top" src="/images/oxford-logo.png" alt="Card image cap">
+
+::: {.card-body}
+<h5 class="card-title">Van Houten Fund</h5>
+:::
+
+:::
+:::
+
+
+<!-- close row -->
+:::
