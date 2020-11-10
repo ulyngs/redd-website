@@ -1,5 +1,5 @@
 ---
-exclude_jquery: true
+exclude_jquery: false
 #title: Strategies
 menu: main
 ---
@@ -9,12 +9,39 @@ library(tidyverse)
 library(readxl)
 library(here)
 
+knitr::opts_chunk$set(echo=FALSE, message = FALSE, warning = FALSE)
+
 strategy_data <- read_excel(here("data", "strategies.xlsx"))
 
 strategy_types <- strategy_data$category %>% unique()
 
-strategy_data
+strategies_details <- read_excel(here("data", "strategies.xlsx"), sheet = "tools")
 ```
+
+```{r helper-functions, include=FALSE}
+generate_strategy_details <- function(devices, title, description, embed_link){
+  cat('<div class="row">')
+  
+  cat('<div class="col-sm-3">')
+  cat(str_c("<p>", devices, "</p>"))
+  cat(str_c("<p>", title, "</p>"))
+  cat("</div>")
+  
+  cat('<div class="col-sm-6">')
+  cat(str_c("<p>", description, "</p>"))
+  cat("</div>")
+  
+  cat('<div class="col-sm-3">')
+  cat('<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>')
+  #cat('<div class="embed-responsive embed-responsive-16by9">')
+  #cat(str_c('<iframe class="embed-responsive-item featured-work-graphic" src="', embed_link, '" allowfullscreen></iframe>'))
+  #cat("</div>")
+  cat("</div>")
+  
+  cat("</div>")
+}
+```
+
 
 
 ::: {.strategy-page}
@@ -35,16 +62,25 @@ This is the fantastic strategy page bla bla bla
 
 ```{r, results='asis', echo=FALSE}
 generate_strategy_examples <- function(strategy, devices, description){
+  clean_strategy <- janitor::make_clean_names(strategy)
+  
   cat("<div class='col-sm-4'>")
   cat("<div class='card'>")
   cat('<img class="card-img-top" src="https://ulriklyngs.com/images/headshot_small.jpg" alt="Card image cap">')
   cat("<div class='card-body'>")
   cat(str_c('<h5 class="card-title">', strategy, '</h5>'))
-  cat(str_c('<p>', devices, '</p>'))
   cat(str_c('<p class="card-text">', description, '</p>'))
-  cat('<a href="#" class="btn btn-primary">Read more</a>')
+  cat(str_c('<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-', clean_strategy, '">Show strategies</button>'))
   cat("</div>")
   cat("</div>")
+  cat("</div>")
+  
+  # this is experimental
+  cat(str_c('<div class="col-sm-12 collapse multi-collapse-', clean_strategy, '">'))
+  
+  show_this <- strategies_details %>% filter(actual_strategy == strategy) %>% select(devices, title, description, embed_link)
+  pwalk(show_this, generate_strategy_details)
+  
   cat("</div>")
 }
 
