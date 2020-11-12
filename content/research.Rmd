@@ -1,6 +1,76 @@
 ---
-#title: Bengali
 menu: main
 ---
 
-# TODO
+```{r, include=FALSE}
+library(tidyverse)
+library(readxl)
+
+knitr::opts_chunk$set(echo=FALSE, message = FALSE, warning = FALSE)
+
+content <- read_excel(here::here("data", "content.xlsx"), sheet = "research")
+
+publications <- read_excel(here::here("data", "content.xlsx"), sheet = "publications")
+```
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+# How can I take part?
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+<button type="button" class="btn btn-primary">Take the "How am I doing?" quiz</button>
+<button type="button" class="btn btn-primary">Sign up for a workshop</button>
+<button type="button" class="btn btn-primary">Take part in a research study</button>
+
+# Our research so far
+
+```{r, results='asis'}
+insert_publications <- function(publication_title, publication_authors, publication_place, talk_video, pdf_url){
+  
+  cat('<div class="research-topic-publications">')
+  cat(str_c('<p class="publication-title"><a href="', pdf_url, '">', publication_title, '</a></p>'))
+  cat(str_c('<p class="publication-authors">', publication_authors, '</p>'))
+  cat(str_c('<p class="publication-place">', publication_place, '</p>'))
+  cat(str_c('<p class="publication-links"><a href=', pdf_url, '">PDF</a>'))
+  if(!is.na(talk_video)){
+    cat(str_c(' | <a href=', talk_video, '">Video of talk</a>'))
+  }
+  cat('</p></div>')
+}
+
+generate_research_info <- function(id, heading, description, illustration_type, illustration){
+  cat('<div class="row">')
+
+  cat('<div class="col-sm-9">')
+  cat(str_c('<h3 class="research-title">', heading, '</h2>'))
+  cat(str_c('<p>', description, '</p>'))
+  cat("</div>")
+
+  cat('<div class="col-sm-3">')
+  cat("</div>")
+
+  cat("</div>")
+  
+  cat('<div class="row">')
+  cat('<div class="col-sm-9">')
+  publications %>% 
+    filter(topic_id == id) %>% 
+    select(-topic_id) %>% 
+    pwalk(insert_publications)
+  cat("</div>")
+  
+  cat('<div class="col-sm-3">')
+  if(illustration_type == "video"){
+    cat(str_c('<div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" src="', illustration, '" allowfullscreen></iframe></div>'))
+  } #else {
+  #  cat(str_c('<img src="', illustration, '" class="img-fluid"/>'))
+  #}
+  cat("</div>")
+  
+  cat("</div>")
+}
+
+content %>%
+  pwalk(generate_research_info)
+```
