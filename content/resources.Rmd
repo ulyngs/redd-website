@@ -1,6 +1,37 @@
 ---
-#title: Bengali
 menu: main
 ---
 
-# TODO
+```{r, include=FALSE}
+library(tidyverse)
+library(readxl)
+
+knitr::opts_chunk$set(echo=FALSE, message = FALSE, warning = FALSE)
+
+resources <- read_excel(here::here("data", "content.xlsx"), sheet = "resources")
+```
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+```{r echo=FALSE, results='asis'}
+headings_and_types <- tribble(
+  ~type_heading, ~entry_type,
+  "Blogs & media",   "blogs_media",
+  "Books",   "books",
+  "Academic papers",   "academic"
+)
+
+generate_resource_entries <- function(type_heading, entry_type){
+  cat(str_c('<h2>', type_heading, '</h2>'))
+  resources %>% 
+    filter(type == entry_type) %>% 
+    mutate(citation = str_c(title, author, place, sep = "<br>")) %>% 
+    select(citation, what, why) %>% 
+    knitr::kable() %>% 
+    print()
+}
+
+headings_and_types %>% 
+  pwalk(generate_resource_entries)
+```
+
