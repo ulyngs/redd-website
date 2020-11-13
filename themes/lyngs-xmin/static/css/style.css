@@ -228,10 +228,21 @@ footer hr {
 /* TIMELINE */
 
 .timeline {
-  /* draw timeline bar */
-  background: linear-gradient(#000, #000) no-repeat center/2px 100%;
+  /* draw timeline bar in the middle of div */
+  background: linear-gradient(#000, #000) no-repeat center/2px 98%;
   max-width: 600px;
   margin: 0 auto;
+}
+
+.timeline .arrow {
+  position: relative;
+  left: 50%;
+  margin-left: -13px;
+  width: 0;
+  height: 0;
+  border-top: solid 13px black;
+  border-left: solid 13px transparent;
+  border-right: solid 13px transparent;
 }
 
 .dot {

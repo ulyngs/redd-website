@@ -3,6 +3,17 @@
 menu: main
 ---
 
+```{r, include=FALSE}
+library(tidyverse)
+library(readxl)
+
+knitr::opts_chunk$set(echo=FALSE, message = FALSE, warning = FALSE)
+
+content <- read_excel(here::here("data", "content.xlsx"), sheet = "faq")
+```
+
+## How the project began
+
 <div class="timeline">
 
 <!-- begin a row -->
@@ -44,5 +55,22 @@ menu: main
 
 </div>
 
+<!-- draw arrow -->
+<div class="arrow"></div>
 <!-- end the timeline -->
 </div>
+
+
+## Help / FAQ
+```{r, results='asis'}
+generate_faq <- function(question, answer){
+  cat(str_c('<h3 class="faq-question">', question, '</h3>'))
+  cat(str_c('<p class="faq-answer">', answer, '</p>'))
+}
+
+cat('<div class="faq-content">')
+content %>% 
+  pwalk(generate_faq)
+cat('</div>')
+```
+
