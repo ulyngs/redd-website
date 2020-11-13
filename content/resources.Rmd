@@ -15,23 +15,52 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ```{r echo=FALSE, results='asis'}
 headings_and_types <- tribble(
-  ~type_heading, ~entry_type,
+  ~type_heading,       ~entry_type,
   "Blogs & media",   "blogs_media",
-  "Books",   "books",
-  "Academic papers",   "academic"
+  "Books",                 "books" #,
+  #"Academic papers",    "academic"
 )
 
 generate_resource_entries <- function(type_heading, entry_type){
   cat(str_c('<h2>', type_heading, '</h2>'))
   resources %>% 
     filter(type == entry_type) %>% 
-    mutate(citation = str_c(title, author, place, sep = "<br>")) %>% 
+    mutate(citation = str_c('<span class="resource-title">', title, '</span><br>', 
+                            '<span class="resource-author">', author, '</span>, ', 
+                            '<span class="resource-place">', place, '</span>')) %>% 
     select(citation, what, why) %>% 
-    knitr::kable() %>% 
+    knitr::kable(format = "html", table.attr = "class=\"resource-entries\"", escape = FALSE) %>% 
     print()
 }
 
+# Academic references as a special case
+headings_and_types_academic <- tribble(
+  ~topic_heading,                                                             ~entry_topic,
+  "The nature of self-control",                                   "nature of self-control",
+  "Understanding digital self-control struggles",         "digital self-control struggles",
+  "Interventions for digital self-control struggles", "digital self-control interventions"
+)
+
+generate_resource_entries_academic <- function(topic_heading, entry_topic){
+  cat(str_c('<h3>', topic_heading, '</h3>'))
+  resources %>% 
+    filter(topic == entry_topic) %>% 
+    mutate(citation = str_c('<span class="resource-title">', title, '</span><br>', 
+                            '<span class="resource-author">', author, '</span>, ', 
+                            '<span class="resource-place">', place, '</span>')) %>% 
+    select(citation, what, why) %>% 
+    knitr::kable(format = "html", table.attr = "class=\"resource-entries\"", escape = FALSE) %>% 
+    print()
+}
+
+# generate non-academic
 headings_and_types %>% 
   pwalk(generate_resource_entries)
+
+# generate academic
+cat('<h2>Academic papers</h2>')
+headings_and_types_academic %>% 
+  pwalk(generate_resource_entries_academic)
+
 ```
 
