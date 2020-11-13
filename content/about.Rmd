@@ -3,4 +3,46 @@
 menu: main
 ---
 
-# TODO
+<div class="timeline">
+
+<!-- begin a row -->
+<div class="row">
+::: {.col-sm-5}
+
+<h3>2011</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+:::
+
+::: {.col-sm-2}
+<div style="text-align:center"><span class="dot"></span></div>
+:::
+
+
+::: {.col-sm-5}
+:::
+
+</div>
+
+
+<!-- begin a row -->
+<div class="row">
+::: {.col-sm-5}
+
+:::
+
+::: {.col-sm-2}
+<div style="text-align:center"><span class="dot"></span></div>
+:::
+
+::: {.col-sm-5}
+
+<h3>2012</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+:::
+
+</div>
+
+<!-- end the timeline -->
+</div>
