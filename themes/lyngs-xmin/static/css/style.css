@@ -149,10 +149,6 @@ footer hr {
   font-style: bold;
 }
 
-.callout button {
-  margin: 2em;
-}
-
 .card {
   margin-bottom: 1em;
 }
@@ -252,4 +248,42 @@ footer hr {
   background-color: white;
   border-radius: 50%;
   display: inline-block;
+}
+
+
+/* FRONT PAGE */
+.callout button,
+.callout a {
+  padding: 1em;
+  margin-top: 1em;
+}
+.callout {
+  margin: 3em 0 3em 0;
+}
+
+.project-info {
+  margin-bottom: 4em;
+}
+.solution-packages {
+  margin-bottom: 4em;
+}
+
+.what-people-say {
+  margin-bottom: 4em;
+}
+
+.team img {
+  object-fit: cover;
+  height: 250px;
+}
+.team {
+  margin-bottom: 3em;
+}
+
+.sponsors {
+  margin-bottom: 3em;
+}
+.sponsors img {
+  height: 250px;
+  object-fit: contain;
 }

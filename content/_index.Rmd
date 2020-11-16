@@ -1,206 +1,160 @@
 ---
 title: Home
-
 ---
 
-::: {.row .front-page-top}
-::: {.col-sm-4}
-> "the second there is that academic intellectual pain then I move immediately to digital media"
->
-> "I check Twitter as escape from a moment of high cognitive work - digital distraction is a way out of that"
->
-> <cite>--- ReDD workshop participants</cite>
+```{r, include=FALSE}
+library(tidyverse)
+library(readxl)
 
-:::
+knitr::opts_chunk$set(echo=FALSE, message = FALSE, warning = FALSE)
 
-::: {.col-sm-4}
+content <- read_excel(here::here("data", "content.xlsx"), sheet = "frontpage")
+```
+
+
+<div class="jumbotron">
 <div class="container">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
-<div class="centered">Take control of your digital life at university</div>
+<h1 class="text-center display-4">Take control of your digital life at university</h1>
+</div>
 </div>
 
+<!--
+::: {.row .front-page-quotes}
+
+::: {.col-sm-6}
+<blockquote class="blockquote">
+<p class="mb-0">"I check Twitter to escape from a moment of high cognitive work --- the second there is that academic intellectual pain, I go to digital distractions"</p>
+</blockquote>
 :::
 
-::: {.col-sm-4}
-> "It’s easy to get a little bit pessimistic about how good my self-discipline can be, given that there’s a billion-dollar economy in making sure I am as addicted as possible"
->
-> <cite>--- ReDD workshop participants</cite>
+::: {.col-sm-6}
+<blockquote class="blockquote">
+<p class="mb-0">"It’s easy to get pessimistic about how good my self-discipline can be, when there's a billion-dollar economy in making me as addicted as possible!"</p>
+</blockquote>
 :::
 
-<!-- end row -->
 :::
+-->
+
+<!-- HERE'S THE QUIZ BUTTON - HOLD ON THIS FOR NOW -->
 
 ::: {.row .callout}
-::: {.col-sm-12 .text-center}
-<button type="button" class="btn btn-primary">Take the 'How am I doing?' quiz</button>
+::: {.col-sm-6 .text-center}
+<!-- <button type="button" class="btn btn-primary">Take the 'How am I doing?' quiz</button> -->
+<button type="button" class="btn btn-primary">Sign up for a workshop</button>
 :::
+
+::: {.col-sm-6 .text-center}
+<a href="/strategies/" class="btn btn-primary" role="button">Browse strategies</a>
+:::
+
 :::
 
 
+::: {.project-info}
 <!-- ####### create information cards ######### -->
-::: {.row}
-::: {.col-sm-4}
-::: {.card}
-::: {.card-body}
-<h5 class="card-title">What's the problem?</h5>
-<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-<a href="#" class="btn btn-primary">Read more</a>
-:::
+```{r, results='asis'}
+generate_project_info <- function(heading, description){
+  cat('<div class="col-sm-6">')
+  cat('<div class="card">')
+  cat('<div class="card-body">')
+  cat(str_c('<h5 class="card-title">', heading, '</h5>'))
+  cat(str_c('<p class="card-text">', description, "</p>"))
+  cat('<a href="#" class="btn btn-primary">Read more</a>')
+  
+  cat("</div>")
+  cat("</div>")
+  cat("</div>")
+}
+
+cat('<div class="row">')
+content %>% 
+  filter(section == "opening-description") %>% 
+  select(heading, description) %>% 
+  pwalk(generate_project_info)
+cat("</div>")
+```
 :::
 
-::: {.card}
-::: {.card-body}
-<h5 class="card-title">Our philosophy</h5>
-<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-<a href="#" class="btn btn-primary">Read more</a>
-:::
-:::
+<!-- ####### create solution packages ####### -->
+::: {.solution-packages}
+```{r, results='asis'}
+generate_solution_packages <- function(illustration, heading, description){
+  cat('<div class="col-sm-3">')
+  cat('<div class="card">')
+  cat(str_c('<i class="fa ', illustration, ' fa-4x card-img-top solution-package-image"></i>'))
+  cat('<div class="card-body">')
+  cat(str_c('<h5 class="card-title">', heading, '</h5>'))
+  cat(str_c('<p class="card-text">', description, "</p>"))
+  cat('<a href="#" class="btn btn-primary">Read more</a>')
+  
+  cat("</div>")
+  cat("</div>")
+  cat('</div>')
+}
 
-<!-- end col -->
+cat('<div class="row">')
+cat('<div class="col-sm-12">')
+cat('<h1>Standard solution packages</h1>')
+cat("</div>")
+content %>% 
+  filter(section == "solution-packages") %>% 
+  select(illustration, heading, description) %>% 
+  pwalk(generate_solution_packages)
+cat("</div>")
+```
 :::
-
-::: {.col-sm-4}
-::: {.card}
-::: {.card-body}
-<h5 class="card-title">How can we help?</h5>
-<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-<a href="#" class="btn btn-primary">Read more</a>
-:::
-:::
-
-::: {.card}
-::: {.card-body}
-<h5 class="card-title">What makes us different?</h5>
-<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-<a href="#" class="btn btn-primary">Read more</a>
-:::
-:::
-<!-- end col -->
-:::
-
-::: {.col-sm-4}
-::: {.embed-responsive .embed-responsive-16by9}
-<iframe class='embed-responsive-item featured-work-graphic' src='https://www.youtube.com/embed/GCOnzStHQcM' allowfullscreen></iframe>
-:::
-<!-- end col -->
-:::
-
-<!-- end row -->  
-:::
-
-
-
-<!-- ####### create solution package cards ######### -->
-::: {.row}
-::: {.col-sm-12}
-# Standard solution packages
-:::
-
-::: {.col-sm-4}
-::: {.card}
-<img class="card-img-top" src="https://ulriklyngs.com/images/headshot_small.jpg" alt="Card image cap">
-
-::: {.card-body}
-<h5 class="card-title">The Impulsive</h5>
-<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-<a href="#" class="btn btn-primary">Read more</a>
-:::
-:::
-:::
-
-::: {.col-sm-4}
-::: {.card}
-<img class="card-img-top" src="https://ulriklyngs.com/images/headshot_small.jpg" alt="Card image cap">
-
-::: {.card-body}
-<h5 class="card-title">The Overwhelmed</h5>
-<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-<a href="#" class="btn btn-primary">Read more</a>
-:::
-:::
-:::
-
-::: {.col-sm-4}
-::: {.card}
-<img class="card-img-top" src="https://ulriklyngs.com/images/headshot_small.jpg" alt="Card image cap">
-
-::: {.card-body}
-<h5 class="card-title">The Worried</h5>
-<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-<a href="#" class="btn btn-primary">Read more</a>
-:::
-:::
-<!-- end col -->
-:::
-
-
-<!-- end row -->  
-:::
-
 
 <!-- ####### create 'what people say' section ######### -->
-::: {.row}
+::: {.row .what-people-say}
 ::: {.col-sm-12}
 # What people say
 :::
 
-::: {.col-sm-4}
-<blockquote class="blockquote">
-<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-<footer class="blockquote-footer">ReDD Workshop participant</footer>
-</blockquote>
-:::
+```{r results='asis'}
+generate_quotes <- function(description, source) {
+  cat('<div class="col-sm-6">')
+  cat(str_c('<p class="mb-0">', description, '</p>'))
+  cat(str_c('<footer class="blockquote-footer">', source, '</footer>'))
+  cat('</blockquote>')
+  cat('</div>')
+}
 
-::: {.col-sm-4}
-<blockquote class="blockquote">
-<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-<footer class="blockquote-footer">ReDD Workshop participant</footer>
-</blockquote>
-:::
+content %>% 
+  filter(section == "quote-statement") %>% 
+  select(description, source) %>% 
+  pwalk(generate_quotes)
+```
 
-::: {.col-sm-4}
-<blockquote class="blockquote">
-<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-<footer class="blockquote-footer">ReDD Workshop participant</footer>
-</blockquote>
-:::
 
+<!-- end row -->
 :::
 
 
 <!-- ####### create 'our team' section ######### -->
-::: {.row}
+::: {.row .team}
 ::: {.col-sm-12}
 # Our team
 :::
 
-::: {.col-sm-2}
-:::
+```{r results='asis'}
+generate_team_images <- function(illustration, heading, description, illustration_alt_text) {
+  cat('<div class="col-sm-3">')
+  cat('<div class="card">')
+  cat(str_c('<img class="card-img-top" src="', illustration, '" alt="', illustration_alt_text, '">'))
+  cat('<div class="card-body">')
+  cat(str_c('<h5 class="card-title">', heading, '</h5>'))
+  cat(str_c('<p class="card-text">', description, '</p>'))
+  cat('</div>')
+  cat('</div>')
+  cat('</div>')
+}
 
-::: {.col-sm-4}
-::: {.card}
-<img class="card-img-top" src="https://ulriklyngs.com/images/headshot_small.jpg" alt="Card image cap">
-
-::: {.card-body}
-<h5 class="card-title">Ulrik Lyngs</h5>
-<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-:::
-:::
-:::
-
-::: {.col-sm-4}
-::: {.card}
-<img class="card-img-top" src="/images/maureen.jpg" alt="Card image cap">
-
-::: {.card-body}
-<h5 class="card-title">Maureen Freed</h5>
-<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-:::
-:::
-:::
-
-::: {.col-sm-2}
-:::
+content %>% 
+  filter(section == "team") %>% 
+  select(illustration, heading, description, illustration_alt_text) %>% 
+  pwalk(generate_team_images)
+```
 
 <!-- close row -->
 :::
@@ -209,42 +163,28 @@ title: Home
 
 
 <!-- ####### create 'sponsors' section ######### -->
-::: {.row}
+::: {.row .sponsors}
 ::: {.col-sm-12}
 # Our sponsors
 :::
 
-::: {.col-sm-4}
-::: {.card}
-<img class="card-img-top" src="/images/oxford-logo.png" alt="Card image cap">
+```{r results='asis'}
+generate_sponsor_images <- function(illustration, heading, illustration_alt_text) {
+  cat('<div class="col-sm-3">')
+  cat('<div class="card">')
+  cat(str_c('<img class="card-img-top" src="', illustration, '" alt="', illustration_alt_text, '">'))
+  cat('<div class="card-body">')
+  cat(str_c('<h5 class="card-title">', heading, '</h5>'))
+  cat('</div>')
+  cat('</div>')
+  cat('</div>')
+}
 
-::: {.card-body}
-<h5 class="card-title">University of Oxford Counselling Service</h5>
-:::
-
-:::
-:::
-
-::: {.col-sm-4}
-::: {.card}
-<img class="card-img-top" src="/images/epsrc-logo.png" alt="Card image cap">
-
-::: {.card-body}
-<h5 class="card-title">Engineering and Physical Sciences Research Council</h5>
-:::
-:::
-:::
-
-::: {.col-sm-4}
-::: {.card}
-<img class="card-img-top" src="/images/oxford-logo.png" alt="Card image cap">
-
-::: {.card-body}
-<h5 class="card-title">Van Houten Fund</h5>
-:::
-
-:::
-:::
+content %>% 
+  filter(section == "sponsors") %>% 
+  select(illustration, heading, illustration_alt_text) %>% 
+  pwalk(generate_sponsor_images)
+```
 
 
 <!-- close row -->
@@ -256,7 +196,7 @@ title: Home
 :::
 
 ::: {.col-sm-12}
-Email us at <a href="mailto:redd.oxford@gmail.com">redd.oxford\@gmail.com</a> 
+Email us at <a href="mailto:ulrik.lyngs@cs.ox.ac.uk">ulrik.lyngs\@cs.ox.ac.uk</a> 
 :::
 
 <!-- close row -->
