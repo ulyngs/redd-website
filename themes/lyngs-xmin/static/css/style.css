@@ -181,6 +181,7 @@ footer hr {
 .jumbotron h1 {
   color: white; 
   /*background-color: rgba(142, 145, 149, 0.7);*/
+  margin: auto;
 }
 
 .card {
@@ -274,7 +275,7 @@ footer hr {
 
 .team img {
   object-fit: cover;
-  height: 250px;
+  height: 225px;
 }
 .team {
   margin-bottom: 3em;
@@ -284,6 +285,33 @@ footer hr {
   margin-bottom: 3em;
 }
 .sponsors img {
-  height: 250px;
+  height: 225px;
   object-fit: contain;
+}
+
+/* STRATEGIES PAGE */
+.strategy-type img {
+  height: 200px;
+  object-fit: cover;
+}
+.strategy-type {
+  padding: 1em 2em 1em 0;
+}
+
+.strategy-class {
+  margin-bottom: 3em;
+}
+
+.strategy-tool {
+  margin: 1em 4em 3em 4em;
+}
+
+.tool-title {
+  font-weight: bold;
+  font-size: 1.1em;
+  
+}
+
+.strategy-type-tools {
+  margin-bottom: 5em;
 }

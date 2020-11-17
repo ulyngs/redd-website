@@ -11,35 +11,12 @@ library(here)
 
 knitr::opts_chunk$set(echo=FALSE, message = FALSE, warning = FALSE)
 
-strategy_data <- read_excel(here("data", "strategies.xlsx"))
+strategy_data <- read_excel(here("data", "content.xlsx"), sheet = "strategy-types") %>% 
+  filter(include == "y")
 
 strategy_types <- strategy_data$category %>% unique()
 
-strategies_details <- read_excel(here("data", "strategies.xlsx"), sheet = "tools")
-```
-
-```{r helper-functions, include=FALSE}
-generate_strategy_details <- function(devices, title, description, embed_link){
-  cat('<div class="row">')
-  
-  cat('<div class="col-sm-3">')
-  cat(str_c("<p>", devices, "</p>"))
-  cat(str_c("<p>", title, "</p>"))
-  cat("</div>")
-  
-  cat('<div class="col-sm-6">')
-  cat(str_c("<p>", description, "</p>"))
-  cat("</div>")
-  
-  cat('<div class="col-sm-3">')
-  cat('<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>')
-  #cat('<div class="embed-responsive embed-responsive-16by9">')
-  #cat(str_c('<iframe class="embed-responsive-item featured-work-graphic" src="', embed_link, '" allowfullscreen></iframe>'))
-  #cat("</div>")
-  cat("</div>")
-  
-  cat("</div>")
-}
+strategies_details <- read_excel(here("data", "content.xlsx"), sheet = "strategy-tools")
 ```
 
 
@@ -61,12 +38,36 @@ This is the fantastic strategy page bla bla bla
 :::
 
 ```{r, results='asis', echo=FALSE}
-generate_strategy_examples <- function(strategy, devices, description){
+# function for generating information about detailed tools
+generate_strategy_tools <- function(devices, title, illustration, description, embed_link){
+  cat('<div class="row strategy-tool">')
+  
+  cat('<div class="col-sm-3">')
+  cat(str_c('<h5 class="tool-title">', title, '</h5>'))
+  cat(str_c('<p class="devices">', devices, '</p>'))
+  cat("</div>")
+  
+  cat('<div class="col-sm-6">')
+  cat(str_c("<p>", description, "</p>"))
+  cat("</div>")
+  
+  cat('<div class="col-sm-3">')
+  cat(str_c('<img src="', illustration, '" class="img-fluid"/>'))
+  #cat('<div class="embed-responsive embed-responsive-16by9">')
+  #cat(str_c('<iframe class="embed-responsive-item featured-work-graphic" src="', embed_link, '" allowfullscreen></iframe>'))
+  #cat("</div>")
+  cat("</div>")
+  
+  cat("</div>")
+}
+
+# function for generating overall types
+generate_strategy_types <- function(strategy, illustration, illustration_position, description){
   clean_strategy <- janitor::make_clean_names(strategy)
   
-  cat("<div class='col-sm-4'>")
+  cat("<div class='col-sm-3 strategy-type'>")
   cat("<div class='card'>")
-  cat('<img class="card-img-top" src="https://ulriklyngs.com/images/headshot_small.jpg" alt="Card image cap">')
+  cat(str_c('<img class="card-img-top" src="', illustration, '" style="object-position: ', illustration_position, ';" alt="Card image cap">'))
   cat("<div class='card-body'>")
   cat(str_c('<h5 class="card-title">', strategy, '</h5>'))
   cat(str_c('<p class="card-text">', description, '</p>'))
@@ -75,11 +76,12 @@ generate_strategy_examples <- function(strategy, devices, description){
   cat("</div>")
   cat("</div>")
   
-  # this is experimental
-  cat(str_c('<div class="col-sm-12 collapse multi-collapse-', clean_strategy, '">'))
+  cat(str_c('<div class="collapse multi-collapse-', clean_strategy, ' strategy-type-tools">'))
   
-  show_this <- strategies_details %>% filter(actual_strategy == strategy) %>% select(devices, title, description, embed_link)
-  pwalk(show_this, generate_strategy_details)
+  strategies_details %>% 
+    filter(actual_strategy == strategy) %>% 
+    select(devices, title, illustration, description, embed_link) %>%
+    pwalk(generate_strategy_tools)
   
   cat("</div>")
 }
@@ -87,14 +89,14 @@ generate_strategy_examples <- function(strategy, devices, description){
 generate_strategy_views <- function(a_strategy_type){
   current_data <- strategy_data %>% 
     filter(category == a_strategy_type) %>% 
-    select(-category)
+    select(strategy, illustration, illustration_position, description)
   
-  cat("<div class='row'>")
+  cat("<div class='row strategy-class'>")
   cat("<div class='col-sm-12'>")
   cat(str_c("<h1>", a_strategy_type, "</h1>"))
   cat("</div>")
   
-  pmap(current_data, generate_strategy_examples)
+  pmap(current_data, generate_strategy_types)
   
   # close project row
   cat("</div>")
