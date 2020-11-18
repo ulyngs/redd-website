@@ -13,6 +13,8 @@ resources <- read_excel(here::here("data", "content.xlsx"), sheet = "resources")
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
+<div class="resources">
+
 ```{r echo=FALSE, results='asis'}
 headings_and_types <- tribble(
   ~type_heading,       ~entry_type,
@@ -22,7 +24,7 @@ headings_and_types <- tribble(
 )
 
 generate_resource_entries <- function(type_heading, entry_type){
-  cat(str_c('<h2>', type_heading, '</h2>'))
+  cat(str_c('<h2 class="type-heading">', type_heading, '</h2>'))
   resources %>% 
     filter(type == entry_type) %>% 
     mutate(citation = str_c('<span class="resource-title">', title, '</span><br>', 
@@ -42,6 +44,8 @@ headings_and_types_academic <- tribble(
 )
 
 generate_resource_entries_academic <- function(topic_heading, entry_topic){
+  cat('<div class="topic-group">')
+  
   cat(str_c('<h3>', topic_heading, '</h3>'))
   resources %>% 
     filter(topic == entry_topic) %>% 
@@ -51,6 +55,8 @@ generate_resource_entries_academic <- function(topic_heading, entry_topic){
     select(citation, what, why) %>% 
     knitr::kable(format = "html", table.attr = "class=\"resource-entries\"", escape = FALSE) %>% 
     print()
+  
+  cat('</div>')
 }
 
 # generate non-academic
@@ -58,9 +64,10 @@ headings_and_types %>%
   pwalk(generate_resource_entries)
 
 # generate academic
-cat('<h2>Academic papers</h2>')
+cat('<h2 class="type-heading">Academic papers</h2>')
 headings_and_types_academic %>% 
   pwalk(generate_resource_entries_academic)
 
 ```
 
+</div>

@@ -190,26 +190,6 @@ footer hr {
 
 
 
-/* RESOURCES PAGE */
-.resource-entries thead {
-  display: none;
-}
-.resource-entries .resource-title {
-  font-weight: bold;
-}
-.resource-entries td {
-  vertical-align: top;
-  padding-right: 2.5em;
-  padding-bottom: 0.8em;
-}
-.resource-entries td:nth-child(1) {
-  width: 40%;
-}
-.resource-entries td:nth-child(2) {
-  width: 30%;
-}
-
-
 
 /* TIMELINE */
 
@@ -338,4 +318,32 @@ footer hr {
 .research-topic-publications p {
   padding: 0;
   margin: 0;
+}
+
+
+/* RESOURCES PAGE */
+.resource-entries thead {
+  display: none;
+}
+.resource-entries .resource-title {
+  font-weight: bold;
+}
+.resource-entries td {
+  vertical-align: top;
+  padding-right: 2.5em;
+  padding-bottom: 1em;
+}
+.resource-entries td:nth-child(1) {
+  width: 45%;
+}
+.resource-entries td:nth-child(2) {
+  width: 28%;
+}
+.type-heading {
+  margin-top: 2em;
+}
+
+.topic-group {
+  margin-top: 0.5em;
+  margin-bottom: 2em;
 }
