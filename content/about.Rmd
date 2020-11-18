@@ -9,68 +9,68 @@ library(readxl)
 
 knitr::opts_chunk$set(echo=FALSE, message = FALSE, warning = FALSE)
 
-content <- read_excel(here::here("data", "content.xlsx"), sheet = "faq")
+content_timeline <- read_excel(here::here("data", "content.xlsx"), sheet = "timeline") %>% 
+  mutate(side = if_else((row_number() %% 2) == 0, "right", "left"))  #column that alternates between left and right
+
+content_faq <- read_excel(here::here("data", "content.xlsx"), sheet = "faq")
 ```
 
 ## How the project began
 
-<div class="timeline">
+```{r, results='asis'}
+generate_timeline_row <- function(time, text, side, size){
+  cat('<div class="row">')
+  
+  if(side == "left"){
+    cat('<div class="col-sm-5">')
+    cat(str_c('<h3 class=', size, '>', time, '</h3>'))
+    cat(str_c('<p>', text, '</p>'))
+    cat('</div>')
+    
+    cat('<div class="col-sm-2">')
+    cat('<div style="text-align:center"><span class="dot ', size, '"></span></div>')
+    cat('</div>')
+    
+    cat('<div class="col-sm-5">')
+    cat('</div>')
+  } else {
+    cat('<div class="col-sm-5">')
+    cat('</div>')
+    
+    cat('<div class="col-sm-2">')
+    cat('<div style="text-align:center"><span class="dot ', size, '"></span></div>')
+    cat('</div>')
+    
+    cat('<div class="col-sm-5">')
+    cat(str_c('<h3 class=', size, '>', time, '</h3>'))
+    cat(str_c('<p>', text, '</p>'))
+    cat('</div>')
+  }
+  
+  cat('</div>')
+}
 
-<!-- begin a row -->
-<div class="row">
-::: {.col-sm-5}
+cat('<div class="timeline">')
+content_timeline %>% 
+  select(time, text, side, size) %>% 
+  pwalk(generate_timeline_row)
+cat('<div class="arrow"></div>') #draw arrow
+cat('</div>')
+```
 
-<h3>2011</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-:::
-
-::: {.col-sm-2}
-<div style="text-align:center"><span class="dot"></span></div>
-:::
-
-
-::: {.col-sm-5}
-:::
-
-</div>
-
-
-<!-- begin a row -->
-<div class="row">
-::: {.col-sm-5}
-
-:::
-
-::: {.col-sm-2}
-<div style="text-align:center"><span class="dot"></span></div>
-:::
-
-::: {.col-sm-5}
-
-<h3>2012</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-:::
-
-</div>
-
-<!-- draw arrow -->
-<div class="arrow"></div>
-<!-- end the timeline -->
-</div>
-
+<div class="faq">
 
 ## Help / FAQ
 ```{r, results='asis'}
 generate_faq <- function(question, answer){
-  cat(str_c('<h3 class="faq-question">', question, '</h3>'))
+  cat(str_c('<h4 class="faq-question">', question, '</h4>'))
   cat(str_c('<p class="faq-answer">', answer, '</p>'))
 }
 
-cat('<div class="faq-content">')
-content %>% 
+cat('<div class="faq-content text-center">')
+content_faq %>% 
   pwalk(generate_faq)
 cat('</div>')
 ```
 
+</div>
