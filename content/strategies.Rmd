@@ -24,15 +24,17 @@ strategies_details <- read_excel(here("data", "content.xlsx"), sheet = "strategy
 ::: {.strategy-page}
 
 ::: {.row .top-matter}
-::: {.col-sm-9}
+::: {.col-sm-12}
 This is the fantastic strategy page bla bla bla
 :::
 
+<!--
 ::: {.col-sm-3}
 ::: {.embed-responsive .embed-responsive-16by9}
 <iframe class='embed-responsive-item featured-work-graphic' src='https://www.youtube.com/embed/GCOnzStHQcM' allowfullscreen></iframe>
 :::
 :::
+-->
 
 <!-- end row with top matter -->
 :::
