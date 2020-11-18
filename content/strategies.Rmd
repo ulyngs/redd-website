@@ -71,7 +71,7 @@ generate_strategy_types <- function(strategy, illustration, illustration_positio
   cat("<div class='card-body'>")
   cat(str_c('<h5 class="card-title">', strategy, '</h5>'))
   cat(str_c('<p class="card-text">', description, '</p>'))
-  cat(str_c('<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-', clean_strategy, '">Show strategies</button>'))
+  cat(str_c('<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-', clean_strategy, '">Tools/instructions</button>'))
   cat("</div>")
   cat("</div>")
   cat("</div>")

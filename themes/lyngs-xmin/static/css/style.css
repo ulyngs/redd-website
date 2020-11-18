@@ -292,7 +292,7 @@ footer hr {
 /* STRATEGIES PAGE */
 .strategy-type img {
   height: 200px;
-  object-fit: cover;
+  object-fit: scale-down;
 }
 .strategy-type {
   padding: 1em 2em 1em 0;
@@ -314,4 +314,8 @@ footer hr {
 
 .strategy-type-tools {
   margin-bottom: 5em;
+}
+
+.strategy-page .top-matter {
+  margin-bottom: 4em;
 }
