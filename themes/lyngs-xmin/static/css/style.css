@@ -190,17 +190,6 @@ footer hr {
 
 
 
-/* RESEARCH PAGE */
-.research-topic-publications {
-  padding: 1em 1em 3em 5em;
-}
-
-.research-topic-publications p {
-  padding: 0;
-  margin: 0;
-}
-
-
 /* RESOURCES PAGE */
 .resource-entries thead {
   display: none;
@@ -318,4 +307,35 @@ footer hr {
 
 .strategy-page .top-matter {
   margin-bottom: 4em;
+}
+
+/* RESEARCH PAGE */
+
+.take-part {
+  margin-top: 3em;
+}
+
+.take-part-buttons {
+  margin: 3em 0 3em 0;
+}
+
+.take-part-buttons button {
+  padding: 1em;
+}
+
+.research-so-far {
+  margin-top: 5em;
+}
+
+.research-entry {
+  margin-bottom: 3em;
+}
+
+.research-topic-publications {
+  padding: 1em 1em 1em 5em;
+}
+
+.research-topic-publications p {
+  padding: 0;
+  margin: 0;
 }

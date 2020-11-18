@@ -13,16 +13,34 @@ content <- read_excel(here::here("data", "content.xlsx"), sheet = "research")
 publications <- read_excel(here::here("data", "content.xlsx"), sheet = "publications")
 ```
 
+<div class="research-page">
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+::: {.take-part}
 
 # How can I take part?
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
+::: {.row .take-part-buttons}
+::: {.col-sm-4}
 <button type="button" class="btn btn-primary">Take the "How am I doing?" quiz</button>
-<button type="button" class="btn btn-primary">Sign up for a workshop</button>
-<button type="button" class="btn btn-primary">Take part in a research study</button>
+:::
 
+::: {.col-sm-4}
+<button type="button" class="btn btn-primary">Sign up for a workshop</button>
+:::
+
+::: {.col-sm-4}
+<button type="button" class="btn btn-primary">Take part in a research study</button>
+:::
+:::
+
+<!-- end 'take-part' div -->
+:::
+
+<div class="research-so-far">
 # Our research so far
 
 ```{r, results='asis'}
@@ -40,6 +58,8 @@ insert_publications <- function(publication_title, publication_authors, publicat
 }
 
 generate_research_info <- function(id, heading, description, illustration_type, illustration){
+  cat('<div class="research-entry">')
+  
   cat('<div class="row">')
 
   cat('<div class="col-sm-9">')
@@ -69,8 +89,17 @@ generate_research_info <- function(id, heading, description, illustration_type, 
   cat("</div>")
   
   cat("</div>")
+  
+  #end research entry div
+  cat("</div>")
 }
 
 content %>%
   pwalk(generate_research_info)
 ```
+
+<!-- end research so far-->
+</div>
+
+<!-- end research page -->
+</div>
