@@ -2,6 +2,11 @@
   --main-page-padding: 0 3em 0 3em;
 }
 
+/* hide the anchor hash that rmarkdown adds */
+.anchor-section {
+  display: none;
+}
+
 .header-container .navbar {
     background-color: white !important;
     border-bottom: 1px solid rgba(0,0,0,0.2)
