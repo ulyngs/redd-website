@@ -69,7 +69,7 @@ generate_strategy_types <- function(strategy, illustration, illustration_positio
   
   cat("<div class='col-sm-3 strategy-type'>")
   cat("<div class='card'>")
-  cat(str_c('<img class="card-img-top" src="', illustration, '" style="object-position: ', illustration_position, ';" alt="Card image cap">'))
+  cat(str_c('<img class="card-img-top" src="', illustration, '" style="object-position: ', illustration_position, ';" alt="Card image cap" data-toggle="collapse" data-target=".multi-collapse-', clean_strategy, '">'))
   cat("<div class='card-body'>")
   cat(str_c('<h5 class="card-title">', strategy, '</h5>'))
   cat(str_c('<p class="card-text">', description, '</p>'))
