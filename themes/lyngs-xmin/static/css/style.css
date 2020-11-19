@@ -260,8 +260,22 @@ footer hr {
 }
 
 .strategy-page .top-matter {
-  margin-bottom: 4em;
+  margin-bottom: 1em;
 }
+
+.strategy-tool {
+  display: none;
+}
+.strategy-tool.mac-show,
+.strategy-tool.pc-show,
+.strategy-tool.android-show,
+.strategy-tool.ios-show,
+.strategy-tool.chrome-show,
+.strategy-tool.firefox-show,
+.strategy-tool.safari-show {
+  display: flex;
+}
+
 
 /* RESEARCH PAGE */
 
@@ -367,6 +381,7 @@ footer hr {
 
 .faq {
   margin-top: 8em;
+  margin-bottom: 7em;
 }
 .faq-question {
   margin-top: 1em;

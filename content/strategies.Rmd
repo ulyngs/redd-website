@@ -27,6 +27,53 @@ strategies_details <- read_excel(here("data", "content.xlsx"), sheet = "strategy
 ::: {.col-sm-12}
 This is the fantastic strategy page bla bla bla
 :::
+:::
+
+::: {.row .tool-filters}
+::: {.col-sm-2}
+<div>
+Mac: 
+<input type="checkbox" onclick="toggleMac()" style="margin:0;" checked="checked">
+<br>
+PC:
+<input type="checkbox" onclick="togglePC()" style="margin:0;" checked="checked">
+</div>
+:::
+
+::: {.col-sm-2}
+<div>
+Android: 
+<input type="checkbox" onclick="toggleAndroid()" style="margin:0;" checked="checked">
+<br>
+iPhone / iPad:
+<input type="checkbox" onclick="toggleIOS()" style="margin:0;" checked="checked">
+</div>
+:::
+
+::: {.col-sm-2}
+<div>
+Chrome: 
+<input type="checkbox" onclick="toggleChrome()" style="margin:0;" checked="checked">
+<br>
+Firefox:
+<input type="checkbox" onclick="toggleFirefox()" style="margin:0;" checked="checked">
+<br>
+Safari:
+<input type="checkbox" onclick="toggleSafari()" style="margin:0;" checked="checked">
+</div>
+:::
+
+<script>
+function toggleMac() { $(".strategy-tool.mac").toggleClass("mac-show");}
+function togglePC() { $(".strategy-tool.pc").toggleClass("pc-show");}
+function toggleAndroid() { $(".strategy-tool.android").toggleClass("android-show");}
+function toggleIOS() { $(".strategy-tool.ios").toggleClass("ios-show");}
+function toggleChrome() { $(".strategy-tool.chrome").toggleClass("chrome-show");}
+function toggleFirefox() { $(".strategy-tool.firefox").toggleClass("firefox-show");}
+function toggleSafari() { $(".strategy-tool.safari").toggleClass("safari-show");}
+</script>
+:::
+
 
 <!--
 ::: {.col-sm-3}
@@ -41,8 +88,8 @@ This is the fantastic strategy page bla bla bla
 
 ```{r, results='asis', echo=FALSE}
 # function for generating information about detailed tools
-generate_strategy_tools <- function(devices, title, illustration, description, embed_link){
-  cat('<div class="row strategy-tool">')
+generate_strategy_tools <- function(devices, show_classes, title, illustration, description, embed_link){
+  cat(str_c('<div class="row strategy-tool ', devices, ' ', show_classes, '">'))
   
   cat('<div class="col-sm-3">')
   cat(str_c('<h5 class="tool-title">', title, '</h5>'))
@@ -82,7 +129,16 @@ generate_strategy_types <- function(strategy, illustration, illustration_positio
   
   strategies_details %>% 
     filter(actual_strategy == strategy) %>% 
-    select(devices, title, illustration, description, embed_link) %>%
+    # a longwinded way of adding -show to classes
+    mutate(id = row_number()) %>% 
+    mutate(show_classes = str_split(devices, " ")) %>% 
+    unnest(cols = c(show_classes)) %>% 
+    mutate(show_classes = str_c(show_classes, "-show")) %>% 
+    group_by(id) %>% 
+    mutate(show_classes = str_c(show_classes, collapse = " ")) %>% 
+    distinct() %>% 
+    ungroup() %>% 
+    select(devices, show_classes, title, illustration, description, embed_link) %>%
     pwalk(generate_strategy_tools)
   
   cat("</div>")
@@ -105,6 +161,7 @@ generate_strategy_views <- function(a_strategy_type){
 }
 
 walk(strategy_types, generate_strategy_views)
+
 ```
 
 <!-- end strategy page -->
