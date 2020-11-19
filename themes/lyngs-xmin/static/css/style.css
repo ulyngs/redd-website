@@ -233,6 +233,19 @@ footer hr {
 }
 
 /* STRATEGIES PAGE */
+
+/* style floating TOC */
+.strategy-page a.nav-link {
+  border-bottom: none;
+}
+
+#toc .nav-link {
+  padding-left: 0.1em;
+}
+.sticky-top {
+  top: 55px;
+}
+
 .strategy-type img {
   height: 200px;
   object-fit: scale-down;

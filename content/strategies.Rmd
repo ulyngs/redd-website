@@ -29,6 +29,14 @@ This is the fantastic strategy page bla bla bla
 :::
 :::
 
+
+::: {.row}
+::: {.col-sm-2}
+<nav id="toc" data-toggle="toc" class="sticky-top"></nav>
+:::
+
+::: {.col-sm-10}
+
 ::: {.row .tool-filters}
 ::: {.col-sm-2}
 <div>
@@ -83,8 +91,6 @@ function toggleSafari() { $(".strategy-tool.safari").toggleClass("safari-show");
 :::
 -->
 
-<!-- end row with top matter -->
-:::
 
 ```{r, results='asis', echo=FALSE}
 # function for generating information about detailed tools
@@ -163,6 +169,11 @@ generate_strategy_views <- function(a_strategy_type){
 walk(strategy_types, generate_strategy_views)
 
 ```
+
+
+:::
+:::
+
 
 <!-- end strategy page -->
 :::
