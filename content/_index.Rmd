@@ -134,7 +134,7 @@ content %>%
 <!-- ####### create 'our team' section ######### -->
 ::: {.row .team}
 ::: {.col-sm-12}
-# Our team
+# Team
 :::
 
 ```{r results='asis'}
@@ -165,7 +165,7 @@ content %>%
 <!-- ####### create 'sponsors' section ######### -->
 ::: {.row .sponsors}
 ::: {.col-sm-12}
-# Our sponsors
+# Sponsors
 :::
 
 ```{r results='asis'}
