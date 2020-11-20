@@ -120,19 +120,19 @@ generate_strategy_tools <- function(devices, show_classes, title, illustration, 
 generate_strategy_types <- function(strategy, illustration, illustration_position, description){
   clean_strategy <- janitor::make_clean_names(strategy)
   
-  cat("<div class='col-sm-3 strategy-type'>")
+  cat(str_c('<div class="col-sm-3 strategy-type ', clean_strategy, '" onclick="highlightStrategy', clean_strategy, '()" data-toggle="collapse" data-target=".multi-collapse-', clean_strategy, '">'))
   cat("<div class='card'>")
-  cat(str_c('<img class="card-img-top" src="', illustration, '" style="object-position: ', illustration_position, ';" alt="Card image cap" data-toggle="collapse" data-target=".multi-collapse-', clean_strategy, '">'))
+  cat(str_c('<img class="card-img-top" src="', illustration, '" style="object-position: ', illustration_position, ';" alt="Card image cap">'))
   cat("<div class='card-body'>")
   cat(str_c('<h5 class="card-title">', strategy, '</h5>'))
   cat(str_c('<p class="card-text">', description, '</p>'))
   cat(str_c('<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-', clean_strategy, '">Tools/instructions</button>'))
+  cat(str_c('<div class="arrow ', clean_strategy, '"></div>')) #draw arrow
   cat("</div>")
   cat("</div>")
   cat("</div>")
   
   cat(str_c('<div class="collapse multi-collapse-', clean_strategy, ' strategy-type-tools">'))
-  
   strategies_details %>% 
     filter(actual_strategy == strategy) %>% 
     # a longwinded way of adding -show to classes
@@ -146,7 +146,6 @@ generate_strategy_types <- function(strategy, illustration, illustration_positio
     ungroup() %>% 
     select(devices, show_classes, title, illustration, description, embed_link) %>%
     pwalk(generate_strategy_tools)
-  
   cat("</div>")
 }
 
@@ -167,7 +166,6 @@ generate_strategy_views <- function(a_strategy_type){
 }
 
 walk(strategy_types, generate_strategy_views)
-
 ```
 
 
@@ -177,3 +175,25 @@ walk(strategy_types, generate_strategy_views)
 
 <!-- end strategy page -->
 :::
+
+
+```{r, results='asis'}
+generate_highlight_functions <- function(strategy){
+  clean_strategy <- janitor::make_clean_names(strategy)
+  
+  cat(str_c('function highlightStrategy', clean_strategy, '() { $(".strategy-type.', clean_strategy, '").toggleClass("highlight-this"); $(".arrow.', clean_strategy, '").toggleClass("highlight-this");}\n'))
+}
+
+cat("<script>")
+walk(strategy_data$strategy, generate_highlight_functions)
+cat("</script>")
+```
+
+
+<!--
+<script>
+function highlightStrategyblock_distracting_websites_or_apps() { $(".strategy-type.block_distracting_websites_or_apps").toggleClass("highlight-this");}
+</script>
+-->
+
+<!-- $(".arrow.', clean_strategy, '").toggleClass("highlight-this");} -->

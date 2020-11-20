@@ -246,30 +246,14 @@ footer hr {
   top: 55px;
 }
 
-.strategy-type img {
-  height: 200px;
-  object-fit: scale-down;
-}
-.strategy-type {
-  padding: 1em 2em 1em 0;
-}
-
 .strategy-class {
   margin-bottom: 3em;
-}
-
-.strategy-tool {
-  margin: 1em 4em 3em 4em;
 }
 
 .tool-title {
   font-weight: bold;
   font-size: 1.1em;
   
-}
-
-.strategy-type-tools {
-  margin-bottom: 5em;
 }
 
 .strategy-page .top-matter {
@@ -288,6 +272,54 @@ footer hr {
 .strategy-tool.safari-show {
   display: flex;
 }
+.tool-filters {
+  margin-bottom: 1em;
+}
+
+.strategy-type .arrow {
+  position: relative;
+  left: 50%;
+  margin-left: -20px;
+  width: 0;
+  height: 0;
+  border-top: solid 20px #0062cc;
+  border-left: solid 20px transparent;
+  border-right: solid 20px transparent;
+  display: none;
+}
+
+.strategy-type .arrow.highlight-this {
+  display: block;
+}
+
+.strategy-type-tools {
+  /*border-left: 2px solid lightgrey;*/
+  margin-bottom: 5em;
+  margin-left: 2em;
+  margin-top: 1.5em;
+  border-left: 1px dashed lightgrey;
+}
+
+.strategy-tool {
+  margin: 0em 4em 3em 1em;
+  padding-left: 2em;
+}
+
+.highlight-this .card-body {
+  border: 2px solid lightgrey;
+  border-radius: 50px;
+  background-color: lightgrey;
+}
+
+.strategy-type img {
+  height: 200px;
+  object-fit: scale-down;
+}
+.strategy-type {
+  padding: 0 1em;
+}
+
+
 
 
 /* RESEARCH PAGE */
