@@ -150,11 +150,13 @@ generate_strategy_types <- function(strategy, illustration, illustration_positio
 }
 
 generate_strategy_views <- function(a_strategy_type){
+  clean_strategy_type <- janitor::make_clean_names(a_strategy_type)
+  
   current_data <- strategy_data %>% 
     filter(category == a_strategy_type) %>% 
     select(strategy, illustration, illustration_position, description)
   
-  cat("<div class='row strategy-class'>")
+  cat(str_c('<div class="row strategy-class ', clean_strategy_type, '">'))
   cat("<div class='col-sm-12'>")
   cat(str_c("<h1>", a_strategy_type, "</h1>"))
   cat("</div>")
@@ -190,10 +192,3 @@ cat("</script>")
 ```
 
 
-<!--
-<script>
-function highlightStrategyblock_distracting_websites_or_apps() { $(".strategy-type.block_distracting_websites_or_apps").toggleClass("highlight-this");}
-</script>
--->
-
-<!-- $(".arrow.', clean_strategy, '").toggleClass("highlight-this");} -->

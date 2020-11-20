@@ -5,30 +5,79 @@ menu: main
 ---
 
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<link href="/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
 
 
 <div class="strategy-page">
 <div class="row top-matter">
-<div class="col-sm-9">
+<div class="col-sm-12">
 <p>This is the fantastic strategy page bla bla bla</p>
 </div>
-<div class="col-sm-3">
-<div class="embed-responsive embed-responsive-16by9">
-<iframe class="embed-responsive-item featured-work-graphic" src="https://www.youtube.com/embed/GCOnzStHQcM" allowfullscreen>
-</iframe>
-</div>
-</div>
-<!-- end row with top matter -->
 </div>
 <div class="row">
+<div class="col-sm-2">
+<nav id="toc" data-toggle="toc" class="sticky-top">
+</nav>
+</div>
+<div class="col-sm-10">
+<div class="row tool-filters">
+<div class="col-sm-2">
+<div>
+<p>Mac:
+<input type="checkbox" onclick="toggleMac()" style="margin:0;" checked="checked">
+<br>
+PC:
+<input type="checkbox" onclick="togglePC()" style="margin:0;" checked="checked"></p>
+</div>
+</div>
+<div class="col-sm-2">
+<div>
+<p>Android:
+<input type="checkbox" onclick="toggleAndroid()" style="margin:0;" checked="checked">
+<br>
+iPhone / iPad:
+<input type="checkbox" onclick="toggleIOS()" style="margin:0;" checked="checked"></p>
+</div>
+</div>
+<div class="col-sm-2">
+<div>
+<p>Chrome:
+<input type="checkbox" onclick="toggleChrome()" style="margin:0;" checked="checked">
+<br>
+Firefox:
+<input type="checkbox" onclick="toggleFirefox()" style="margin:0;" checked="checked">
+<br>
+Safari:
+<input type="checkbox" onclick="toggleSafari()" style="margin:0;" checked="checked"></p>
+</div>
+</div>
+<script>
+function toggleMac() { $(".strategy-tool.mac").toggleClass("mac-show");}
+function togglePC() { $(".strategy-tool.pc").toggleClass("pc-show");}
+function toggleAndroid() { $(".strategy-tool.android").toggleClass("android-show");}
+function toggleIOS() { $(".strategy-tool.ios").toggleClass("ios-show");}
+function toggleChrome() { $(".strategy-tool.chrome").toggleClass("chrome-show");}
+function toggleFirefox() { $(".strategy-tool.firefox").toggleClass("firefox-show");}
+function toggleSafari() { $(".strategy-tool.safari").toggleClass("safari-show");}
+</script>
+</div>
+<!--
+::: {.col-sm-3}
+::: {.embed-responsive .embed-responsive-16by9}
+<iframe class='embed-responsive-item featured-work-graphic' src='https://www.youtube.com/embed/GCOnzStHQcM' allowfullscreen></iframe>
+:::
+:::
+-->
+<div class="row strategy-class block_or_remove_distractions">
 <div class="col-sm-12">
 <h1>
-Remove distractions
+Block or remove distractions
 </h1>
 </div>
-<div class="col-sm-4">
+<div class="col-sm-3 strategy-type block_distracting_websites_or_apps" onclick="highlightStrategyblock_distracting_websites_or_apps()" data-toggle="collapse" data-target=".multi-collapse-block_distracting_websites_or_apps">
 <div class="card">
-<img class="card-img-top" src="https://ulriklyngs.com/images/headshot_small.jpg" alt="Card image cap">
+<img class="card-img-top" src="/images/strategy-icons/block.jpeg" style="object-position: 0% 50%;" alt="Card image cap">
 <div class="card-body">
 <h5 class="card-title">
 Block distracting websites or apps
@@ -37,55 +86,60 @@ Block distracting websites or apps
 some amazing description of this strategy here
 </p>
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-block_distracting_websites_or_apps">
-Show strategies
+Tools/instructions
 </button>
+<div class="arrow block_distracting_websites_or_apps">
+
 </div>
 </div>
 </div>
-<div class="col-sm-12 collapse multi-collapse-block_distracting_websites_or_apps">
-<div class="row">
+</div>
+<div class="collapse multi-collapse-block_distracting_websites_or_apps strategy-type-tools">
+<div class="row strategy-tool mac pc mac-show pc-show">
 <div class="col-sm-3">
-<p>
-mac, pc
-</p>
-<p>
+<h5 class="tool-title">
 Cold Turkey Blocker
+</h5>
+<p class="devices">
+mac pc
 </p>
 </div>
 <div class="col-sm-6">
 <p>
-There’s a really interesting description here and it is also fantastic to use and bla bla bla
+<p>Other website blockers are too easy to cheat. That’s why you’ll love Cold Turkey Blocker. It’ll be there for you when your willpower isn’t.</p>
+<p>You can choose to lock your block: until a specified time or time window everyday, until a restart, or until you type a customizable amount of random text.</p>
+In the pro version, you can also lock a block using a password or during active scheduled blocks.
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/cold_turkey_blocker.png" class="img-fluid"/>
 </div>
 </div>
-<div class="row">
+<div class="row strategy-tool android android-show">
 <div class="col-sm-3">
-<p>
-android
-</p>
-<p>
+<h5 class="tool-title">
 Stay Focused
-</p>
-</div>
-<div class="col-sm-6">
-<p>
-There’s a really interesting description here and it is also fantastic to use and bla bla bla
-</p>
-</div>
-<div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
-</div>
-</div>
-<div class="row">
-<div class="col-sm-3">
-<p>
+</h5>
+<p class="devices">
 android
 </p>
+</div>
+<div class="col-sm-6">
 <p>
+There’s a really interesting description here and it is also fantastic to use and bla bla bla
+</p>
+</div>
+<div class="col-sm-3">
+<img src="/images/tool-icons/stay_focused.png" class="img-fluid"/>
+</div>
+</div>
+<div class="row strategy-tool android android-show">
+<div class="col-sm-3">
+<h5 class="tool-title">
 Digital Wellbeing
+</h5>
+<p class="devices">
+android
 </p>
 </div>
 <div class="col-sm-6">
@@ -94,16 +148,16 @@ There’s a really interesting description here and it is also fantastic to use 
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/android_digital_wellbeing_limit.png" class="img-fluid"/>
 </div>
 </div>
-<div class="row">
+<div class="row strategy-tool mac ios mac-show ios-show">
 <div class="col-sm-3">
-<p>
-iOS
-</p>
-<p>
+<h5 class="tool-title">
 Screen Time
+</h5>
+<p class="devices">
+mac ios
 </p>
 </div>
 <div class="col-sm-6">
@@ -112,34 +166,37 @@ There’s a really interesting description here and it is also fantastic to use 
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/screen_time_limit.jpg" class="img-fluid"/>
 </div>
 </div>
 </div>
-<div class="col-sm-4">
+<div class="col-sm-3 strategy-type reduce_your_device_to_the_tools_you_need" onclick="highlightStrategyreduce_your_device_to_the_tools_you_need()" data-toggle="collapse" data-target=".multi-collapse-reduce_your_device_to_the_tools_you_need">
 <div class="card">
-<img class="card-img-top" src="https://ulriklyngs.com/images/headshot_small.jpg" alt="Card image cap">
+<img class="card-img-top" src="/images/strategy-icons/toolbox2.png" style="object-position: 0% 50%;" alt="Card image cap">
 <div class="card-body">
 <h5 class="card-title">
-Lock yourself into just those apps you need
+Reduce your device to the tools you need
 </h5>
 <p class="card-text">
 some amazing description of this strategy here
 </p>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-lock_yourself_into_just_those_apps_you_need">
-Show strategies
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-reduce_your_device_to_the_tools_you_need">
+Tools/instructions
 </button>
+<div class="arrow reduce_your_device_to_the_tools_you_need">
+
 </div>
 </div>
 </div>
-<div class="col-sm-12 collapse multi-collapse-lock_yourself_into_just_those_apps_you_need">
-<div class="row">
+</div>
+<div class="collapse multi-collapse-reduce_your_device_to_the_tools_you_need strategy-type-tools">
+<div class="row strategy-tool mac pc mac-show pc-show">
 <div class="col-sm-3">
-<p>
-laptop
-</p>
-<p>
+<h5 class="tool-title">
 Micromanager
+</h5>
+<p class="devices">
+mac pc
 </p>
 </div>
 <div class="col-sm-6">
@@ -148,16 +205,16 @@ There’s a really interesting description here and it is also fantastic to use 
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/micromanager.png" class="img-fluid"/>
 </div>
 </div>
-<div class="row">
+<div class="row strategy-tool mac pc mac-show pc-show">
 <div class="col-sm-3">
-<p>
-laptop
-</p>
-<p>
+<h5 class="tool-title">
 Cold Turkey Writer
+</h5>
+<p class="devices">
+mac pc
 </p>
 </div>
 <div class="col-sm-6">
@@ -166,16 +223,16 @@ There’s a really interesting description here and it is also fantastic to use 
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/cold_turkey_writer.png" class="img-fluid"/>
 </div>
 </div>
-<div class="row">
+<div class="row strategy-tool ios ios-show">
 <div class="col-sm-3">
-<p>
-iOS
-</p>
-<p>
+<h5 class="tool-title">
 Screen Time (Downtime)
+</h5>
+<p class="devices">
+ios
 </p>
 </div>
 <div class="col-sm-6">
@@ -184,34 +241,37 @@ There’s a really interesting description here and it is also fantastic to use 
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/downtime1.png" class="img-fluid"/>
 </div>
 </div>
 </div>
-<div class="col-sm-4">
+<div class="col-sm-3 strategy-type hide_distracting_features_on_websites" onclick="highlightStrategyhide_distracting_features_on_websites()" data-toggle="collapse" data-target=".multi-collapse-hide_distracting_features_on_websites">
 <div class="card">
-<img class="card-img-top" src="https://ulriklyngs.com/images/headshot_small.jpg" alt="Card image cap">
+<img class="card-img-top" src="/images/strategy-icons/remove_distractions_fb_icon.png" style="object-position: 0% 70%;" alt="Card image cap">
 <div class="card-body">
 <h5 class="card-title">
-Remove distracting features on websites &amp; apps
+Hide distracting features on websites
 </h5>
 <p class="card-text">
 some amazing description of this strategy here
 </p>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-remove_distracting_features_on_websites_apps">
-Show strategies
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-hide_distracting_features_on_websites">
+Tools/instructions
 </button>
+<div class="arrow hide_distracting_features_on_websites">
+
 </div>
 </div>
 </div>
-<div class="col-sm-12 collapse multi-collapse-remove_distracting_features_on_websites_apps">
-<div class="row">
+</div>
+<div class="collapse multi-collapse-hide_distracting_features_on_websites strategy-type-tools">
+<div class="row strategy-tool chrome chrome-show">
 <div class="col-sm-3">
-<p>
-laptop: chrome
-</p>
-<p>
+<h5 class="tool-title">
 News Feed Eradicator
+</h5>
+<p class="devices">
+chrome
 </p>
 </div>
 <div class="col-sm-6">
@@ -220,16 +280,16 @@ There’s a really interesting description here and it is also fantastic to use 
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/fb_newsfeed_eradicator.png" class="img-fluid"/>
 </div>
 </div>
-<div class="row">
+<div class="row strategy-tool safari safari-show">
 <div class="col-sm-3">
-<p>
-laptop: safari
-</p>
-<p>
+<h5 class="tool-title">
 “No Distractions” for Facebook
+</h5>
+<p class="devices">
+safari
 </p>
 </div>
 <div class="col-sm-6">
@@ -238,16 +298,16 @@ There’s a really interesting description here and it is also fantastic to use 
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/fb_no_distractions.png" class="img-fluid"/>
 </div>
 </div>
-<div class="row">
+<div class="row strategy-tool ios ios-show">
 <div class="col-sm-3">
-<p>
-iOS
-</p>
-<p>
+<h5 class="tool-title">
 Feedless
+</h5>
+<p class="devices">
+ios
 </p>
 </div>
 <div class="col-sm-6">
@@ -256,16 +316,16 @@ There’s a really interesting description here and it is also fantastic to use 
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/feedless.png" class="img-fluid"/>
 </div>
 </div>
-<div class="row">
+<div class="row strategy-tool chrome chrome-show">
 <div class="col-sm-3">
-<p>
-laptop: chrome
-</p>
-<p>
+<h5 class="tool-title">
 Facebook Demetricator
+</h5>
+<p class="devices">
+chrome
 </p>
 </div>
 <div class="col-sm-6">
@@ -274,34 +334,34 @@ There’s a really interesting description here and it is also fantastic to use 
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/fb-demetricator.jpg" class="img-fluid"/>
 </div>
 </div>
-<div class="row">
+<div class="row strategy-tool chrome chrome-show">
 <div class="col-sm-3">
-<p>
-laptop: chrome
-</p>
-<p>
+<h5 class="tool-title">
 Remove YouTube Recommended Videos
+</h5>
+<p class="devices">
+chrome
 </p>
 </div>
 <div class="col-sm-6">
 <p>
-There’s a really interesting description here and it is also fantastic to use and bla bla bla
+On Chrome, remove video recommentations with the extension Remove YouTube Recommended Videos:
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/chrome_youtube.jpg" class="img-fluid"/>
 </div>
 </div>
-<div class="row">
+<div class="row strategy-tool safari safari-show">
 <div class="col-sm-3">
-<p>
-laptop: safari
-</p>
-<p>
+<h5 class="tool-title">
 “No Distractions” for YouTube
+</h5>
+<p class="devices">
+safari
 </p>
 </div>
 <div class="col-sm-6">
@@ -310,17 +370,17 @@ There’s a really interesting description here and it is also fantastic to use 
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/youtube_minimal.png" class="img-fluid"/>
 </div>
 </div>
-<div class="row">
+<div class="row strategy-tool firefox firefox-show">
 <div class="col-sm-3">
-<p>
+<h5 class="tool-title">
+Remove YouTube’s Suggestions
+</h5>
+<p class="devices">
 firefox
 </p>
-<p>
-Remove YouTube’s Suggestions
-</p>
 </div>
 <div class="col-sm-6">
 <p>
@@ -328,16 +388,16 @@ There’s a really interesting description here and it is also fantastic to use 
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/firefox_youtube.png" class="img-fluid"/>
 </div>
 </div>
-<div class="row">
+<div class="row strategy-tool chrome chrome-show">
 <div class="col-sm-3">
-<p>
-laptop: chrome
-</p>
-<p>
+<h5 class="tool-title">
 Inbox When Ready
+</h5>
+<p class="devices">
+chrome
 </p>
 </div>
 <div class="col-sm-6">
@@ -346,16 +406,16 @@ There’s a really interesting description here and it is also fantastic to use 
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/inbox_ready.jpg" class="img-fluid"/>
 </div>
 </div>
-<div class="row">
+<div class="row strategy-tool firefox firefox-show">
 <div class="col-sm-3">
-<p>
-laptop: firefox
-</p>
-<p>
+<h5 class="tool-title">
 Gmail Hide
+</h5>
+<p class="devices">
+firefox
 </p>
 </div>
 <div class="col-sm-6">
@@ -364,16 +424,16 @@ There’s a really interesting description here and it is also fantastic to use 
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/firefox_gmail.png" class="img-fluid"/>
 </div>
 </div>
-<div class="row">
+<div class="row strategy-tool chrome chrome-show">
 <div class="col-sm-3">
-<p>
-laptop: chrome
-</p>
-<p>
+<h5 class="tool-title">
 Click to Remove Element
+</h5>
+<p class="devices">
+chrome
 </p>
 </div>
 <div class="col-sm-6">
@@ -382,16 +442,16 @@ There’s a really interesting description here and it is also fantastic to use 
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/remove_element.jpg" class="img-fluid"/>
 </div>
 </div>
-<div class="row">
+<div class="row strategy-tool firefox firefox-show">
 <div class="col-sm-3">
-<p>
-laptop: firefox
-</p>
-<p>
+<h5 class="tool-title">
 Remove HTML Elements
+</h5>
+<p class="devices">
+firefox
 </p>
 </div>
 <div class="col-sm-6">
@@ -400,13 +460,13 @@ There’s a really interesting description here and it is also fantastic to use 
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/firefox_remove_element.png" class="img-fluid"/>
 </div>
 </div>
 </div>
-<div class="col-sm-4">
+<div class="col-sm-3 strategy-type use_focus_mode" onclick="highlightStrategyuse_focus_mode()" data-toggle="collapse" data-target=".multi-collapse-use_focus_mode">
 <div class="card">
-<img class="card-img-top" src="https://ulriklyngs.com/images/headshot_small.jpg" alt="Card image cap">
+<img class="card-img-top" src="/images/strategy-icons/focus_mode.png" style="object-position: 0% 50%;" alt="Card image cap">
 <div class="card-body">
 <h5 class="card-title">
 Use focus mode
@@ -415,19 +475,22 @@ Use focus mode
 some amazing description of this strategy here
 </p>
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-use_focus_mode">
-Show strategies
+Tools/instructions
 </button>
+<div class="arrow use_focus_mode">
+
 </div>
 </div>
 </div>
-<div class="col-sm-12 collapse multi-collapse-use_focus_mode">
-<div class="row">
+</div>
+<div class="collapse multi-collapse-use_focus_mode strategy-type-tools">
+<div class="row strategy-tool chrome firefox chrome-show firefox-show">
 <div class="col-sm-3">
-<p>
-laptop: chrome + firefox
-</p>
-<p>
+<h5 class="tool-title">
 Distraction Free Mode for Google Docs
+</h5>
+<p class="devices">
+chrome firefox
 </p>
 </div>
 <div class="col-sm-6">
@@ -436,16 +499,16 @@ There’s a really interesting description here and it is also fantastic to use 
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/google_docs.png" class="img-fluid"/>
 </div>
 </div>
-<div class="row">
+<div class="row strategy-tool mac pc mac-show pc-show">
 <div class="col-sm-3">
-<p>
-laptop
-</p>
-<p>
+<h5 class="tool-title">
 MS Word Focus mode
+</h5>
+<p class="devices">
+mac pc
 </p>
 </div>
 <div class="col-sm-6">
@@ -454,16 +517,16 @@ There’s a really interesting description here and it is also fantastic to use 
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/word_focus1.png" class="img-fluid"/>
 </div>
 </div>
-<div class="row">
+<div class="row strategy-tool mac pc mac-show pc-show">
 <div class="col-sm-3">
-<p>
-laptop
-</p>
-<p>
+<h5 class="tool-title">
 Typora
+</h5>
+<p class="devices">
+mac pc
 </p>
 </div>
 <div class="col-sm-6">
@@ -472,17 +535,17 @@ There’s a really interesting description here and it is also fantastic to use 
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/typora.png" class="img-fluid"/>
 </div>
 </div>
-<div class="row">
+<div class="row strategy-tool android android-show">
 <div class="col-sm-3">
-<p>
+<h5 class="tool-title">
+JotterPad
+</h5>
+<p class="devices">
 android
 </p>
-<p>
-JotterPad
-</p>
 </div>
 <div class="col-sm-6">
 <p>
@@ -490,16 +553,16 @@ There’s a really interesting description here and it is also fantastic to use 
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/jotterpad.png" class="img-fluid"/>
 </div>
 </div>
-<div class="row">
+<div class="row strategy-tool mac pc mac-show pc-show">
 <div class="col-sm-3">
-<p>
-OSX
-</p>
-<p>
+<h5 class="tool-title">
 Full screen mode
+</h5>
+<p class="devices">
+mac pc
 </p>
 </div>
 <div class="col-sm-6">
@@ -508,13 +571,13 @@ There’s a really interesting description here and it is also fantastic to use 
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/full_screen_2.png" class="img-fluid"/>
 </div>
 </div>
 </div>
-<div class="col-sm-4">
+<div class="col-sm-3 strategy-type limit_notifications" onclick="highlightStrategylimit_notifications()" data-toggle="collapse" data-target=".multi-collapse-limit_notifications">
 <div class="card">
-<img class="card-img-top" src="https://ulriklyngs.com/images/headshot_small.jpg" alt="Card image cap">
+<img class="card-img-top" src="/images/strategy-icons/limit_notifications.jpg" style="object-position: 0% 50%;" alt="Card image cap">
 <div class="card-body">
 <h5 class="card-title">
 Limit notifications
@@ -523,19 +586,22 @@ Limit notifications
 some amazing description of this strategy here
 </p>
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-limit_notifications">
-Show strategies
+Tools/instructions
 </button>
+<div class="arrow limit_notifications">
+
 </div>
 </div>
 </div>
-<div class="col-sm-12 collapse multi-collapse-limit_notifications">
-<div class="row">
+</div>
+<div class="collapse multi-collapse-limit_notifications strategy-type-tools">
+<div class="row strategy-tool mac pc ios android mac-show pc-show ios-show android-show">
 <div class="col-sm-3">
-<p>
-laptop, smartphone
-</p>
-<p>
+<h5 class="tool-title">
 Notifications settings
+</h5>
+<p class="devices">
+mac pc ios android
 </p>
 </div>
 <div class="col-sm-6">
@@ -544,38 +610,39 @@ There’s a really interesting description here and it is also fantastic to use 
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/notifications.png" class="img-fluid"/>
 </div>
 </div>
-<div class="row">
+<div class="row strategy-tool mac ios android mac-show ios-show android-show">
 <div class="col-sm-3">
-<p>
-iOS, android
-</p>
-<p>
+<h5 class="tool-title">
 Schedule Do Not Disturb
+</h5>
+<p class="devices">
+mac ios android
 </p>
 </div>
 <div class="col-sm-6">
 <p>
-There’s a really interesting description here and it is also fantastic to use and bla bla bla
+<p>Schedule do not disturb, so that during certain hours (e.g. 9pm to 8am) only calls from your favorite contacts go through directly.</p>
+On iPhone go to Settings &gt; Do Not Disturb
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/do_not_disturb.png" class="img-fluid"/>
 </div>
 </div>
 </div>
 </div>
-<div class="row">
+<div class="row strategy-class track_yourself">
 <div class="col-sm-12">
 <h1>
 Track yourself
 </h1>
 </div>
-<div class="col-sm-4">
+<div class="col-sm-3 strategy-type understand_how_you_use_your_devices" onclick="highlightStrategyunderstand_how_you_use_your_devices()" data-toggle="collapse" data-target=".multi-collapse-understand_how_you_use_your_devices">
 <div class="card">
-<img class="card-img-top" src="https://ulriklyngs.com/images/headshot_small.jpg" alt="Card image cap">
+<img class="card-img-top" src="/images/strategy-icons/understand_use_icon.png" style="object-position: 0% 50%;" alt="Card image cap">
 <div class="card-body">
 <h5 class="card-title">
 Understand how you use your devices
@@ -584,127 +651,133 @@ Understand how you use your devices
 some amazing description of this strategy here
 </p>
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-understand_how_you_use_your_devices">
-Show strategies
+Tools/instructions
 </button>
+<div class="arrow understand_how_you_use_your_devices">
+
 </div>
 </div>
 </div>
-<div class="col-sm-12 collapse multi-collapse-understand_how_you_use_your_devices">
-<div class="row">
+</div>
+<div class="collapse multi-collapse-understand_how_you_use_your_devices strategy-type-tools">
+<div class="row strategy-tool mac pc mac-show pc-show">
 <div class="col-sm-3">
-<p>
-laptop
-</p>
-<p>
+<h5 class="tool-title">
 RescueTime
+</h5>
+<p class="devices">
+mac pc
 </p>
 </div>
 <div class="col-sm-6">
 <p>
-There’s a really interesting description here and it is also fantastic to use and bla bla bla
+One of the most popular tools for tracking your time on laptop is RescueTime:
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/rescue_time.png" class="img-fluid"/>
 </div>
 </div>
-<div class="row">
+<div class="row strategy-tool android android-show">
 <div class="col-sm-3">
-<p>
-android
-</p>
-<p>
+<h5 class="tool-title">
 Digital Wellbeing
-</p>
-</div>
-<div class="col-sm-6">
-<p>
-There’s a really interesting description here and it is also fantastic to use and bla bla bla
-</p>
-</div>
-<div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
-</div>
-</div>
-<div class="row">
-<div class="col-sm-3">
-<p>
+</h5>
+<p class="devices">
 android
 </p>
+</div>
+<div class="col-sm-6">
 <p>
+Google provides this functionality with Digital Wellbeing, which is pre-installed on many newer Android devices (Settings &gt; Digital Wellbeing):
+</p>
+</div>
+<div class="col-sm-3">
+<img src="/images/tool-icons/android_digi_wellbeing_track.png" class="img-fluid"/>
+</div>
+</div>
+<div class="row strategy-tool android android-show">
+<div class="col-sm-3">
+<h5 class="tool-title">
 Usage Time
+</h5>
+<p class="devices">
+android
 </p>
 </div>
 <div class="col-sm-6">
 <p>
-There’s a really interesting description here and it is also fantastic to use and bla bla bla
+Many third-party apps do the same thing, e.g. Usage Time:
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/app_usage.png" class="img-fluid"/>
 </div>
 </div>
-<div class="row">
+<div class="row strategy-tool mac ios mac-show ios-show">
 <div class="col-sm-3">
-<p>
-iOS
-</p>
-<p>
+<h5 class="tool-title">
 Screen Time
+</h5>
+<p class="devices">
+mac ios
 </p>
 </div>
 <div class="col-sm-6">
 <p>
-There’s a really interesting description here and it is also fantastic to use and bla bla bla
+Apple’s Screen Time functionality provides this ability on iOS (Settings -&gt; Screen Time) and Mac (System Preferences -&gt; Screen Time):
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/screentime.png" class="img-fluid"/>
 </div>
 </div>
 </div>
-<div class="col-sm-4">
+<div class="col-sm-3 strategy-type focus_in_bursts_with_a_timer" onclick="highlightStrategyfocus_in_bursts_with_a_timer()" data-toggle="collapse" data-target=".multi-collapse-focus_in_bursts_with_a_timer">
 <div class="card">
-<img class="card-img-top" src="https://ulriklyngs.com/images/headshot_small.jpg" alt="Card image cap">
+<img class="card-img-top" src="/images/strategy-icons/work_in_bursts.png" style="object-position: 0% 80%;" alt="Card image cap">
 <div class="card-body">
 <h5 class="card-title">
-Work in bursts with a timer
+Focus in bursts with a timer
 </h5>
 <p class="card-text">
 some amazing description of this strategy here
 </p>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-work_in_bursts_with_a_timer">
-Show strategies
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-focus_in_bursts_with_a_timer">
+Tools/instructions
 </button>
+<div class="arrow focus_in_bursts_with_a_timer">
+
 </div>
 </div>
 </div>
-<div class="col-sm-12 collapse multi-collapse-work_in_bursts_with_a_timer">
-<div class="row">
+</div>
+<div class="collapse multi-collapse-focus_in_bursts_with_a_timer strategy-type-tools">
+<div class="row strategy-tool mac mac-show">
 <div class="col-sm-3">
-<p>
-laptop
-</p>
-<p>
+<h5 class="tool-title">
 Be Focused
+</h5>
+<p class="devices">
+mac
 </p>
 </div>
 <div class="col-sm-6">
 <p>
-There’s a really interesting description here and it is also fantastic to use and bla bla bla
+Numerous tools support this, for example Be Focused:
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/pomodoro.png" class="img-fluid"/>
 </div>
 </div>
-<div class="row">
+<div class="row strategy-tool chrome chrome-show">
 <div class="col-sm-3">
-<p>
-laptop: chrome
-</p>
-<p>
+<h5 class="tool-title">
 FocusMe
+</h5>
+<p class="devices">
+chrome
 </p>
 </div>
 <div class="col-sm-6">
@@ -713,16 +786,16 @@ There’s a really interesting description here and it is also fantastic to use 
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/focusme.png" class="img-fluid"/>
 </div>
 </div>
-<div class="row">
+<div class="row strategy-tool firefox firefox-show">
 <div class="col-sm-3">
-<p>
-laptop: firefox
-</p>
-<p>
+<h5 class="tool-title">
 Pomodoro clock extension
+</h5>
+<p class="devices">
+firefox
 </p>
 </div>
 <div class="col-sm-6">
@@ -731,17 +804,17 @@ There’s a really interesting description here and it is also fantastic to use 
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/firefox_pomodoro.png" class="img-fluid"/>
 </div>
 </div>
-<div class="row">
+<div class="row strategy-tool android android-show">
 <div class="col-sm-3">
-<p>
+<h5 class="tool-title">
+It’s Study Time
+</h5>
+<p class="devices">
 android
 </p>
-<p>
-It’s Study Time
-</p>
 </div>
 <div class="col-sm-6">
 <p>
@@ -749,16 +822,16 @@ There’s a really interesting description here and it is also fantastic to use 
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/its_study_time2.png" class="img-fluid"/>
 </div>
 </div>
-<div class="row">
+<div class="row strategy-tool ios ios-show">
 <div class="col-sm-3">
-<p>
-iOS
-</p>
-<p>
+<h5 class="tool-title">
 Mattie
+</h5>
+<p class="devices">
+ios
 </p>
 </div>
 <div class="col-sm-6">
@@ -767,20 +840,20 @@ There’s a really interesting description here and it is also fantastic to use 
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/mattie.jpg" class="img-fluid"/>
 </div>
 </div>
 </div>
 </div>
-<div class="row">
+<div class="row strategy-class keep_your_goals_in_mind">
 <div class="col-sm-12">
 <h1>
-Remind yourself of your goals
+Keep your goals in mind
 </h1>
 </div>
-<div class="col-sm-4">
+<div class="col-sm-3 strategy-type put_to_do_lists_or_motivational_quotes_on_new_tabs" onclick="highlightStrategyput_to_do_lists_or_motivational_quotes_on_new_tabs()" data-toggle="collapse" data-target=".multi-collapse-put_to_do_lists_or_motivational_quotes_on_new_tabs">
 <div class="card">
-<img class="card-img-top" src="https://ulriklyngs.com/images/headshot_small.jpg" alt="Card image cap">
+<img class="card-img-top" src="/images/strategy-icons/motivational_quotes.png" style="object-position: 0% 50%;" alt="Card image cap">
 <div class="card-body">
 <h5 class="card-title">
 Put to-do lists or motivational quotes on new tabs
@@ -789,88 +862,20 @@ Put to-do lists or motivational quotes on new tabs
 some amazing description of this strategy here
 </p>
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-put_to_do_lists_or_motivational_quotes_on_new_tabs">
-Show strategies
+Tools/instructions
 </button>
+<div class="arrow put_to_do_lists_or_motivational_quotes_on_new_tabs">
+
 </div>
 </div>
 </div>
-<div class="col-sm-12 collapse multi-collapse-put_to_do_lists_or_motivational_quotes_on_new_tabs">
-<div class="row">
-<div class="col-sm-3">
-<p>
-laptop: chrome
-</p>
-<p>
-Focus
-</p>
 </div>
-<div class="col-sm-6">
-<p>
-There’s a really interesting description here and it is also fantastic to use and bla bla bla
-</p>
+<div class="collapse multi-collapse-put_to_do_lists_or_motivational_quotes_on_new_tabs strategy-type-tools">
+
 </div>
-<div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
-</div>
-</div>
-<div class="row">
-<div class="col-sm-3">
-<p>
-laptop: chrome
-</p>
-<p>
-Daily motivation
-</p>
-</div>
-<div class="col-sm-6">
-<p>
-There’s a really interesting description here and it is also fantastic to use and bla bla bla
-</p>
-</div>
-<div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
-</div>
-</div>
-<div class="row">
-<div class="col-sm-3">
-<p>
-laptop: firefox
-</p>
-<p>
-Daily Motivational Tab
-</p>
-</div>
-<div class="col-sm-6">
-<p>
-There’s a really interesting description here and it is also fantastic to use and bla bla bla
-</p>
-</div>
-<div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
-</div>
-</div>
-<div class="row">
-<div class="col-sm-3">
-<p>
-laptop: firefox
-</p>
-<p>
-Motivation
-</p>
-</div>
-<div class="col-sm-6">
-<p>
-There’s a really interesting description here and it is also fantastic to use and bla bla bla
-</p>
-</div>
-<div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
-</div>
-</div>
-</div>
-<div class="col-sm-4">
+<div class="col-sm-3 strategy-type replace_facebooks_newsfeed_with_a_to_do_list" onclick="highlightStrategyreplace_facebooks_newsfeed_with_a_to_do_list()" data-toggle="collapse" data-target=".multi-collapse-replace_facebooks_newsfeed_with_a_to_do_list">
 <div class="card">
-<img class="card-img-top" src="https://ulriklyngs.com/images/headshot_small.jpg" alt="Card image cap">
+<img class="card-img-top" src="/images/strategy-icons/fb_todo.png" style="object-position: 0% 50%;" alt="Card image cap">
 <div class="card-body">
 <h5 class="card-title">
 Replace Facebook’s newsfeed with a to-do list
@@ -879,19 +884,22 @@ Replace Facebook’s newsfeed with a to-do list
 some amazing description of this strategy here
 </p>
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-replace_facebooks_newsfeed_with_a_to_do_list">
-Show strategies
+Tools/instructions
 </button>
+<div class="arrow replace_facebooks_newsfeed_with_a_to_do_list">
+
 </div>
 </div>
 </div>
-<div class="col-sm-12 collapse multi-collapse-replace_facebooks_newsfeed_with_a_to_do_list">
-<div class="row">
+</div>
+<div class="collapse multi-collapse-replace_facebooks_newsfeed_with_a_to_do_list strategy-type-tools">
+<div class="row strategy-tool chrome chrome-show">
 <div class="col-sm-3">
-<p>
-laptop: chrome
-</p>
-<p>
+<h5 class="tool-title">
 Todobook
+</h5>
+<p class="devices">
+chrome
 </p>
 </div>
 <div class="col-sm-6">
@@ -900,13 +908,13 @@ There’s a really interesting description here and it is also fantastic to use 
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/todobook.png" class="img-fluid"/>
 </div>
 </div>
 </div>
-<div class="col-sm-4">
+<div class="col-sm-3 strategy-type redirect_yourself_away_from_distracting_sites" onclick="highlightStrategyredirect_yourself_away_from_distracting_sites()" data-toggle="collapse" data-target=".multi-collapse-redirect_yourself_away_from_distracting_sites">
 <div class="card">
-<img class="card-img-top" src="https://ulriklyngs.com/images/headshot_small.jpg" alt="Card image cap">
+<img class="card-img-top" src="/images/strategy-icons/redirect.png" style="object-position: 0% 50%;" alt="Card image cap">
 <div class="card-body">
 <h5 class="card-title">
 Redirect yourself away from distracting sites
@@ -915,73 +923,22 @@ Redirect yourself away from distracting sites
 some amazing description of this strategy here
 </p>
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-redirect_yourself_away_from_distracting_sites">
-Show strategies
+Tools/instructions
 </button>
+<div class="arrow redirect_yourself_away_from_distracting_sites">
+
 </div>
 </div>
 </div>
-<div class="col-sm-12 collapse multi-collapse-redirect_yourself_away_from_distracting_sites">
-<div class="row">
+</div>
+<div class="collapse multi-collapse-redirect_yourself_away_from_distracting_sites strategy-type-tools">
+<div class="row strategy-tool chrome chrome-show">
 <div class="col-sm-3">
-<p>
-laptop: chrome
-</p>
-<p>
+<h5 class="tool-title">
 Timewarp
-</p>
-</div>
-<div class="col-sm-6">
-<p>
-There’s a really interesting description here and it is also fantastic to use and bla bla bla
-</p>
-</div>
-<div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
-</div>
-</div>
-<div class="row">
-<div class="col-sm-3">
-<p>
-laptop: firefox
-</p>
-<p>
-Nudge
-</p>
-</div>
-<div class="col-sm-6">
-<p>
-There’s a really interesting description here and it is also fantastic to use and bla bla bla
-</p>
-</div>
-<div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
-</div>
-</div>
-</div>
-<div class="col-sm-4">
-<div class="card">
-<img class="card-img-top" src="https://ulriklyngs.com/images/headshot_small.jpg" alt="Card image cap">
-<div class="card-body">
-<h5 class="card-title">
-Get pop-up reminders of your goal
 </h5>
-<p class="card-text">
-some amazing description of this strategy here
-</p>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-get_pop_up_reminders_of_your_goal">
-Show strategies
-</button>
-</div>
-</div>
-</div>
-<div class="col-sm-12 collapse multi-collapse-get_pop_up_reminders_of_your_goal">
-<div class="row">
-<div class="col-sm-3">
-<p>
-laptop: chrome
-</p>
-<p>
-Gen4
+<p class="devices">
+chrome
 </p>
 </div>
 <div class="col-sm-6">
@@ -990,41 +947,62 @@ There’s a really interesting description here and it is also fantastic to use 
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/timewarp.png" class="img-fluid"/>
+</div>
+</div>
+<div class="row strategy-tool firefox firefox-show">
+<div class="col-sm-3">
+<h5 class="tool-title">
+Nudge
+</h5>
+<p class="devices">
+firefox
+</p>
+</div>
+<div class="col-sm-6">
+<p>
+There’s a really interesting description here and it is also fantastic to use and bla bla bla
+</p>
+</div>
+<div class="col-sm-3">
+<img src="/images/tool-icons/firefox_nudge.png" class="img-fluid"/>
 </div>
 </div>
 </div>
 </div>
-<div class="row">
+<div class="row strategy-class make_intended_use_rewarding">
 <div class="col-sm-12">
 <h1>
-Make your goals rewarding / easy
+Make intended use rewarding
 </h1>
 </div>
-<div class="col-sm-4">
+<div class="col-sm-3 strategy-type protect_a_creature_by_being_focused" onclick="highlightStrategyprotect_a_creature_by_being_focused()" data-toggle="collapse" data-target=".multi-collapse-protect_a_creature_by_being_focused">
 <div class="card">
-<img class="card-img-top" src="https://ulriklyngs.com/images/headshot_small.jpg" alt="Card image cap">
+<img class="card-img-top" src="/images/strategy-icons/protect_creature_icon.png" style="object-position: 0% 70%;" alt="Card image cap">
 <div class="card-body">
 <h5 class="card-title">
-Protect a virtual creature by being focused
+Protect a creature by being focused
 </h5>
 <p class="card-text">
 some amazing description of this strategy here
 </p>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-protect_a_virtual_creature_by_being_focused">
-Show strategies
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-protect_a_creature_by_being_focused">
+Tools/instructions
 </button>
+<div class="arrow protect_a_creature_by_being_focused">
+
 </div>
 </div>
 </div>
-<div class="col-sm-12 collapse multi-collapse-protect_a_virtual_creature_by_being_focused">
-<div class="row">
+</div>
+<div class="collapse multi-collapse-protect_a_creature_by_being_focused strategy-type-tools">
+<div class="row strategy-tool ios android chrome ios-show android-show chrome-show">
 <div class="col-sm-3">
-<p>
-iOS, android, laptop: chrome
-</p>
-<p>
+<h5 class="tool-title">
 Forest
+</h5>
+<p class="devices">
+ios android chrome
 </p>
 </div>
 <div class="col-sm-6">
@@ -1033,16 +1011,16 @@ There’s a really interesting description here and it is also fantastic to use 
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/protect_creature.png" class="img-fluid"/>
 </div>
 </div>
-<div class="row">
+<div class="row strategy-tool chrome chrome-show">
 <div class="col-sm-3">
-<p>
-laptop: chrome
-</p>
-<p>
+<h5 class="tool-title">
 Feed the Goat
+</h5>
+<p class="devices">
+chrome
 </p>
 </div>
 <div class="col-sm-6">
@@ -1051,16 +1029,16 @@ There’s a really interesting description here and it is also fantastic to use 
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/feed_goat.png" class="img-fluid"/>
 </div>
 </div>
-<div class="row">
+<div class="row strategy-tool ios ios-show">
 <div class="col-sm-3">
-<p>
-iOS
-</p>
-<p>
+<h5 class="tool-title">
 Flora
+</h5>
+<p class="devices">
+ios
 </p>
 </div>
 <div class="col-sm-6">
@@ -1069,13 +1047,13 @@ There’s a really interesting description here and it is also fantastic to use 
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/flora.png" class="img-fluid"/>
 </div>
 </div>
 </div>
-<div class="col-sm-4">
+<div class="col-sm-3 strategy-type write_under_time_pressure" onclick="highlightStrategywrite_under_time_pressure()" data-toggle="collapse" data-target=".multi-collapse-write_under_time_pressure">
 <div class="card">
-<img class="card-img-top" src="https://ulriklyngs.com/images/headshot_small.jpg" alt="Card image cap">
+<img class="card-img-top" src="/images/strategy-icons/write_pressure.png" style="object-position: 0% 50%;" alt="Card image cap">
 <div class="card-body">
 <h5 class="card-title">
 Write under time pressure
@@ -1084,19 +1062,22 @@ Write under time pressure
 some amazing description of this strategy here
 </p>
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-write_under_time_pressure">
-Show strategies
+Tools/instructions
 </button>
+<div class="arrow write_under_time_pressure">
+
 </div>
 </div>
 </div>
-<div class="col-sm-12 collapse multi-collapse-write_under_time_pressure">
-<div class="row">
+</div>
+<div class="collapse multi-collapse-write_under_time_pressure strategy-type-tools">
+<div class="row strategy-tool chrome firefox safari edge chrome-show firefox-show safari-show edge-show">
 <div class="col-sm-3">
-<p>
-web browser
-</p>
-<p>
+<h5 class="tool-title">
 The Most Dangerous Writing App
+</h5>
+<p class="devices">
+chrome firefox safari edge
 </p>
 </div>
 <div class="col-sm-6">
@@ -1105,13 +1086,13 @@ There’s a really interesting description here and it is also fantastic to use 
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/worlds_dangerous.png" class="img-fluid"/>
 </div>
 </div>
 </div>
-<div class="col-sm-4">
+<div class="col-sm-3 strategy-type go_grey_scale" onclick="highlightStrategygo_grey_scale()" data-toggle="collapse" data-target=".multi-collapse-go_grey_scale">
 <div class="card">
-<img class="card-img-top" src="https://ulriklyngs.com/images/headshot_small.jpg" alt="Card image cap">
+<img class="card-img-top" src="/images/strategy-icons/grey_scale_icon.png" style="object-position: 0% 50%;" alt="Card image cap">
 <div class="card-body">
 <h5 class="card-title">
 Go grey scale
@@ -1120,187 +1101,93 @@ Go grey scale
 some amazing description of this strategy here
 </p>
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-go_grey_scale">
-Show strategies
+Tools/instructions
 </button>
+<div class="arrow go_grey_scale">
+
 </div>
 </div>
 </div>
-<div class="col-sm-12 collapse multi-collapse-go_grey_scale">
-<div class="row">
+</div>
+<div class="collapse multi-collapse-go_grey_scale strategy-type-tools">
+<div class="row strategy-tool ios android ios-show android-show">
 <div class="col-sm-3">
-<p>
-iOS, android
-</p>
-<p>
+<h5 class="tool-title">
 Greyscale
+</h5>
+<p class="devices">
+ios android
 </p>
 </div>
 <div class="col-sm-6">
 <p>
-There’s a really interesting description here and it is also fantastic to use and bla bla bla
+<p>On iPhone, set a triple-tap on the Home button to toggle grey scale on and off:</p>
+Settings &gt; Accessibility &gt; Accessibility Shortcut &gt; Colour Filters
+Newer versions of the Android operating system may include a gray scale toggle in your phone’s quick settings.
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/grey_scale.png" class="img-fluid"/>
 </div>
 </div>
 </div>
-<div class="col-sm-4">
+<div class="col-sm-3 strategy-type make_distracting_apps_harder_to_access" onclick="highlightStrategymake_distracting_apps_harder_to_access()" data-toggle="collapse" data-target=".multi-collapse-make_distracting_apps_harder_to_access">
 <div class="card">
-<img class="card-img-top" src="https://ulriklyngs.com/images/headshot_small.jpg" alt="Card image cap">
+<img class="card-img-top" src="/images/strategy-icons/rearrange_icon.png" style="object-position: 0% 80%;" alt="Card image cap">
 <div class="card-body">
 <h5 class="card-title">
-Make only the apps you really need easy to access
+Make distracting apps harder to access
 </h5>
 <p class="card-text">
 some amazing description of this strategy here
 </p>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-make_only_the_apps_you_really_need_easy_to_access">
-Show strategies
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-make_distracting_apps_harder_to_access">
+Tools/instructions
 </button>
+<div class="arrow make_distracting_apps_harder_to_access">
+
 </div>
 </div>
 </div>
-<div class="col-sm-12 collapse multi-collapse-make_only_the_apps_you_really_need_easy_to_access">
-<div class="row">
+</div>
+<div class="collapse multi-collapse-make_distracting_apps_harder_to_access strategy-type-tools">
+<div class="row strategy-tool ios android ios-show android-show">
 <div class="col-sm-3">
-<p>
-iOS, android
-</p>
-<p>
+<h5 class="tool-title">
 Moving apps off home screen
-</p>
-</div>
-<div class="col-sm-6">
-<p>
-There’s a really interesting description here and it is also fantastic to use and bla bla bla
-</p>
-</div>
-<div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
-</div>
-</div>
-</div>
-</div>
-<div class="row">
-<div class="col-sm-12">
-<h1>
-Analogue
-</h1>
-</div>
-<div class="col-sm-4">
-<div class="card">
-<img class="card-img-top" src="https://ulriklyngs.com/images/headshot_small.jpg" alt="Card image cap">
-<div class="card-body">
-<h5 class="card-title">
-Get an alarm clock
 </h5>
-<p class="card-text">
-some amazing description of this strategy here
-</p>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-get_an_alarm_clock">
-Show strategies
-</button>
-</div>
-</div>
-</div>
-<div class="col-sm-12 collapse multi-collapse-get_an_alarm_clock">
-<div class="row">
-<div class="col-sm-3">
-<p>
-none
-</p>
-<p>
-Get an alarm clock
+<p class="devices">
+ios android
 </p>
 </div>
 <div class="col-sm-6">
 <p>
-There’s a really interesting description here and it is also fantastic to use and bla bla bla
+<p>Arrange your apps so that the home screen is minimalistic and simple, and the apps you want to use less often require a bit more effort to get to.</p>
+For example, limit your first page of apps to only apps you use for quick in-and-out tasks - then move the rest, especially those you find yourself using mindlessly, off the first page and into folders.
 </p>
 </div>
 <div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
-</div>
-</div>
-</div>
-<div class="col-sm-4">
-<div class="card">
-<img class="card-img-top" src="https://ulriklyngs.com/images/headshot_small.jpg" alt="Card image cap">
-<div class="card-body">
-<h5 class="card-title">
-Manage others’ expectations
-</h5>
-<p class="card-text">
-some amazing description of this strategy here
-</p>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-manage_others_expectations">
-Show strategies
-</button>
-</div>
-</div>
-</div>
-<div class="col-sm-12 collapse multi-collapse-manage_others_expectations">
-<div class="row">
-<div class="col-sm-3">
-<p>
-none
-</p>
-<p>
-Manage others’ expectations
-</p>
-</div>
-<div class="col-sm-6">
-<p>
-There’s a really interesting description here and it is also fantastic to use and bla bla bla
-</p>
-</div>
-<div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
-</div>
-</div>
-</div>
-<div class="col-sm-4">
-<div class="card">
-<img class="card-img-top" src="https://ulriklyngs.com/images/headshot_small.jpg" alt="Card image cap">
-<div class="card-body">
-<h5 class="card-title">
-One space, one use
-</h5>
-<p class="card-text">
-some amazing description of this strategy here
-</p>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-one_space_one_use">
-Show strategies
-</button>
-</div>
-</div>
-</div>
-<div class="col-sm-12 collapse multi-collapse-one_space_one_use">
-<div class="row">
-<div class="col-sm-3">
-<p>
-none
-</p>
-<p>
-One space, one use
-</p>
-</div>
-<div class="col-sm-6">
-<p>
-There’s a really interesting description here and it is also fantastic to use and bla bla bla
-</p>
-</div>
-<div class="col-sm-3">
-<img src="/images/digi-distraction.jpg" class="img-fluid featured-work-graphic"/>
+<img src="/images/tool-icons/rearrange.png" class="img-fluid"/>
 </div>
 </div>
 </div>
 </div>
-<div class="row">
-<div class="col-sm-12">
-NA
 </div>
 </div>
 <!-- end strategy page -->
 </div>
+<script>function highlightStrategyblock_distracting_websites_or_apps() { $(".strategy-type.block_distracting_websites_or_apps").toggleClass("highlight-this"); $(".arrow.block_distracting_websites_or_apps").toggleClass("highlight-this");}
+function highlightStrategyreduce_your_device_to_the_tools_you_need() { $(".strategy-type.reduce_your_device_to_the_tools_you_need").toggleClass("highlight-this"); $(".arrow.reduce_your_device_to_the_tools_you_need").toggleClass("highlight-this");}
+function highlightStrategyhide_distracting_features_on_websites() { $(".strategy-type.hide_distracting_features_on_websites").toggleClass("highlight-this"); $(".arrow.hide_distracting_features_on_websites").toggleClass("highlight-this");}
+function highlightStrategyuse_focus_mode() { $(".strategy-type.use_focus_mode").toggleClass("highlight-this"); $(".arrow.use_focus_mode").toggleClass("highlight-this");}
+function highlightStrategylimit_notifications() { $(".strategy-type.limit_notifications").toggleClass("highlight-this"); $(".arrow.limit_notifications").toggleClass("highlight-this");}
+function highlightStrategyunderstand_how_you_use_your_devices() { $(".strategy-type.understand_how_you_use_your_devices").toggleClass("highlight-this"); $(".arrow.understand_how_you_use_your_devices").toggleClass("highlight-this");}
+function highlightStrategyfocus_in_bursts_with_a_timer() { $(".strategy-type.focus_in_bursts_with_a_timer").toggleClass("highlight-this"); $(".arrow.focus_in_bursts_with_a_timer").toggleClass("highlight-this");}
+function highlightStrategyput_to_do_lists_or_motivational_quotes_on_new_tabs() { $(".strategy-type.put_to_do_lists_or_motivational_quotes_on_new_tabs").toggleClass("highlight-this"); $(".arrow.put_to_do_lists_or_motivational_quotes_on_new_tabs").toggleClass("highlight-this");}
+function highlightStrategyreplace_facebooks_newsfeed_with_a_to_do_list() { $(".strategy-type.replace_facebooks_newsfeed_with_a_to_do_list").toggleClass("highlight-this"); $(".arrow.replace_facebooks_newsfeed_with_a_to_do_list").toggleClass("highlight-this");}
+function highlightStrategyredirect_yourself_away_from_distracting_sites() { $(".strategy-type.redirect_yourself_away_from_distracting_sites").toggleClass("highlight-this"); $(".arrow.redirect_yourself_away_from_distracting_sites").toggleClass("highlight-this");}
+function highlightStrategyprotect_a_creature_by_being_focused() { $(".strategy-type.protect_a_creature_by_being_focused").toggleClass("highlight-this"); $(".arrow.protect_a_creature_by_being_focused").toggleClass("highlight-this");}
+function highlightStrategywrite_under_time_pressure() { $(".strategy-type.write_under_time_pressure").toggleClass("highlight-this"); $(".arrow.write_under_time_pressure").toggleClass("highlight-this");}
+function highlightStrategygo_grey_scale() { $(".strategy-type.go_grey_scale").toggleClass("highlight-this"); $(".arrow.go_grey_scale").toggleClass("highlight-this");}
+function highlightStrategymake_distracting_apps_harder_to_access() { $(".strategy-type.make_distracting_apps_harder_to_access").toggleClass("highlight-this"); $(".arrow.make_distracting_apps_harder_to_access").toggleClass("highlight-this");}
+</script>

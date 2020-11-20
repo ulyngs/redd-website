@@ -154,10 +154,6 @@ footer hr {
   font-style: bold;
 }
 
-.card {
-  margin-bottom: 1em;
-}
-
 .bottom-site-footer {
   text-align: center;
 }
@@ -191,6 +187,7 @@ footer hr {
 
 .card {
   border: none;
+  margin-bottom: 1em;
 }
 
 
@@ -273,7 +270,7 @@ footer hr {
   display: flex;
 }
 .tool-filters {
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 .strategy-type .arrow {
@@ -319,8 +316,29 @@ footer hr {
   padding: 0 1em;
 }
 
+.strategy-class h1 {
+  margin-top: 0.7em;
+  margin-bottom: 0.9em;
+  padding-bottom: 0.1em;
+  font-weight: bold;
+  font-size: 3em;
+}
+.block_or_remove_distractions h1 {
+  border-bottom: 3px solid #BB4C38;
+}
+.track_yourself h1 {
+  border-bottom: 3px solid #DEAB77;
+}
+.keep_your_goals_in_mind h1 {
+  border-bottom: 3px solid #285FA0;
+}
+.make_intended_use_rewarding h1 {
+  border-bottom: 3px solid #93B77F;
+}
 
-
+.strategy-type img {
+  padding: 1.25rem;
+}
 
 /* RESEARCH PAGE */
 
