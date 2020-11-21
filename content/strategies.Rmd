@@ -99,11 +99,26 @@ checkbox_content$type %>%
 ```{r, results='asis', echo=FALSE}
 # function for generating information about detailed tools
 generate_strategy_tools <- function(devices, show_classes, title, illustration, description, embed_link){
+  
+  labels_to_apply <- tibble(
+    devices_labels = devices
+  ) %>% 
+    mutate(tag = str_split(devices, " ")) %>% 
+    unnest(cols = c(tag)) %>% 
+    left_join(checkbox_content %>% select(tag, label, type)) %>% 
+    mutate(label = case_when(
+      type == "Laptop" ~ str_c('<span class="tool-label-laptop">', label, '</span>'),
+      type == "Smartphone" ~ str_c('<span class="tool-label-smartphone">', label, '</span>'),
+      type == "Browser" ~ str_c('<span class="tool-label-browser">', label, '</span>')
+    )) %>% 
+    pull(label) %>% 
+    str_c(collapse = "<br>")
+  
   cat(str_c('<div class="row strategy-tool ', devices, ' ', show_classes, '">'))
   
   cat('<div class="col-sm-3">')
   cat(str_c('<h5 class="tool-title">', title, '</h5>'))
-  cat(str_c('<p class="devices">', devices, '</p>'))
+  cat(str_c('<p class="devices">', labels_to_apply, '</p>'))
   cat("</div>")
   
   cat('<div class="col-sm-6">')
@@ -121,7 +136,8 @@ generate_strategy_tools <- function(devices, show_classes, title, illustration, 
 }
 
 # function for generating overall types
-generate_strategy_types <- function(strategy, illustration, illustration_position, description){
+generate_strategy_types <- function(category, strategy, illustration, illustration_position, description){
+  clean_category <- janitor::make_clean_names(category)
   clean_strategy <- janitor::make_clean_names(strategy)
   
   cat(str_c('<div class="col-sm-3 strategy-type ', clean_strategy, '" onclick="highlightStrategy', clean_strategy, '()" data-toggle="collapse" data-target=".multi-collapse-', clean_strategy, '">'))
@@ -131,12 +147,12 @@ generate_strategy_types <- function(strategy, illustration, illustration_positio
   cat(str_c('<h5 class="card-title">', strategy, '</h5>'))
   cat(str_c('<p class="card-text">', description, '</p>'))
   cat(str_c('<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-', clean_strategy, '">Tools/instructions</button>'))
-  cat(str_c('<div class="arrow ', clean_strategy, '"></div>')) #draw arrow
   cat("</div>")
   cat("</div>")
+  cat(str_c('<div class="arrow ', clean_category, ' ', clean_strategy, '"></div>')) #draw arrow
   cat("</div>")
   
-  cat(str_c('<div class="collapse multi-collapse-', clean_strategy, ' strategy-type-tools">'))
+  cat(str_c('<div class="collapse multi-collapse-', clean_strategy, ' ', clean_category, ' strategy-type-tools">'))
   strategies_details %>% 
     filter(actual_strategy == strategy) %>% 
     # a longwinded way of adding -show to classes
@@ -158,7 +174,7 @@ generate_strategy_views <- function(a_strategy_type){
   
   current_data <- strategy_data %>% 
     filter(category == a_strategy_type) %>% 
-    select(strategy, illustration, illustration_position, description)
+    select(category, strategy, illustration, illustration_position, description)
   
   cat(str_c('<div class="row strategy-class ', clean_strategy_type, '">'))
   cat("<div class='col-sm-12'>")
@@ -172,6 +188,7 @@ generate_strategy_views <- function(a_strategy_type){
 }
 
 walk(strategy_types, generate_strategy_views)
+
 ```
 
 

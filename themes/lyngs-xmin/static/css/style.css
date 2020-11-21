@@ -1,6 +1,11 @@
 :root {
   --main-page-padding: 0 3em 0 3em;
+  --block-strategy-color: #BB4C38;
+  --track-strategy-color: #DEAB77;
+  --goal-strategy-color: #285FA0;
+  --reward-strategy-color: #93B77F;
 }
+
 
 /* hide the anchor hash that rmarkdown adds */
 .anchor-section {
@@ -187,7 +192,6 @@ footer hr {
 
 .card {
   border: none;
-  margin-bottom: 1em;
 }
 
 
@@ -249,7 +253,7 @@ footer hr {
 
 .tool-title {
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: 1.2em;
   
 }
 
@@ -282,10 +286,21 @@ footer hr {
   margin-left: -20px;
   width: 0;
   height: 0;
-  border-top: solid 20px #0062cc;
   border-left: solid 20px transparent;
   border-right: solid 20px transparent;
   display: none;
+}
+.strategy-type .arrow.block_or_remove_distractions {
+  border-top: solid 20px var(--block-strategy-color);
+}
+.strategy-type .arrow.track_yourself {
+  border-top: solid 20px var(--track-strategy-color);
+}
+.strategy-type .arrow.keep_your_goals_in_mind {
+  border-top: solid 20px var(--goal-strategy-color);
+}
+.strategy-type .arrow.make_intended_use_rewarding {
+  border-top: solid 20px var(--reward-strategy-color);
 }
 
 .strategy-type .arrow.highlight-this {
@@ -296,9 +311,47 @@ footer hr {
   /*border-left: 2px solid lightgrey;*/
   margin-bottom: 5em;
   margin-left: 2em;
-  margin-top: 1.5em;
-  border-left: 1px dashed lightgrey;
+  margin-top: 4em;
 }
+.strategy-type-tools.block_or_remove_distractions {
+  border-left: 1px dashed var(--block-strategy-color);  
+}
+.strategy-type-tools.track_yourself {
+  border-left: 1px dashed var(--track-strategy-color);
+}
+.strategy-type-tools.keep_your_goals_in_mind {
+  border-left: 1px dashed var(--goal-strategy-color);
+}
+.strategy-type-tools.make_intended_use_rewarding {
+  border-left: 1px dashed var(--reward-strategy-color);
+}
+
+
+
+.tool-label-laptop,
+.tool-label-smartphone,
+.tool-label-browser {
+  border-radius: 2px;
+  color: white;
+  font-family: nyt-franklin, arial, sans-serif;
+  font-size: 15px;
+  letter-spacing: 1px;
+  padding: 4px 6px 2px 7px;
+  margin-right: 1px;
+  font-weight: 600;
+}
+.tool-label-laptop {
+  background-color: #aaaaaa;
+}
+.tool-label-smartphone {
+  background-color: #75acc8;
+}
+.tool-label-browser {
+  background-color: #719d94;
+}
+
+
+
 
 .strategy-tool {
   margin: 0em 4em 3em 1em;
@@ -306,9 +359,16 @@ footer hr {
 }
 
 .highlight-this .card-body {
-  border: 2px solid lightgrey;
-  border-radius: 50px;
-  background-color: lightgrey;
+  border-bottom: 4px solid var(--block-strategy-color);
+}
+.track_yourself .highlight-this .card-body {
+  border-bottom: 4px solid var(--track-strategy-color);
+}
+.keep_your_goals_in_mind .highlight-this .card-body {
+  border-bottom: 4px solid var(--goal-strategy-color);
+}
+.make_intended_use_rewarding .highlight-this .card-body {
+  border-bottom: 4px solid var(--reward-strategy-color);
 }
 
 .strategy-type img {
@@ -340,6 +400,15 @@ footer hr {
 
 .strategy-type img {
   padding: 1.25rem;
+}
+
+.card-body button {
+  background-color: #eeeeee;
+  color: #555555;
+  border: none;
+}
+.card-body button:hover {
+  background-color: #BB4C38;
 }
 
 /* RESEARCH PAGE */
