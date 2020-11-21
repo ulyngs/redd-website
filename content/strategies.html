@@ -10,10 +10,43 @@ menu: main
 
 
 <div class="strategy-page">
-<div class="row top-matter">
-<div class="col-sm-12">
-<p>This is the fantastic strategy page bla bla bla</p>
+<div class="row">
+<div class="col-sm-2">
+
 </div>
+<div class="col-sm-10">
+<div class="row tool-filters">
+<div class="col-sm-12">
+<h2>
+Choose devices
+</h2>
+</div>
+<div class="col-sm-2">
+<h4>
+Laptop
+</h4>
+<input type="checkbox" onclick="toggleMac()" id="device-mac" name="device-mac" value="Mac" checked="checked"><label for="device-mac">Mac</label><br><input type="checkbox" onclick="togglePC()" id="device-pc" name="device-pc" value="PC" checked="checked"><label for="device-pc">PC</label><br>
+</div>
+<script>function toggleMac() { $(".strategy-tool.mac").toggleClass("mac-show");}function togglePC() { $(".strategy-tool.pc").toggleClass("pc-show");}</script>
+<div class="col-sm-2">
+<h4>
+Smartphone
+</h4>
+<input type="checkbox" onclick="toggleAndroid()" id="device-android" name="device-android" value="Android" checked="checked"><label for="device-android">Android</label><br><input type="checkbox" onclick="toggleIOS()" id="device-ios" name="device-ios" value="iPhone / iPad" checked="checked"><label for="device-ios">iPhone / iPad</label><br>
+</div>
+<script>function toggleAndroid() { $(".strategy-tool.android").toggleClass("android-show");}function toggleIOS() { $(".strategy-tool.ios").toggleClass("ios-show");}</script>
+<div class="col-sm-2">
+<h4>
+Browser
+</h4>
+<input type="checkbox" onclick="toggleChrome()" id="device-chrome" name="device-chrome" value="Chrome" checked="checked"><label for="device-chrome">Chrome</label><br><input type="checkbox" onclick="toggleFirefox()" id="device-firefox" name="device-firefox" value="Firefox" checked="checked"><label for="device-firefox">Firefox</label><br><input type="checkbox" onclick="toggleSafari()" id="device-safari" name="device-safari" value="Safari" checked="checked"><label for="device-safari">Safari</label><br>
+</div>
+<script>function toggleChrome() { $(".strategy-tool.chrome").toggleClass("chrome-show");}function toggleFirefox() { $(".strategy-tool.firefox").toggleClass("firefox-show");}function toggleSafari() { $(".strategy-tool.safari").toggleClass("safari-show");}</script>
+<!-- end tool filters -->
+</div>
+<!-- end column -->
+</div>
+<!-- end row -->
 </div>
 <div class="row">
 <div class="col-sm-2">
@@ -21,54 +54,6 @@ menu: main
 </nav>
 </div>
 <div class="col-sm-10">
-<div class="row tool-filters">
-<div class="col-sm-2">
-<div>
-<p>Mac:
-<input type="checkbox" onclick="toggleMac()" style="margin:0;" checked="checked">
-<br>
-PC:
-<input type="checkbox" onclick="togglePC()" style="margin:0;" checked="checked"></p>
-</div>
-</div>
-<div class="col-sm-2">
-<div>
-<p>Android:
-<input type="checkbox" onclick="toggleAndroid()" style="margin:0;" checked="checked">
-<br>
-iPhone / iPad:
-<input type="checkbox" onclick="toggleIOS()" style="margin:0;" checked="checked"></p>
-</div>
-</div>
-<div class="col-sm-2">
-<div>
-<p>Chrome:
-<input type="checkbox" onclick="toggleChrome()" style="margin:0;" checked="checked">
-<br>
-Firefox:
-<input type="checkbox" onclick="toggleFirefox()" style="margin:0;" checked="checked">
-<br>
-Safari:
-<input type="checkbox" onclick="toggleSafari()" style="margin:0;" checked="checked"></p>
-</div>
-</div>
-<script>
-function toggleMac() { $(".strategy-tool.mac").toggleClass("mac-show");}
-function togglePC() { $(".strategy-tool.pc").toggleClass("pc-show");}
-function toggleAndroid() { $(".strategy-tool.android").toggleClass("android-show");}
-function toggleIOS() { $(".strategy-tool.ios").toggleClass("ios-show");}
-function toggleChrome() { $(".strategy-tool.chrome").toggleClass("chrome-show");}
-function toggleFirefox() { $(".strategy-tool.firefox").toggleClass("firefox-show");}
-function toggleSafari() { $(".strategy-tool.safari").toggleClass("safari-show");}
-</script>
-</div>
-<!--
-::: {.col-sm-3}
-::: {.embed-responsive .embed-responsive-16by9}
-<iframe class='embed-responsive-item featured-work-graphic' src='https://www.youtube.com/embed/GCOnzStHQcM' allowfullscreen></iframe>
-:::
-:::
--->
 <div class="row strategy-class block_or_remove_distractions">
 <div class="col-sm-12">
 <h1>

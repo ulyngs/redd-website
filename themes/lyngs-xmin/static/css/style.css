@@ -272,6 +272,9 @@ footer hr {
 .tool-filters {
   margin-bottom: 2em;
 }
+.tool-filters label {
+  padding-left: 0.3em;
+}
 
 .strategy-type .arrow {
   position: relative;
@@ -317,7 +320,6 @@ footer hr {
 }
 
 .strategy-class h1 {
-  margin-top: 0.7em;
   margin-bottom: 0.9em;
   padding-bottom: 0.1em;
   font-weight: bold;

@@ -21,14 +21,72 @@ strategies_details <- read_excel(here("data", "content.xlsx"), sheet = "strategy
 
 
 
-::: {.strategy-page}
+<div class="strategy-page">
 
-::: {.row .top-matter}
+::: {.row}
+
+::: {.col-sm-2}
+:::
+
+::: {.col-sm-10}
+
+::: {.row .tool-filters}
 ::: {.col-sm-12}
-This is the fantastic strategy page bla bla bla
-:::
+<h2>Choose devices</h2>
 :::
 
+```{r, results='asis'}
+checkbox_content <- tribble(
+  ~type,                  ~label,   ~function_name,     ~tag,
+  "Laptop",               "Mac",      "toggleMac",     "mac",
+  "Laptop",                "PC",       "togglePC",      "pc",
+  "Smartphone",       "Android",  "toggleAndroid", "android",
+  "Smartphone", "iPhone / iPad",      "toggleIOS",     "ios",
+  "Browser",           "Chrome",   "toggleChrome",  "chrome",
+  "Browser",          "Firefox",  "toggleFirefox", "firefox",
+  "Browser",           "Safari",   "toggleSafari",   "safari"
+)
+
+generate_inputs <- function(label, function_name, tag){
+  cat(str_c('<input type="checkbox" onclick="', function_name, '()" id="device-', tag, '" name="device-', tag, '" value="', label, '" checked="checked">'))
+  cat(str_c('<label for="device-', tag, '">', label, '</label><br>'))
+}
+
+generate_functions <- function(function_name, tag){
+  cat(str_c('function ', function_name, '() { $(".strategy-tool.', tag, '").toggleClass("', tag, '-show");}'))
+}
+
+generate_checkbox <- function(device_type){
+  current_checkbox <- checkbox_content %>% 
+    filter(type == device_type)
+  
+  cat('<div class="col-sm-2">')
+  cat(str_c('<h4>', device_type, '</h4>'))
+  current_checkbox %>% 
+    select(label, function_name, tag) %>% 
+    pwalk(generate_inputs)
+  cat('</div>')
+  
+  # create the toggle functions
+  cat('<script>')
+  current_checkbox %>% 
+    select(function_name, tag) %>% 
+    pwalk(generate_functions)
+  cat('</script>')
+}
+
+# generate it
+checkbox_content$type %>% 
+  unique() %>% 
+  walk(generate_checkbox)
+```
+
+<!-- end tool filters -->
+:::
+<!-- end column -->
+:::
+<!-- end row -->
+:::
 
 ::: {.row}
 ::: {.col-sm-2}
@@ -36,60 +94,6 @@ This is the fantastic strategy page bla bla bla
 :::
 
 ::: {.col-sm-10}
-
-::: {.row .tool-filters}
-::: {.col-sm-2}
-<div>
-Mac: 
-<input type="checkbox" onclick="toggleMac()" style="margin:0;" checked="checked">
-<br>
-PC:
-<input type="checkbox" onclick="togglePC()" style="margin:0;" checked="checked">
-</div>
-:::
-
-::: {.col-sm-2}
-<div>
-Android: 
-<input type="checkbox" onclick="toggleAndroid()" style="margin:0;" checked="checked">
-<br>
-iPhone / iPad:
-<input type="checkbox" onclick="toggleIOS()" style="margin:0;" checked="checked">
-</div>
-:::
-
-::: {.col-sm-2}
-<div>
-Chrome: 
-<input type="checkbox" onclick="toggleChrome()" style="margin:0;" checked="checked">
-<br>
-Firefox:
-<input type="checkbox" onclick="toggleFirefox()" style="margin:0;" checked="checked">
-<br>
-Safari:
-<input type="checkbox" onclick="toggleSafari()" style="margin:0;" checked="checked">
-</div>
-:::
-
-<script>
-function toggleMac() { $(".strategy-tool.mac").toggleClass("mac-show");}
-function togglePC() { $(".strategy-tool.pc").toggleClass("pc-show");}
-function toggleAndroid() { $(".strategy-tool.android").toggleClass("android-show");}
-function toggleIOS() { $(".strategy-tool.ios").toggleClass("ios-show");}
-function toggleChrome() { $(".strategy-tool.chrome").toggleClass("chrome-show");}
-function toggleFirefox() { $(".strategy-tool.firefox").toggleClass("firefox-show");}
-function toggleSafari() { $(".strategy-tool.safari").toggleClass("safari-show");}
-</script>
-:::
-
-
-<!--
-::: {.col-sm-3}
-::: {.embed-responsive .embed-responsive-16by9}
-<iframe class='embed-responsive-item featured-work-graphic' src='https://www.youtube.com/embed/GCOnzStHQcM' allowfullscreen></iframe>
-:::
-:::
--->
 
 
 ```{r, results='asis', echo=FALSE}
@@ -176,7 +180,7 @@ walk(strategy_types, generate_strategy_views)
 
 
 <!-- end strategy page -->
-:::
+</div>
 
 
 ```{r, results='asis'}
