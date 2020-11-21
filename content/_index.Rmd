@@ -18,36 +18,14 @@ content <- read_excel(here::here("data", "content.xlsx"), sheet = "frontpage")
 </div>
 </div>
 
-<!--
-::: {.row .front-page-quotes}
-
-::: {.col-sm-6}
-<blockquote class="blockquote">
-<p class="mb-0">"I check Twitter to escape from a moment of high cognitive work --- the second there is that academic intellectual pain, I go to digital distractions"</p>
-</blockquote>
-:::
-
-::: {.col-sm-6}
-<blockquote class="blockquote">
-<p class="mb-0">"It’s easy to get pessimistic about how good my self-discipline can be, when there's a billion-dollar economy in making me as addicted as possible!"</p>
-</blockquote>
-:::
-
-:::
--->
-
 <!-- HERE'S THE QUIZ BUTTON - HOLD ON THIS FOR NOW -->
 
 ::: {.row .callout}
-::: {.col-sm-6 .text-center}
-<!-- <button type="button" class="btn btn-primary">Take the 'How am I doing?' quiz</button> -->
-<button type="button" class="btn btn-primary">Sign up for a workshop</button>
+::: {.col-sm-12 .text-center}
+<button type="button" class="btn btn-primary">Take the 'How am I doing?' quiz</button>
+<!-- <button type="button" class="btn btn-primary">Sign up for a workshop</button> -->
+<!-- <a href="/strategies/" class="btn btn-primary" role="button">Browse strategies</a> -->
 :::
-
-::: {.col-sm-6 .text-center}
-<a href="/strategies/" class="btn btn-primary" role="button">Browse strategies</a>
-:::
-
 :::
 
 
@@ -121,7 +99,7 @@ generate_quotes <- function(description, source) {
 }
 
 content %>% 
-  filter(section == "quote-statement") %>% 
+  filter(section == "quote-testimony") %>% 
   select(description, source) %>% 
   pwalk(generate_quotes)
 ```
