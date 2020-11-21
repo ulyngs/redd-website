@@ -247,6 +247,15 @@ footer hr {
   top: 55px;
 }
 
+/* account for the sticky menu bar, cf. https://www.bryanbraun.com/anchorjs/ */
+.strategy-page :target::before {
+  content: "";
+  display: block;
+  margin-top: -55px;
+  height: 55px;
+  width: 1px;
+}
+
 .strategy-class {
   margin-bottom: 3em;
 }
