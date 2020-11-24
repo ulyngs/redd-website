@@ -26,14 +26,13 @@ strategies_details <- read_excel(here("data", "content.xlsx"), sheet = "strategy
 ::: {.row}
 
 ::: {.col-sm-2}
+<nav id="toc" data-toggle="toc" class="sticky-top"></nav>
 :::
 
 ::: {.col-sm-10}
+<h2>Choose devices</h2>
 
 ::: {.row .tool-filters}
-::: {.col-sm-12}
-<h2>Choose devices</h2>
-:::
 
 ```{r, results='asis'}
 checkbox_content <- tribble(
@@ -81,19 +80,8 @@ checkbox_content$type %>%
   walk(generate_checkbox)
 ```
 
-<!-- end tool filters -->
+<!-- end tool filters row -->
 :::
-<!-- end column -->
-:::
-<!-- end row -->
-:::
-
-::: {.row}
-::: {.col-sm-2}
-<nav id="toc" data-toggle="toc" class="sticky-top"></nav>
-:::
-
-::: {.col-sm-10}
 
 
 ```{r, results='asis', echo=FALSE}
@@ -140,7 +128,7 @@ generate_strategy_types <- function(category, strategy, illustration, illustrati
   clean_category <- janitor::make_clean_names(category)
   clean_strategy <- janitor::make_clean_names(strategy)
   
-  cat(str_c('<div class="col-sm-3 strategy-type ', clean_strategy, '" onclick="highlightStrategy', clean_strategy, '()" data-toggle="collapse" data-target=".multi-collapse-', clean_strategy, '">'))
+  cat(str_c('<div id="', clean_strategy, '" class="col-sm-3 strategy-type ', clean_strategy, '" onclick="highlightStrategy', clean_strategy, '()" data-toggle="collapse" data-target=".multi-collapse-', clean_strategy, '">'))
   cat("<div class='card'>")
   cat(str_c('<img class="card-img-top" src="', illustration, '" style="object-position: ', illustration_position, ';" alt="Card image cap">'))
   cat("<div class='card-body'>")

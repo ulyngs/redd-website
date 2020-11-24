@@ -12,15 +12,14 @@ menu: main
 <div class="strategy-page">
 <div class="row">
 <div class="col-sm-2">
-
+<nav id="toc" data-toggle="toc" class="sticky-top">
+</nav>
 </div>
 <div class="col-sm-10">
-<div class="row tool-filters">
-<div class="col-sm-12">
 <h2>
 Choose devices
 </h2>
-</div>
+<div class="row tool-filters">
 <div class="col-sm-2">
 <h4>
 Laptop
@@ -42,25 +41,15 @@ Browser
 <input type="checkbox" onclick="toggleChrome()" id="device-chrome" name="device-chrome" value="Chrome" checked="checked"><label for="device-chrome">Chrome</label><br><input type="checkbox" onclick="toggleFirefox()" id="device-firefox" name="device-firefox" value="Firefox" checked="checked"><label for="device-firefox">Firefox</label><br><input type="checkbox" onclick="toggleSafari()" id="device-safari" name="device-safari" value="Safari" checked="checked"><label for="device-safari">Safari</label><br>
 </div>
 <script>function toggleChrome() { $(".strategy-tool.chrome").toggleClass("chrome-show");}function toggleFirefox() { $(".strategy-tool.firefox").toggleClass("firefox-show");}function toggleSafari() { $(".strategy-tool.safari").toggleClass("safari-show");}</script>
-<!-- end tool filters -->
+<!-- end tool filters row -->
 </div>
-<!-- end column -->
-</div>
-<!-- end row -->
-</div>
-<div class="row">
-<div class="col-sm-2">
-<nav id="toc" data-toggle="toc" class="sticky-top">
-</nav>
-</div>
-<div class="col-sm-10">
 <div class="row strategy-class block_or_remove_distractions">
 <div class="col-sm-12">
 <h1>
 Block or remove distractions
 </h1>
 </div>
-<div class="col-sm-3 strategy-type block_distracting_websites_or_apps" onclick="highlightStrategyblock_distracting_websites_or_apps()" data-toggle="collapse" data-target=".multi-collapse-block_distracting_websites_or_apps">
+<div id="block_distracting_websites_or_apps" class="col-sm-3 strategy-type block_distracting_websites_or_apps" onclick="highlightStrategyblock_distracting_websites_or_apps()" data-toggle="collapse" data-target=".multi-collapse-block_distracting_websites_or_apps">
 <div class="card">
 <img class="card-img-top" src="/images/strategy-icons/block.jpeg" style="object-position: 0% 50%;" alt="Card image cap">
 <div class="card-body">
@@ -155,7 +144,7 @@ There’s a really interesting description here and it is also fantastic to use 
 </div>
 </div>
 </div>
-<div class="col-sm-3 strategy-type reduce_your_device_to_the_tools_you_need" onclick="highlightStrategyreduce_your_device_to_the_tools_you_need()" data-toggle="collapse" data-target=".multi-collapse-reduce_your_device_to_the_tools_you_need">
+<div id="reduce_your_device_to_the_tools_you_need" class="col-sm-3 strategy-type reduce_your_device_to_the_tools_you_need" onclick="highlightStrategyreduce_your_device_to_the_tools_you_need()" data-toggle="collapse" data-target=".multi-collapse-reduce_your_device_to_the_tools_you_need">
 <div class="card">
 <img class="card-img-top" src="/images/strategy-icons/toolbox2.png" style="object-position: 0% 50%;" alt="Card image cap">
 <div class="card-body">
@@ -230,7 +219,7 @@ There’s a really interesting description here and it is also fantastic to use 
 </div>
 </div>
 </div>
-<div class="col-sm-3 strategy-type hide_distracting_features_on_websites" onclick="highlightStrategyhide_distracting_features_on_websites()" data-toggle="collapse" data-target=".multi-collapse-hide_distracting_features_on_websites">
+<div id="hide_distracting_features_on_websites" class="col-sm-3 strategy-type hide_distracting_features_on_websites" onclick="highlightStrategyhide_distracting_features_on_websites()" data-toggle="collapse" data-target=".multi-collapse-hide_distracting_features_on_websites">
 <div class="card">
 <img class="card-img-top" src="/images/strategy-icons/remove_distractions_fb_icon.png" style="object-position: 0% 70%;" alt="Card image cap">
 <div class="card-body">
@@ -449,7 +438,7 @@ There’s a really interesting description here and it is also fantastic to use 
 </div>
 </div>
 </div>
-<div class="col-sm-3 strategy-type use_focus_mode" onclick="highlightStrategyuse_focus_mode()" data-toggle="collapse" data-target=".multi-collapse-use_focus_mode">
+<div id="use_focus_mode" class="col-sm-3 strategy-type use_focus_mode" onclick="highlightStrategyuse_focus_mode()" data-toggle="collapse" data-target=".multi-collapse-use_focus_mode">
 <div class="card">
 <img class="card-img-top" src="/images/strategy-icons/focus_mode.png" style="object-position: 0% 50%;" alt="Card image cap">
 <div class="card-body">
@@ -560,7 +549,7 @@ There’s a really interesting description here and it is also fantastic to use 
 </div>
 </div>
 </div>
-<div class="col-sm-3 strategy-type limit_notifications" onclick="highlightStrategylimit_notifications()" data-toggle="collapse" data-target=".multi-collapse-limit_notifications">
+<div id="limit_notifications" class="col-sm-3 strategy-type limit_notifications" onclick="highlightStrategylimit_notifications()" data-toggle="collapse" data-target=".multi-collapse-limit_notifications">
 <div class="card">
 <img class="card-img-top" src="/images/strategy-icons/limit_notifications.jpg" style="object-position: 0% 50%;" alt="Card image cap">
 <div class="card-body">
@@ -625,7 +614,7 @@ On iPhone go to Settings &gt; Do Not Disturb
 Track yourself
 </h1>
 </div>
-<div class="col-sm-3 strategy-type understand_how_you_use_your_devices" onclick="highlightStrategyunderstand_how_you_use_your_devices()" data-toggle="collapse" data-target=".multi-collapse-understand_how_you_use_your_devices">
+<div id="understand_how_you_use_your_devices" class="col-sm-3 strategy-type understand_how_you_use_your_devices" onclick="highlightStrategyunderstand_how_you_use_your_devices()" data-toggle="collapse" data-target=".multi-collapse-understand_how_you_use_your_devices">
 <div class="card">
 <img class="card-img-top" src="/images/strategy-icons/understand_use_icon.png" style="object-position: 0% 50%;" alt="Card image cap">
 <div class="card-body">
@@ -718,7 +707,7 @@ Apple’s Screen Time functionality provides this ability on iOS (Settings -&gt;
 </div>
 </div>
 </div>
-<div class="col-sm-3 strategy-type focus_in_bursts_with_a_timer" onclick="highlightStrategyfocus_in_bursts_with_a_timer()" data-toggle="collapse" data-target=".multi-collapse-focus_in_bursts_with_a_timer">
+<div id="focus_in_bursts_with_a_timer" class="col-sm-3 strategy-type focus_in_bursts_with_a_timer" onclick="highlightStrategyfocus_in_bursts_with_a_timer()" data-toggle="collapse" data-target=".multi-collapse-focus_in_bursts_with_a_timer">
 <div class="card">
 <img class="card-img-top" src="/images/strategy-icons/work_in_bursts.png" style="object-position: 0% 80%;" alt="Card image cap">
 <div class="card-body">
@@ -836,7 +825,7 @@ There’s a really interesting description here and it is also fantastic to use 
 Keep your goals in mind
 </h1>
 </div>
-<div class="col-sm-3 strategy-type put_motivational_quotes_or_to_dos_on_new_tabs" onclick="highlightStrategyput_motivational_quotes_or_to_dos_on_new_tabs()" data-toggle="collapse" data-target=".multi-collapse-put_motivational_quotes_or_to_dos_on_new_tabs">
+<div id="put_motivational_quotes_or_to_dos_on_new_tabs" class="col-sm-3 strategy-type put_motivational_quotes_or_to_dos_on_new_tabs" onclick="highlightStrategyput_motivational_quotes_or_to_dos_on_new_tabs()" data-toggle="collapse" data-target=".multi-collapse-put_motivational_quotes_or_to_dos_on_new_tabs">
 <div class="card">
 <img class="card-img-top" src="/images/strategy-icons/motivational_quotes.png" style="object-position: 0% 50%;" alt="Card image cap">
 <div class="card-body">
@@ -929,7 +918,7 @@ There’s a really interesting description here and it is also fantastic to use 
 </div>
 </div>
 </div>
-<div class="col-sm-3 strategy-type replace_facebooks_newsfeed_with_a_to_do_list" onclick="highlightStrategyreplace_facebooks_newsfeed_with_a_to_do_list()" data-toggle="collapse" data-target=".multi-collapse-replace_facebooks_newsfeed_with_a_to_do_list">
+<div id="replace_facebooks_newsfeed_with_a_to_do_list" class="col-sm-3 strategy-type replace_facebooks_newsfeed_with_a_to_do_list" onclick="highlightStrategyreplace_facebooks_newsfeed_with_a_to_do_list()" data-toggle="collapse" data-target=".multi-collapse-replace_facebooks_newsfeed_with_a_to_do_list">
 <div class="card">
 <img class="card-img-top" src="/images/strategy-icons/fb_todo.png" style="object-position: 0% 50%;" alt="Card image cap">
 <div class="card-body">
@@ -968,7 +957,7 @@ There’s a really interesting description here and it is also fantastic to use 
 </div>
 </div>
 </div>
-<div class="col-sm-3 strategy-type redirect_yourself_away_from_distracting_sites" onclick="highlightStrategyredirect_yourself_away_from_distracting_sites()" data-toggle="collapse" data-target=".multi-collapse-redirect_yourself_away_from_distracting_sites">
+<div id="redirect_yourself_away_from_distracting_sites" class="col-sm-3 strategy-type redirect_yourself_away_from_distracting_sites" onclick="highlightStrategyredirect_yourself_away_from_distracting_sites()" data-toggle="collapse" data-target=".multi-collapse-redirect_yourself_away_from_distracting_sites">
 <div class="card">
 <img class="card-img-top" src="/images/strategy-icons/redirect.png" style="object-position: 0% 50%;" alt="Card image cap">
 <div class="card-body">
@@ -1032,7 +1021,7 @@ There’s a really interesting description here and it is also fantastic to use 
 Make intended use rewarding
 </h1>
 </div>
-<div class="col-sm-3 strategy-type protect_a_creature_by_being_focused" onclick="highlightStrategyprotect_a_creature_by_being_focused()" data-toggle="collapse" data-target=".multi-collapse-protect_a_creature_by_being_focused">
+<div id="protect_a_creature_by_being_focused" class="col-sm-3 strategy-type protect_a_creature_by_being_focused" onclick="highlightStrategyprotect_a_creature_by_being_focused()" data-toggle="collapse" data-target=".multi-collapse-protect_a_creature_by_being_focused">
 <div class="card">
 <img class="card-img-top" src="/images/strategy-icons/protect_creature_icon.png" style="object-position: 0% 70%;" alt="Card image cap">
 <div class="card-body">
@@ -1107,7 +1096,7 @@ There’s a really interesting description here and it is also fantastic to use 
 </div>
 </div>
 </div>
-<div class="col-sm-3 strategy-type write_under_time_pressure" onclick="highlightStrategywrite_under_time_pressure()" data-toggle="collapse" data-target=".multi-collapse-write_under_time_pressure">
+<div id="write_under_time_pressure" class="col-sm-3 strategy-type write_under_time_pressure" onclick="highlightStrategywrite_under_time_pressure()" data-toggle="collapse" data-target=".multi-collapse-write_under_time_pressure">
 <div class="card">
 <img class="card-img-top" src="/images/strategy-icons/write_pressure.png" style="object-position: 0% 50%;" alt="Card image cap">
 <div class="card-body">
@@ -1146,7 +1135,7 @@ There’s a really interesting description here and it is also fantastic to use 
 </div>
 </div>
 </div>
-<div class="col-sm-3 strategy-type go_grey_scale" onclick="highlightStrategygo_grey_scale()" data-toggle="collapse" data-target=".multi-collapse-go_grey_scale">
+<div id="go_grey_scale" class="col-sm-3 strategy-type go_grey_scale" onclick="highlightStrategygo_grey_scale()" data-toggle="collapse" data-target=".multi-collapse-go_grey_scale">
 <div class="card">
 <img class="card-img-top" src="/images/strategy-icons/grey_scale_icon.png" style="object-position: 0% 50%;" alt="Card image cap">
 <div class="card-body">
@@ -1187,7 +1176,7 @@ Newer versions of the Android operating system may include a gray scale toggle i
 </div>
 </div>
 </div>
-<div class="col-sm-3 strategy-type make_distracting_apps_harder_to_access" onclick="highlightStrategymake_distracting_apps_harder_to_access()" data-toggle="collapse" data-target=".multi-collapse-make_distracting_apps_harder_to_access">
+<div id="make_distracting_apps_harder_to_access" class="col-sm-3 strategy-type make_distracting_apps_harder_to_access" onclick="highlightStrategymake_distracting_apps_harder_to_access()" data-toggle="collapse" data-target=".multi-collapse-make_distracting_apps_harder_to_access">
 <div class="card">
 <img class="card-img-top" src="/images/strategy-icons/rearrange_icon.png" style="object-position: 0% 80%;" alt="Card image cap">
 <div class="card-body">
