@@ -257,7 +257,7 @@ footer hr {
 }
 
 .strategy-class {
-  margin-bottom: 3em;
+  margin-bottom: 5em;
 }
 
 .tool-title {
@@ -359,9 +359,6 @@ footer hr {
   background-color: #719d94;
 }
 
-
-
-
 .strategy-tool {
   margin: 0em 4em 3em 1em;
   padding-left: 2em;
@@ -395,16 +392,28 @@ footer hr {
   font-size: 3em;
 }
 .block_or_remove_distractions h1 {
-  border-bottom: 3px solid #BB4C38;
+  /*border-bottom: 3px solid var(--block-strategy-color);*/
+  background-color: var(--block-strategy-color);
+  color: white;
+  text-align: center;
 }
 .track_yourself h1 {
-  border-bottom: 3px solid #DEAB77;
+  /*border-bottom: 3px solid var(--track-strategy-color);*/
+  background-color: var(--track-strategy-color);
+  color: white;
+  text-align: center;
 }
 .keep_your_goals_in_mind h1 {
-  border-bottom: 3px solid #285FA0;
+  /*border-bottom: 3px solid var(--goal-strategy-color);*/
+  background-color: var(--goal-strategy-color);
+  color: white;
+  text-align: center;
 }
 .make_intended_use_rewarding h1 {
-  border-bottom: 3px solid #93B77F;
+  /*border-bottom: 3px solid var(--reward-strategy-color);*/
+  background-color: var(--reward-strategy-color);
+  color: white;
+  text-align: center;
 }
 
 .strategy-type img {
