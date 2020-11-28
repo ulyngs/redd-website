@@ -30,7 +30,7 @@ strategies_details <- read_excel(here("data", "content.xlsx"), sheet = "strategy
 :::
 
 ::: {.col-sm-10}
-<h2>Choose devices</h2>
+<h2>Filter by device & browser</h2>
 
 ::: {.row .tool-filters}
 
@@ -135,7 +135,7 @@ generate_strategy_types <- function(category, strategy, illustration, illustrati
   cat("<div class='card-body'>")
   cat(str_c('<h5 class="card-title">', strategy, '</h5>'))
   cat(str_c('<p class="card-text">', description, '</p>'))
-  cat(str_c('<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-', clean_strategy, '">Tools/instructions</button>'))
+  cat(str_c('<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-', clean_strategy, '">Show me how</button>'))
   cat("</div>")
   cat("</div>")
   cat(str_c('<div class="arrow ', clean_category, ' ', clean_strategy, '"></div>')) #draw arrow
