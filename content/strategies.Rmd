@@ -11,12 +11,12 @@ library(here)
 
 knitr::opts_chunk$set(echo=FALSE, message = FALSE, warning = FALSE)
 
-strategy_data <- read_excel(here("data", "content.xlsx"), sheet = "strategy-types") %>% 
+strategy_data <- read_csv(here("data", "strategy-types.csv")) %>% 
   filter(include == "y")
 
 strategy_types <- strategy_data$category %>% unique()
 
-strategies_details <- read_excel(here("data", "content.xlsx"), sheet = "strategy-tools")
+strategies_details <- read_csv(here("data", "strategy-tools.csv"))
 ```
 
 

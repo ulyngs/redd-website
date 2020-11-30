@@ -9,10 +9,10 @@ library(readxl)
 
 knitr::opts_chunk$set(echo=FALSE, message = FALSE, warning = FALSE)
 
-content_timeline <- read_excel(here::here("data", "content.xlsx"), sheet = "timeline") %>% 
+content_timeline <- read_csv(here::here("data", "timeline.csv")) %>% 
   mutate(side = if_else((row_number() %% 2) == 0, "right", "left"))  #column that alternates between left and right
 
-content_faq <- read_excel(here::here("data", "content.xlsx"), sheet = "faq")
+content_faq <- read_csv(here::here("data", "faq.csv"))
 ```
 
 ## How the project began

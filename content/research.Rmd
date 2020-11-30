@@ -8,9 +8,9 @@ library(readxl)
 
 knitr::opts_chunk$set(echo=FALSE, message = FALSE, warning = FALSE)
 
-content <- read_excel(here::here("data", "content.xlsx"), sheet = "research")
+content <- read_csv(here::here("data", "research.csv"))
 
-publications <- read_excel(here::here("data", "content.xlsx"), sheet = "publications")
+publications <- read_csv(here::here("data", "publications.csv"))
 ```
 
 <div class="research-page">
