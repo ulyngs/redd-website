@@ -11,28 +11,31 @@ library(here)
 
 knitr::opts_chunk$set(echo=FALSE, message = FALSE, warning = FALSE)
 
-strategy_data <- read_csv(here("data", "strategy-types.csv")) %>% 
+strategy_data <- read_csv(here("data", "strategy-types.csv"), col_types = cols(.default = "c")) %>%
   filter(include == "y")
 
 strategy_types <- strategy_data$category %>% unique()
 
-strategies_details <- read_csv(here("data", "strategy-tools.csv"))
+strategies_details <- read_csv(here("data", "strategy-tools.csv"), col_types = cols(.default = "c"))
+
+# strategies_details <- read_excel(here("data", "content.xlsx"), sheet = "strategy-tools")
+
 ```
 
 
 
 <div class="strategy-page">
 
-::: {.row}
+<div class="row">
 
-::: {.col-sm-2}
+<div class="col-sm-2">
 <nav id="toc" data-toggle="toc" class="sticky-top"></nav>
-:::
+</div>
 
-::: {.col-sm-10}
+<div class="col-sm-10">
 <h2>Filter by device & browser</h2>
 
-::: {.row .tool-filters}
+<div class="row tool-filters">
 
 ```{r, results='asis'}
 checkbox_content <- tribble(
@@ -81,7 +84,7 @@ checkbox_content$type %>%
 ```
 
 <!-- end tool filters row -->
-:::
+</div>
 
 
 ```{r, results='asis', echo=FALSE, message=FALSE}
@@ -181,8 +184,8 @@ walk(strategy_types, generate_strategy_views)
 ```
 
 
-:::
-:::
+</div>
+</div>
 
 
 <!-- end strategy page -->
