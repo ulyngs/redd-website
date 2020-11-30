@@ -234,6 +234,19 @@ footer hr {
 }
 
 /* STRATEGIES PAGE */
+.price-header {
+  font-weight: bold;
+}
+
+.strategy-page .tool-link {
+  max-width: 100%;
+  white-space: normal;
+}
+
+.strategy-page .tool-image {
+  height: 225px;
+  object-fit: contain;
+}
 
 /* style floating TOC */
 .strategy-page a.nav-link {
