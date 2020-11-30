@@ -16,9 +16,8 @@ strategy_data <- read_csv(here("data", "strategy-types.csv"), col_types = cols(.
 
 strategy_types <- strategy_data$category %>% unique()
 
-strategies_details <- read_csv(here("data", "strategy-tools.csv"), col_types = cols(.default = "c"))
-
-# strategies_details <- read_excel(here("data", "content.xlsx"), sheet = "strategy-tools")
+strategies_details <- read_csv(here("data", "strategy-tools.csv"), col_types = cols(.default = "c")) %>% 
+  filter(include == "y")
 
 ```
 
@@ -89,7 +88,7 @@ checkbox_content$type %>%
 
 ```{r, results='asis', echo=FALSE, message=FALSE}
 # function for generating information about detailed tools
-generate_strategy_tools <- function(devices, show_classes, title, illustration, description, link, link_text){
+generate_strategy_tools <- function(devices, show_classes, title, illustration, description, link, link_text, link2, link2_text, price){
   
   labels_to_apply <- tibble(
     devices_labels = devices
@@ -110,18 +109,24 @@ generate_strategy_tools <- function(devices, show_classes, title, illustration, 
   cat('<div class="col-sm-3">')
   cat(str_c('<h5 class="tool-title">', title, '</h5>'))
   cat(str_c('<p class="devices">', labels_to_apply, '</p>'))
+  cat(str_c('<a target="_blank" href="', link, '" class="btn btn-primary tool-link" role="button">', link_text, '</a>'))
+  if(!is.na(link2)){
+    cat(str_c('<a target="_blank" href="', link2, '" class="btn btn-primary tool-link" role="button">', link2_text, '</a>'))  
+  }
   cat("</div>")
   
   cat('<div class="col-sm-6">')
   cat(str_c("<p>", description, "</p>"))
-  cat(str_c('<a target="_blank" href="', link, '" class="btn btn-primary" role="button">', link_text, '</a>'))
+  cat(str_c('<p class="price"><span class="price-header">Price: </span>', price, '</p>'))
   cat("</div>")
   
   cat('<div class="col-sm-3">')
-  cat(str_c('<img src="', illustration, '" class="img-fluid"/>'))
+  cat('<div class="text-center">')
+  cat(str_c('<img src="', illustration, '" class="img-fluid tool-image"/>'))
   #cat('<div class="embed-responsive embed-responsive-16by9">')
   #cat(str_c('<iframe class="embed-responsive-item featured-work-graphic" src="', embed_link, '" allowfullscreen></iframe>'))
   #cat("</div>")
+  cat("</div>")
   cat("</div>")
   
   cat("</div>")
@@ -156,7 +161,7 @@ generate_strategy_types <- function(category, strategy, illustration, illustrati
     mutate(show_classes = str_c(show_classes, collapse = " ")) %>% 
     distinct() %>% 
     ungroup() %>% 
-    select(devices, show_classes, title, illustration, description, link, link_text) %>%
+    select(devices, show_classes, title, illustration, description, link, link_text, link2, link2_text, price) %>%
     pwalk(generate_strategy_tools)
   cat("</div>")
 }
