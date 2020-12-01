@@ -234,8 +234,12 @@ footer hr {
 }
 
 /* STRATEGIES PAGE */
-.price-header {
+.why-this-header, .price-header,
+.what-it-can-do, .downsides-header {
   font-weight: bold;
+}
+.what-it-can-do {
+  margin-bottom: 5px;
 }
 
 .strategy-page .tool-link {
@@ -284,8 +288,11 @@ footer hr {
 }
 
 .strategy-tool {
-  display: none;
+  margin: 0em 1em 8em 1em;
+  padding-left: 2em;
+  display: none; /* hide it when checkbox is not ticked */
 }
+
 .strategy-tool.mac-show,
 .strategy-tool.pc-show,
 .strategy-tool.android-show,
@@ -295,8 +302,9 @@ footer hr {
 .strategy-tool.safari-show {
   display: flex;
 }
+
 .tool-filters {
-  margin-bottom: 2em;
+  margin-bottom: 3em;
 }
 .tool-filters label {
   padding-left: 0.3em;
@@ -352,7 +360,8 @@ footer hr {
 
 .tool-label-laptop,
 .tool-label-smartphone,
-.tool-label-browser {
+.tool-label-browser,
+.tool-link {
   border-radius: 2px;
   color: white;
   font-family: nyt-franklin, arial, sans-serif;
@@ -363,7 +372,7 @@ footer hr {
   font-weight: 600;
 }
 .tool-label-laptop {
-  background-color: #aaaaaa;
+  background-color: #663159;
 }
 .tool-label-smartphone {
   background-color: #75acc8;
@@ -371,11 +380,30 @@ footer hr {
 .tool-label-browser {
   background-color: #719d94;
 }
-
-.strategy-tool {
-  margin: 0em 4em 3em 1em;
-  padding-left: 2em;
+.tool-link {
+  background-color: #eeeeee;
+  color: #555555;
+  border: none;
+  padding: 6px 8px 4px 9px;
 }
+
+.block_or_remove_distractions .tool-link:hover,
+.block_or_remove_distractions .card-body button:hover {
+  background-color: var(--block-strategy-color);
+}
+.track_yourself .tool-link:hover,
+.track_yourself .card-body button:hover {
+  background-color: var(--track-strategy-color);
+}
+.keep_your_goals_in_mind .tool-link:hover,
+.keep_your_goals_in_mind .card-body button:hover {
+  background-color: var(--goal-strategy-color);
+}
+.make_intended_use_rewarding .tool-link:hover,
+.make_intended_use_rewarding .card-body button:hover {
+  background-color: var(--reward-strategy-color);
+}
+
 
 .highlight-this .card-body {
   border-bottom: 4px solid var(--block-strategy-color);
@@ -438,9 +466,7 @@ footer hr {
   color: #555555;
   border: none;
 }
-.card-body button:hover {
-  background-color: #BB4C38;
-}
+
 
 /* RESEARCH PAGE */
 

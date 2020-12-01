@@ -90,7 +90,7 @@ checkbox_content$type %>%
 
 ```{r, results='asis', echo=FALSE, message=FALSE}
 # function for generating information about detailed tools
-generate_strategy_tools <- function(devices, show_classes, title, illustration, link, link_text, link2, link2_text, what_it_can_do, why_this, price){
+generate_strategy_tools <- function(devices, show_classes, title, illustration, link, link_text, link2, link2_text, what_it_can_do, why_this, downside, price){
   
   labels_to_apply <- tibble(
     devices_labels = devices
@@ -108,28 +108,33 @@ generate_strategy_tools <- function(devices, show_classes, title, illustration, 
   
   cat(str_c('<div class="row strategy-tool ', devices, ' ', show_classes, '">'))
   
-  cat('<div class="col-sm-3">')
+  cat('<div class="col-sm-4">')
   cat(str_c('<h5 class="tool-title">', title, '</h5>'))
   cat(str_c('<p class="devices">', labels_to_apply, '</p>'))
-  cat(str_c('<a target="_blank" href="', link, '" class="btn btn-primary tool-link" role="button">', link_text, '</a>'))
-  if(!is.na(link2)){
-    cat(str_c('<a target="_blank" href="', link2, '" class="btn btn-primary tool-link" role="button">', link2_text, '</a>'))  
-  }
-  cat("</div>")
-  
-  cat('<div class="col-sm-6">')
-  cat(str_c('<p class="why-this"><span class="why-this-header">Why: </span>', why_this, '</p>'))
-  cat(what_it_can_do)
-  #cat(str_c('<p class="price"><span class="price-header">Price: </span>', price, '</p>'))
-  cat("</div>")
-  
-  cat('<div class="col-sm-3">')
-  cat('<div class="text-center">')
   cat(str_c('<img src="', illustration, '" class="img-fluid tool-image"/>'))
   #cat('<div class="embed-responsive embed-responsive-16by9">')
   #cat(str_c('<iframe class="embed-responsive-item featured-work-graphic" src="', embed_link, '" allowfullscreen></iframe>'))
   #cat("</div>")
   cat("</div>")
+  
+  cat('<div class="col-sm-8">')
+  cat(str_c('<p class="why-this"><span class="why-this-header">Why: </span>', why_this, '</p>'))
+  cat('<p class="what-it-can-do">What it can do:</p>')
+  cat(str_c(what_it_can_do, "\n"))
+  cat(str_c('<p class="downsides"><span class="downsides-header">Cons: </span>', downside, '</p>'))
+  if(!is.na(price)){
+    cat(str_c('<p class="price"><span class="price-header">Price: </span>', price, '</p>'))  
+  }
+  
+  # add try it now, where buttons are in two columns
+  cat('<div class="row">')
+  cat('<div class="col-sm-2"><p class="what-it-can-do">Try it:</p></div>')
+  cat(str_c('<div class="col-sm-5 text-center"><a target="_blank" href="', link, '" class="btn btn-primary tool-link" role="button">', link_text, '</a></div>'))
+  if(!is.na(link2)){
+    cat(str_c('<div class="col-sm-5 text-center"><a target="_blank" href="', link2, '" class="btn btn-primary tool-link" role="button">', link2_text, '</a></div>'))  
+  }
+  cat("</div>")
+  
   cat("</div>")
   
   cat("</div>")
@@ -164,7 +169,7 @@ generate_strategy_types <- function(category, strategy, illustration, illustrati
     mutate(show_classes = str_c(show_classes, collapse = " ")) %>% 
     distinct() %>% 
     ungroup() %>% 
-    select(devices, show_classes, title, illustration, link, link_text, link2, link2_text, what_it_can_do, why_this, price) %>%
+    select(devices, show_classes, title, illustration, link, link_text, link2, link2_text, what_it_can_do, why_this, downside, price) %>%
     pwalk(generate_strategy_tools)
   cat("</div>")
 }
@@ -211,5 +216,4 @@ cat("<script>")
 walk(strategy_data$strategy, generate_highlight_functions)
 cat("</script>")
 ```
-
 
