@@ -9,6 +9,7 @@ library(tidyverse)
 library(readxl)
 library(here)
 
+
 knitr::opts_chunk$set(echo=FALSE, message = FALSE, warning = FALSE)
 
 strategy_data <- read_csv(here("data", "strategy-types.csv"), col_types = cols(.default = "c")) %>%
@@ -16,9 +17,10 @@ strategy_data <- read_csv(here("data", "strategy-types.csv"), col_types = cols(.
 
 strategy_types <- strategy_data$category %>% unique()
 
-strategies_details <- read_csv(here("data", "strategy-tools.csv"), col_types = cols(.default = "c")) %>% 
-  filter(include == "y")
-
+strategies_details <- read_csv(here("data", "strategy-tools.csv"), col_types = cols(.default = "c")) %>%
+  filter(include == "y") %>% 
+  mutate(what_it_can_do = str_c("\n", what_it_can_do, "\n")) #add whitespace to make make the markdown bullet points render correctly
+  
 ```
 
 
@@ -88,7 +90,7 @@ checkbox_content$type %>%
 
 ```{r, results='asis', echo=FALSE, message=FALSE}
 # function for generating information about detailed tools
-generate_strategy_tools <- function(devices, show_classes, title, illustration, description, link, link_text, link2, link2_text, price){
+generate_strategy_tools <- function(devices, show_classes, title, illustration, link, link_text, link2, link2_text, what_it_can_do, why_this, price){
   
   labels_to_apply <- tibble(
     devices_labels = devices
@@ -116,8 +118,9 @@ generate_strategy_tools <- function(devices, show_classes, title, illustration, 
   cat("</div>")
   
   cat('<div class="col-sm-6">')
-  cat(str_c("<p>", description, "</p>"))
-  cat(str_c('<p class="price"><span class="price-header">Price: </span>', price, '</p>'))
+  cat(str_c('<p class="why-this"><span class="why-this-header">Why: </span>', why_this, '</p>'))
+  cat(what_it_can_do)
+  #cat(str_c('<p class="price"><span class="price-header">Price: </span>', price, '</p>'))
   cat("</div>")
   
   cat('<div class="col-sm-3">')
@@ -161,7 +164,7 @@ generate_strategy_types <- function(category, strategy, illustration, illustrati
     mutate(show_classes = str_c(show_classes, collapse = " ")) %>% 
     distinct() %>% 
     ungroup() %>% 
-    select(devices, show_classes, title, illustration, description, link, link_text, link2, link2_text, price) %>%
+    select(devices, show_classes, title, illustration, link, link_text, link2, link2_text, what_it_can_do, why_this, price) %>%
     pwalk(generate_strategy_tools)
   cat("</div>")
 }
