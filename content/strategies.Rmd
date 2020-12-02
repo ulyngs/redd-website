@@ -19,8 +19,9 @@ strategy_types <- strategy_data$category %>% unique()
 
 strategies_details <- read_csv(here("data", "strategy-tools.csv"), col_types = cols(.default = "c")) %>%
   filter(include == "y") %>% 
-  mutate(what_it_can_do = str_c("\n", what_it_can_do, "\n")) #add whitespace to make make the markdown bullet points render correctly
-  
+  mutate(what_it_can_do = str_c("\n", what_it_can_do, "\n"),
+         how_to = str_c("\n", how_to, "\n")) #add whitespace to make make the markdown bullet points render correctly
+
 ```
 
 
@@ -34,7 +35,7 @@ strategies_details <- read_csv(here("data", "strategy-tools.csv"), col_types = c
 </div>
 
 <div class="col-sm-10">
-<h2>Filter by device & browser</h2>
+<h2>Filter instructions</h2>
 
 <div class="row tool-filters">
 
@@ -90,7 +91,7 @@ checkbox_content$type %>%
 
 ```{r, results='asis', echo=FALSE, message=FALSE}
 # function for generating information about detailed tools
-generate_strategy_tools <- function(devices, show_classes, title, illustration, link, link_text, link2, link2_text, what_it_can_do, why_this, downside, price){
+generate_strategy_tools <- function(devices, show_classes, title, illustration, link, link_text, link2, link2_text, what_it_can_do, why_this, downside, price, how_to){
   
   labels_to_apply <- tibble(
     devices_labels = devices
@@ -129,10 +130,23 @@ generate_strategy_tools <- function(devices, show_classes, title, illustration, 
   # add try it now, where buttons are in two columns
   cat('<div class="row">')
   cat('<div class="col-sm-2"><p class="what-it-can-do">Try it:</p></div>')
-  cat(str_c('<div class="col-sm-5 text-center"><a target="_blank" href="', link, '" class="btn btn-primary tool-link" role="button">', link_text, '</a></div>'))
-  if(!is.na(link2)){
-    cat(str_c('<div class="col-sm-5 text-center"><a target="_blank" href="', link2, '" class="btn btn-primary tool-link" role="button">', link2_text, '</a></div>'))  
+  if(!is.na(how_to)){
+    cat(str_c(how_to, "\n"))
+    if(!is.na(link)){
+      cat(str_c('<div class="col-sm-5 text-center"><a target="_blank" href="', link, '" class="btn btn-primary tool-link" role="button">', link_text, '</a></div>'))
+    }
+    if(!is.na(link2)){
+      cat(str_c('<div class="col-sm-5 text-center"><a target="_blank" href="', link2, '" class="btn btn-primary tool-link" role="button">', link2_text, '</a></div>'))  
+    }
+    
+  } else {
+    cat(str_c('<div class="col-sm-5 text-center"><a target="_blank" href="', link, '" class="btn btn-primary tool-link" role="button">', link_text, '</a></div>'))
+    
+    if(!is.na(link2)){
+      cat(str_c('<div class="col-sm-5 text-center"><a target="_blank" href="', link2, '" class="btn btn-primary tool-link" role="button">', link2_text, '</a></div>'))  
+    }
   }
+  
   cat("</div>")
   
   cat("</div>")
@@ -169,7 +183,7 @@ generate_strategy_types <- function(category, strategy, illustration, illustrati
     mutate(show_classes = str_c(show_classes, collapse = " ")) %>% 
     distinct() %>% 
     ungroup() %>% 
-    select(devices, show_classes, title, illustration, link, link_text, link2, link2_text, what_it_can_do, why_this, downside, price) %>%
+    select(devices, show_classes, title, illustration, link, link_text, link2, link2_text, what_it_can_do, why_this, downside, price, how_to) %>%
     pwalk(generate_strategy_tools)
   cat("</div>")
 }
