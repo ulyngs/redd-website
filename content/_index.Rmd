@@ -12,21 +12,21 @@ content <- read_csv(here::here("data", "frontpage.csv"))
 ```
 
 
-<div class="jumbotron">
-<div class="container">
+::::::{.jumbotron}
+:::{.container}
 <h1 class="text-center display-4">Take control of your digital life at university</h1>
-</div>
-</div>
+:::
+::::::
 
 <!-- HERE'S THE QUIZ BUTTON - HOLD ON THIS FOR NOW -->
 
-::: {.row .callout}
+:::::: {.row .callout}
 ::: {.col-sm-12 .text-center}
 <button type="button" class="btn btn-primary">Take the 'How am I doing?' quiz</button>
 <!-- <button type="button" class="btn btn-primary">Sign up for a workshop</button> -->
 <!-- <a href="/strategies/" class="btn btn-primary" role="button">Browse strategies</a> -->
 :::
-:::
+::::::
 
 
 ::: {.project-info}
@@ -84,7 +84,7 @@ cat("</div>")
 :::
 
 <!-- ####### create 'what people say' section ######### -->
-::: {.row .what-people-say}
+:::::: {.row .what-people-say}
 ::: {.col-sm-12}
 # What people say
 :::
@@ -106,11 +106,11 @@ content %>%
 
 
 <!-- end row -->
-:::
+::::::
 
 
 <!-- ####### create 'our team' section ######### -->
-::: {.row .team}
+:::::: {.row .team}
 ::: {.col-sm-12}
 # Team
 :::
@@ -135,13 +135,13 @@ content %>%
 ```
 
 <!-- close row -->
-:::
+::::::
 
 
 
 
 <!-- ####### create 'sponsors' section ######### -->
-::: {.row .sponsors}
+:::::: {.row .sponsors}
 ::: {.col-sm-12}
 # Sponsors
 :::
@@ -166,9 +166,9 @@ content %>%
 
 
 <!-- close row -->
-:::
+::::::
 
-::: {.row}
+:::::: {.row}
 ::: {.col-sm-12}
 # Contact
 :::
@@ -178,4 +178,4 @@ Email us at <a href="mailto:ulrik.lyngs@cs.ox.ac.uk">ulrik.lyngs\@cs.ox.ac.uk</a
 :::
 
 <!-- close row -->
-:::
+::::::
