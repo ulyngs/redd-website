@@ -25,21 +25,17 @@ strategies_details <- read_csv(here("data", "strategy-tools.csv"), col_types = c
 ```
 
 
+::::::::: {.row .strategy-page}
 
-<div class="strategy-page">
-
-<div class="row">
-
-<div class="col-sm-2">
+:::::: {.col-sm-2}
 <nav id="toc" data-toggle="toc" class="sticky-top"></nav>
-</div>
+::::::
 
-<div class="col-sm-10">
+:::::: {.col-sm-10}
 <h2>Filter instructions</h2>
 
-<div class="row tool-filters">
-
-```{r, results='asis'}
+::: {.row .tool-filters}
+```{r checkbox-filters, results='asis'}
 checkbox_content <- tribble(
   ~type,                  ~label,   ~function_name,     ~tag,
   "Laptop",               "Mac",      "toggleMac",     "mac",
@@ -84,12 +80,10 @@ checkbox_content$type %>%
   unique() %>% 
   walk(generate_checkbox)
 ```
-
-<!-- end tool filters row -->
-</div>
+:::
 
 
-```{r, results='asis', echo=FALSE, message=FALSE}
+```{r generate-strategies, results='asis'}
 # function for generating information about detailed tools
 generate_strategy_tools <- function(devices, show_classes, title, illustration, link, link_text, link2, link2_text, what_it_can_do, why_this, downside, price, how_to){
   
@@ -209,17 +203,13 @@ generate_strategy_views <- function(a_strategy_type){
 walk(strategy_types, generate_strategy_views)
 
 ```
-
-
-</div>
-</div>
-
+::::::
 
 <!-- end strategy page -->
-</div>
+:::::::::
 
 
-```{r, results='asis'}
+```{r generate-js-functions, results='asis'}
 generate_highlight_functions <- function(strategy){
   clean_strategy <- janitor::make_clean_names(strategy)
   
