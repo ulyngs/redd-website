@@ -5,10 +5,13 @@ menu: main
 ```{r, include=FALSE}
 library(tidyverse)
 library(readxl)
+library(kableExtra)
 
 knitr::opts_chunk$set(echo=FALSE, message = FALSE, warning = FALSE)
 
 resources <- read_csv(here::here("data", "resources.csv"))
+
+
 ```
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -16,26 +19,50 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <div class="resources">
 
 ```{r echo=FALSE, results='asis'}
+generate_resource_table <- function(entries_table){
+  entries_table %>% 
+    mutate(citation = str_c('<span class="resource-title">', title, '</span><br>', 
+                            '<span class="resource-author">', author, '</span>, ', 
+                            '<span class="resource-place">', place, '</span>')) %>% 
+    select(citation, why, what) %>% 
+    rename(" " = citation,
+           "Why would you read it?" = why,
+           "What does it say?" = what) %>% 
+    knitr::kable(format = "html", table.attr = "class=\"resource-entries\"", escape = FALSE) %>% 
+    kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>% 
+    print()
+}
+
+generate_resource_entries_non_academic <- function(type_heading, entry_type){
+  cat(str_c('<h2 class="type-heading">', type_heading, '</h2>'))
+  entries <- resources %>% 
+    filter(type == entry_type)
+  
+  entries %>% 
+    generate_resource_table()
+}
+
+generate_resource_entries_academic <- function(topic_heading, entry_topic){
+  cat('<div class="topic-group">')
+  
+  cat(str_c('<h3>', topic_heading, '</h3>'))
+  entries <- resources %>% 
+    filter(topic == entry_topic)
+  
+  entries %>% 
+    generate_resource_table()
+  
+  cat('</div>')
+}
+
+# non-academic entries
 headings_and_types <- tribble(
   ~type_heading,       ~entry_type,
   "Blogs & media",   "blogs_media",
   "Books",                 "books" #,
-  #"Academic papers",    "academic"
 )
 
-generate_resource_entries <- function(type_heading, entry_type){
-  cat(str_c('<h2 class="type-heading">', type_heading, '</h2>'))
-  resources %>% 
-    filter(type == entry_type) %>% 
-    mutate(citation = str_c('<span class="resource-title">', title, '</span><br>', 
-                            '<span class="resource-author">', author, '</span>, ', 
-                            '<span class="resource-place">', place, '</span>')) %>% 
-    select(citation, what, why) %>% 
-    knitr::kable(format = "html", table.attr = "class=\"resource-entries\"", escape = FALSE) %>% 
-    print()
-}
-
-# Academic references as a special case
+# academic entries
 headings_and_types_academic <- tribble(
   ~topic_heading,                                                             ~entry_topic,
   "The nature of self-control",                                   "nature of self-control",
@@ -43,25 +70,9 @@ headings_and_types_academic <- tribble(
   "Interventions for digital self-control struggles", "digital self-control interventions"
 )
 
-generate_resource_entries_academic <- function(topic_heading, entry_topic){
-  cat('<div class="topic-group">')
-  
-  cat(str_c('<h3>', topic_heading, '</h3>'))
-  resources %>% 
-    filter(topic == entry_topic) %>% 
-    mutate(citation = str_c('<span class="resource-title">', title, '</span><br>', 
-                            '<span class="resource-author">', author, '</span>, ', 
-                            '<span class="resource-place">', place, '</span>')) %>% 
-    select(citation, what, why) %>% 
-    knitr::kable(format = "html", table.attr = "class=\"resource-entries\"", escape = FALSE) %>% 
-    print()
-  
-  cat('</div>')
-}
-
 # generate non-academic
 headings_and_types %>% 
-  pwalk(generate_resource_entries)
+  pwalk(generate_resource_entries_non_academic)
 
 # generate academic
 cat('<h2 class="type-heading">Academic papers</h2>')
