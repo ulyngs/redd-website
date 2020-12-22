@@ -60,7 +60,7 @@ generate_checkbox <- function(device_type){
   current_checkbox <- checkbox_content %>% 
     filter(type == device_type)
   
-  cat('<div class="col-sm-2">')
+  cat('<div class="col-lg-2 col-md-3 col-sm-4">')
   cat(str_c('<h4>', device_type, '</h4>'))
   current_checkbox %>% 
     select(label, function_name, tag) %>% 
@@ -122,22 +122,22 @@ generate_strategy_tools <- function(devices, show_classes, title, illustration, 
   }
   
   # add try it now, where buttons are in two columns
+  cat('<p class="what-it-can-do">Try it:</p>')
   cat('<div class="row">')
-  cat('<div class="col-sm-2"><p class="what-it-can-do">Try it:</p></div>')
   if(!is.na(how_to)){
-    cat(str_c(how_to, "\n"))
+    cat(str_c("\n", how_to, "\n"))
     if(!is.na(link)){
-      cat(str_c('<div class="col-sm-5 text-center"><a target="_blank" href="', link, '" class="btn btn-primary tool-link" role="button">', link_text, '</a></div>'))
+      cat(str_c('<div class="col-sm-6 text-center"><a target="_blank" href="', link, '" class="btn btn-primary tool-link" role="button">', link_text, '</a></div>'))
     }
     if(!is.na(link2)){
-      cat(str_c('<div class="col-sm-5 text-center"><a target="_blank" href="', link2, '" class="btn btn-primary tool-link" role="button">', link2_text, '</a></div>'))  
+      cat(str_c('<div class="col-sm-6 text-center"><a target="_blank" href="', link2, '" class="btn btn-primary tool-link" role="button">', link2_text, '</a></div>'))  
     }
     
   } else {
-    cat(str_c('<div class="col-sm-5 text-center"><a target="_blank" href="', link, '" class="btn btn-primary tool-link" role="button">', link_text, '</a></div>'))
+    cat(str_c('<div class="col-sm-6 text-center"><a target="_blank" href="', link, '" class="btn btn-primary tool-link" role="button">', link_text, '</a></div>'))
     
     if(!is.na(link2)){
-      cat(str_c('<div class="col-sm-5 text-center"><a target="_blank" href="', link2, '" class="btn btn-primary tool-link" role="button">', link2_text, '</a></div>'))  
+      cat(str_c('<div class="col-sm-6 text-center"><a target="_blank" href="', link2, '" class="btn btn-primary tool-link" role="button">', link2_text, '</a></div>'))  
     }
   }
   
@@ -153,7 +153,7 @@ generate_strategy_types <- function(category, strategy, illustration, illustrati
   clean_category <- janitor::make_clean_names(category)
   clean_strategy <- janitor::make_clean_names(strategy)
   
-  cat(str_c('<div id="', clean_strategy, '" class="col-sm-3 strategy-type ', clean_strategy, '" onclick="highlightStrategy', clean_strategy, '()" data-toggle="collapse" data-target=".multi-collapse-', clean_strategy, '">'))
+  cat(str_c('<div id="', clean_strategy, '" class="col-sm-6 col-md-4 col-lg-3 strategy-type ', clean_strategy, '" onclick="highlightStrategy', clean_strategy, '()" data-toggle="collapse" data-target=".multi-collapse-', clean_strategy, '">'))
   cat("<div class='card'>")
   cat(str_c('<img class="card-img-top" src="', illustration, '" style="object-position: ', illustration_position, ';" alt="Card image cap">'))
   cat("<div class='card-body'>")
