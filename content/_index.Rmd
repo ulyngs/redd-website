@@ -58,7 +58,7 @@ cat("</div>")
 ::: {.solution-packages}
 ```{r, results='asis'}
 generate_solution_packages <- function(illustration, heading, description){
-  cat('<div class="col-sm-3">')
+  cat('<div class="col-md-3 col-sm-4">')
   cat('<div class="card">')
   cat(str_c('<i class="fa ', illustration, ' fa-4x card-img-top solution-package-image"></i>'))
   cat('<div class="card-body">')
@@ -117,7 +117,7 @@ content %>%
 
 ```{r results='asis'}
 generate_team_images <- function(illustration, heading, description, illustration_alt_text) {
-  cat('<div class="col-sm-3">')
+  cat('<div class="col-md-3 col-sm-4">')
   cat('<div class="card">')
   cat(str_c('<img class="card-img-top" src="', illustration, '" alt="', illustration_alt_text, '">'))
   cat('<div class="card-body">')
@@ -140,15 +140,15 @@ content %>%
 
 
 
-<!-- ####### create 'sponsors' section ######### -->
+<!-- ####### create 'Thanks to' section ######### -->
 :::::: {.row .sponsors}
 ::: {.col-sm-12}
-# Sponsors
+# Thanks to
 :::
 
 ```{r results='asis'}
 generate_sponsor_images <- function(illustration, heading, illustration_alt_text) {
-  cat('<div class="col-sm-3">')
+  cat('<div class="col-md-3 col-sm-4">')
   cat('<div class="card">')
   cat(str_c('<img class="card-img-top" src="', illustration, '" alt="', illustration_alt_text, '">'))
   cat('<div class="card-body">')
