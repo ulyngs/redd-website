@@ -258,7 +258,7 @@ footer hr {
 }
 
 #toc .nav-link {
-  padding-left: 0.1em;
+  padding-left: 0.2em;
 }
 .sticky-top {
   top: 55px;
@@ -501,9 +501,13 @@ footer hr {
 
 
 /* RESOURCES PAGE */
-.resource-entries thead {
-  display: none;
+.resource-entries th {
+  border: none !important;
 }
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, .04)
+}
+
 .resource-entries .resource-title {
   font-weight: bold;
 }
