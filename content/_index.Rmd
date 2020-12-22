@@ -22,9 +22,9 @@ content <- read_csv(here::here("data", "frontpage.csv"))
 
 :::::: {.row .callout}
 ::: {.col-sm-12 .text-center}
-<button type="button" class="btn btn-primary">Take the 'How am I doing?' quiz</button>
+<!-- <button type="button" class="btn btn-primary">Take the 'How am I doing?' quiz</button> -->
 <!-- <button type="button" class="btn btn-primary">Sign up for a workshop</button> -->
-<!-- <a href="/strategies/" class="btn btn-primary" role="button">Browse strategies</a> -->
+<a href="/strategies/" class="btn btn-primary" role="button">Browse strategies</a>
 :::
 ::::::
 
