@@ -220,4 +220,3 @@ cat("<script>")
 walk(strategy_data$strategy, generate_highlight_functions)
 cat("</script>")
 ```
-

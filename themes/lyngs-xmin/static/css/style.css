@@ -329,7 +329,7 @@ footer hr {
 .strategy-type .arrow.keep_your_goals_in_mind {
   border-top: solid 20px var(--goal-strategy-color);
 }
-.strategy-type .arrow.make_intended_use_rewarding {
+.strategy-type .arrow.make_your_goals_attractive {
   border-top: solid 20px var(--reward-strategy-color);
 }
 
@@ -352,7 +352,7 @@ footer hr {
 .strategy-type-tools.keep_your_goals_in_mind {
   border-left: 1px dashed var(--goal-strategy-color);
 }
-.strategy-type-tools.make_intended_use_rewarding {
+.strategy-type-tools.make_your_goals_attractive {
   border-left: 1px dashed var(--reward-strategy-color);
 }
 
@@ -399,8 +399,8 @@ footer hr {
 .keep_your_goals_in_mind .card-body button:hover {
   background-color: var(--goal-strategy-color);
 }
-.make_intended_use_rewarding .tool-link:hover,
-.make_intended_use_rewarding .card-body button:hover {
+.make_your_goals_attractive .tool-link:hover,
+.make_your_goals_attractive .card-body button:hover {
   background-color: var(--reward-strategy-color);
 }
 
@@ -414,7 +414,7 @@ footer hr {
 .keep_your_goals_in_mind .highlight-this .card-body {
   border-bottom: 4px solid var(--goal-strategy-color);
 }
-.make_intended_use_rewarding .highlight-this .card-body {
+.make_your_goals_attractive .highlight-this .card-body {
   border-bottom: 4px solid var(--reward-strategy-color);
 }
 
@@ -450,7 +450,7 @@ footer hr {
   color: white;
   text-align: center;
 }
-.make_intended_use_rewarding h1 {
+.make_your_goals_attractive h1 {
   /*border-bottom: 3px solid var(--reward-strategy-color);*/
   background-color: var(--reward-strategy-color);
   color: white;
