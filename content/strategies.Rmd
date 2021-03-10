@@ -154,19 +154,19 @@ generate_strategy_types <- function(category, strategy, illustration, illustrati
   clean_category <- janitor::make_clean_names(category)
   clean_strategy <- janitor::make_clean_names(strategy)
   
-  cat(str_c('<div id="', clean_strategy, '" class="col-sm-6 col-md-4 col-lg-3 strategy-type ', clean_strategy, '" onclick="highlightStrategy', clean_strategy, '()" data-toggle="collapse" data-target=".multi-collapse-', clean_strategy, '">'))
+  cat(str_c('<div id="', clean_strategy, '" class="col-sm-6 col-md-4 col-lg-3 strategy-type ', clean_strategy, '" onclick="highlightStrategyApply', clean_strategy, '()" data-toggle="collapse" data-target="#collapse-', clean_strategy, '">'))
   cat("<div class='card'>")
   cat(str_c('<img class="card-img-top" src="', illustration, '" style="object-position: ', illustration_position, ';" alt="Card image cap">'))
   cat("<div class='card-body'>")
   cat(str_c('<h5 class="card-title">', strategy, '</h5>'))
   cat(str_c('<p class="card-text">', description, '</p>'))
-  cat(str_c('<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-', clean_strategy, '">Show me how</button>'))
+  cat(str_c('<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-', clean_strategy, '">Show me how</button>'))
   cat("</div>")
   cat("</div>")
   cat(str_c('<div class="arrow ', clean_category, ' ', clean_strategy, '"></div>')) #draw arrow
   cat("</div>")
   
-  cat(str_c('<div class="collapse multi-collapse-', clean_strategy, ' ', clean_category, ' strategy-type-tools">'))
+  cat(str_c('<div class="collapse strategy-type-tools ', clean_category, '" id="collapse-', clean_strategy, '" data-parent="#collapse-group">'))
   strategies_details %>% 
     filter(actual_strategy == strategy) %>% 
     # a longwinded way of adding -show to classes
@@ -202,7 +202,9 @@ generate_strategy_views <- function(a_strategy_type){
   cat("</div>")
 }
 
+cat('<div id="collapse-group">')
 walk(strategy_types, generate_strategy_views)
+cat("</div>")
 
 ```
 ::::::
@@ -216,15 +218,32 @@ generate_highlight_functions <- function(strategy){
   clean_strategy <- janitor::make_clean_names(strategy)
   
   glue::glue('
-function highlightStrategy{{clean_strategy}}(){ 
-$(".strategy-type.{{clean_strategy}}").toggleClass("highlight-this"); 
-$(".arrow.{{clean_strategy}}").toggleClass("highlight-this");
+function highlightStrategyApply{{clean_strategy}}(){ 
+
+var element = document.querySelector(".strategy-type.{{clean_strategy}}");
+wasOn = element.classList.contains("highlight-this");
+
+highlightStrategyRemove();
+
+if (wasOn) {
+$(".strategy-type.{{clean_strategy}}").removeClass("highlight-this"); 
+$(".arrow.{{clean_strategy}}").removeClass("highlight-this");
+} else {
+$(".strategy-type.{{clean_strategy}}").addClass("highlight-this"); 
+$(".arrow.{{clean_strategy}}").addClass("highlight-this");
+}
+
 }', .open = "{{", .close = "}}") %>% cat()
-  
 }
 
 cat("<script>")
+
+glue::glue('
+function highlightStrategyRemove(){ 
+$(".strategy-type").removeClass("highlight-this"); 
+$(".arrow").removeClass("highlight-this");
+}', .open = "{{", .close = "}}") %>% cat()
+
 walk(strategy_data$strategy, generate_highlight_functions)
 cat("</script>")
 ```
-
