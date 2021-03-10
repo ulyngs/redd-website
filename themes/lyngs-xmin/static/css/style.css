@@ -265,16 +265,20 @@ footer hr {
 }
 
 /* account for the sticky menu bar, cf. https://www.bryanbraun.com/anchorjs/ */
-.strategy-page :target::before {
+/*.strategy-page :target::before {
   content: "";
   display: block;
   margin-top: -65px;
   height: 65px;
   width: 1px;
+}*/
+
+.anchor {
+    visibility: hidden !important;
 }
 
 .strategy-class {
-  margin-bottom: 5em;
+  margin-bottom: 3.5em;
 }
 
 .tool-title {
@@ -406,7 +410,7 @@ footer hr {
 
 
 .highlight-this .card-body {
-  border-bottom: 4px solid var(--block-strategy-color);
+  border: 4px solid var(--block-strategy-color);
 }
 .track_yourself .highlight-this .card-body {
   border-bottom: 4px solid var(--track-strategy-color);
@@ -426,11 +430,18 @@ footer hr {
   padding: 0 1em;
 }
 
+
 .strategy-class h1 {
-  margin-bottom: 0.9em;
+  margin-bottom: 0.6em;
   padding-bottom: 0.1em;
   font-weight: bold;
   font-size: 3em;
+}
+.strategy-class h1.anchor {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  font-weight: bold;
+  font-size: 2.9em;
 }
 .block_or_remove_distractions h1 {
   /*border-bottom: 3px solid var(--block-strategy-color);*/

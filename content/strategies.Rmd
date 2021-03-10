@@ -32,7 +32,8 @@ strategies_details <- read_csv(here("data", "strategy-tools.csv"), col_types = c
 ::::::
 
 :::::: {.col-sm-10}
-<h2>Filter instructions</h2>
+<h1 class='anchor'>Filter instructions</h1>
+<h2 data-toc-skip>Filter instructions</h2>
 
 ::: {.row .tool-filters}
 ```{r checkbox-filters, results='asis'}
@@ -191,7 +192,8 @@ generate_strategy_views <- function(a_strategy_type){
   
   cat(str_c('<div class="row strategy-class ', clean_strategy_type, '">'))
   cat("<div class='col-sm-12'>")
-  cat(str_c("<h1>", a_strategy_type, "</h1>"))
+  cat(str_c("<h1 class='anchor'>", a_strategy_type, "</h1>"))
+  cat(str_c("<h1 data-toc-skip>", a_strategy_type, "</h1>"))
   cat("</div>")
   
   pmap(current_data, generate_strategy_types)
