@@ -404,13 +404,13 @@ footer hr {
   border: 4px solid var(--block-strategy-color);
 }
 .track_yourself .highlight-this .card-body {
-  border-bottom: 4px solid var(--track-strategy-color);
+  border: 4px solid var(--track-strategy-color);
 }
 .keep_your_goals_in_mind .highlight-this .card-body {
-  border-bottom: 4px solid var(--goal-strategy-color);
+  border: 4px solid var(--goal-strategy-color);
 }
 .make_your_goals_attractive .highlight-this .card-body {
-  border-bottom: 4px solid var(--reward-strategy-color);
+  border: 4px solid var(--reward-strategy-color);
 }
 
 .strategy-type img {
