@@ -215,10 +215,16 @@ walk(strategy_types, generate_strategy_views)
 generate_highlight_functions <- function(strategy){
   clean_strategy <- janitor::make_clean_names(strategy)
   
-  cat(str_c('function highlightStrategy', clean_strategy, '() { $(".strategy-type.', clean_strategy, '").toggleClass("highlight-this"); $(".arrow.', clean_strategy, '").toggleClass("highlight-this");}\n'))
+  glue::glue('
+function highlightStrategy{clean_strategy}(){ 
+$(".strategy-type.{clean_strategy}").toggleClass("highlight-this"); 
+$(".arrow.{clean_strategy}").toggleClass("highlight-this");
+}
+             ')
 }
 
 cat("<script>")
 walk(strategy_data$strategy, generate_highlight_functions)
 cat("</script>")
 ```
+
