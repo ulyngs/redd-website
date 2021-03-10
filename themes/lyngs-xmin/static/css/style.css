@@ -264,15 +264,6 @@ footer hr {
   top: 55px;
 }
 
-/* account for the sticky menu bar, cf. https://www.bryanbraun.com/anchorjs/ */
-/*.strategy-page :target::before {
-  content: "";
-  display: block;
-  margin-top: -65px;
-  height: 65px;
-  width: 1px;
-}*/
-
 .anchor {
     visibility: hidden !important;
 }
