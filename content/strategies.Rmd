@@ -216,11 +216,11 @@ generate_highlight_functions <- function(strategy){
   clean_strategy <- janitor::make_clean_names(strategy)
   
   glue::glue('
-function highlightStrategy{clean_strategy}(){ 
-$(".strategy-type.{clean_strategy}").toggleClass("highlight-this"); 
-$(".arrow.{clean_strategy}").toggleClass("highlight-this");
-}
-             ')
+function highlightStrategy{{clean_strategy}}(){ 
+$(".strategy-type.{{clean_strategy}}").toggleClass("highlight-this"); 
+$(".arrow.{{clean_strategy}}").toggleClass("highlight-this");
+}', .open = "{{", .close = "}}") %>% cat()
+  
 }
 
 cat("<script>")
