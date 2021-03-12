@@ -32,8 +32,7 @@ strategies_details <- read_csv(here("data", "strategy-tools.csv"), col_types = c
 ::::::
 
 :::::: {.col-sm-10}
-<h1 class='anchor'>Filter instructions</h1>
-<h2 data-toc-skip>Filter instructions</h2>
+<h2>Filter instructions</h2>
 
 ::: {.row .tool-filters}
 ```{r checkbox-filters, results='asis'}
