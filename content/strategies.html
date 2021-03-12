@@ -42,6 +42,7 @@ Browser
 </div>
 <script>function toggleChrome() { $(".strategy-tool.chrome").toggleClass("chrome-show");}function toggleFirefox() { $(".strategy-tool.firefox").toggleClass("firefox-show");}function toggleSafari() { $(".strategy-tool.safari").toggleClass("safari-show");}</script>
 </div>
+<div id="collapse-group">
 <div class="row strategy-class block_or_remove_distractions">
 <div class="col-sm-12">
 <h1 class="anchor">
@@ -51,7 +52,7 @@ Block or remove distractions
 Block or remove distractions
 </h1>
 </div>
-<div id="block_distracting_websites_or_apps" class="col-sm-6 col-md-4 col-lg-3 strategy-type block_distracting_websites_or_apps" onclick="highlightStrategyblock_distracting_websites_or_apps()" data-toggle="collapse" data-target=".multi-collapse-block_distracting_websites_or_apps">
+<div id="block_distracting_websites_or_apps" class="col-sm-6 col-md-4 col-lg-3 strategy-type block_distracting_websites_or_apps" onclick="highlightStrategyApplyblock_distracting_websites_or_apps()" data-toggle="collapse" data-target="#collapse-block_distracting_websites_or_apps">
 <div class="card">
 <img class="card-img-top" src="/images/strategy-icons/block_hand.png" style="object-position: 0% 50%;" alt="Card image cap">
 <div class="card-body">
@@ -61,7 +62,7 @@ Block distracting websites or apps
 <p class="card-text">
 Choose websites or apps you don’t want to access for a period of time.
 </p>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-block_distracting_websites_or_apps">
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-block_distracting_websites_or_apps">
 Show me how
 </button>
 </div>
@@ -70,7 +71,7 @@ Show me how
 
 </div>
 </div>
-<div class="collapse multi-collapse-block_distracting_websites_or_apps block_or_remove_distractions strategy-type-tools">
+<div id="collapse-block_distracting_websites_or_apps" class="collapse strategy-type-tools block_or_remove_distractions" data-parent="#collapse-group">
 <div class="row strategy-tool android android-show">
 <div class="col-sm-4">
 <h5 class="tool-title">
@@ -309,7 +310,7 @@ Try it:
 </div>
 </div>
 </div>
-<div id="reduce_your_device_to_the_tools_you_need" class="col-sm-6 col-md-4 col-lg-3 strategy-type reduce_your_device_to_the_tools_you_need" onclick="highlightStrategyreduce_your_device_to_the_tools_you_need()" data-toggle="collapse" data-target=".multi-collapse-reduce_your_device_to_the_tools_you_need">
+<div id="reduce_your_device_to_the_tools_you_need" class="col-sm-6 col-md-4 col-lg-3 strategy-type reduce_your_device_to_the_tools_you_need" onclick="highlightStrategyApplyreduce_your_device_to_the_tools_you_need()" data-toggle="collapse" data-target="#collapse-reduce_your_device_to_the_tools_you_need">
 <div class="card">
 <img class="card-img-top" src="/images/strategy-icons/toolbox2.png" style="object-position: 0% 50%;" alt="Card image cap">
 <div class="card-body">
@@ -319,7 +320,7 @@ Reduce your device to the tools you need
 <p class="card-text">
 Choose applications or websites you need - your device has only those for a period of time
 </p>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-reduce_your_device_to_the_tools_you_need">
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-reduce_your_device_to_the_tools_you_need">
 Show me how
 </button>
 </div>
@@ -328,7 +329,7 @@ Show me how
 
 </div>
 </div>
-<div class="collapse multi-collapse-reduce_your_device_to_the_tools_you_need block_or_remove_distractions strategy-type-tools">
+<div id="collapse-reduce_your_device_to_the_tools_you_need" class="collapse strategy-type-tools block_or_remove_distractions" data-parent="#collapse-group">
 <div class="row strategy-tool mac pc mac-show pc-show">
 <div class="col-sm-4">
 <h5 class="tool-title">
@@ -526,7 +527,7 @@ Try it:
 </div>
 </div>
 </div>
-<div id="hide_distracting_features_on_websites" class="col-sm-6 col-md-4 col-lg-3 strategy-type hide_distracting_features_on_websites" onclick="highlightStrategyhide_distracting_features_on_websites()" data-toggle="collapse" data-target=".multi-collapse-hide_distracting_features_on_websites">
+<div id="hide_distracting_features_on_websites" class="col-sm-6 col-md-4 col-lg-3 strategy-type hide_distracting_features_on_websites" onclick="highlightStrategyApplyhide_distracting_features_on_websites()" data-toggle="collapse" data-target="#collapse-hide_distracting_features_on_websites">
 <div class="card">
 <img class="card-img-top" src="/images/strategy-icons/remove_distractions_fb_icon.png" style="object-position: 0% 70%;" alt="Card image cap">
 <div class="card-body">
@@ -536,7 +537,7 @@ Hide distracting features on websites
 <p class="card-text">
 Use a browser extension to change things that make you lose control on a website
 </p>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-hide_distracting_features_on_websites">
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-hide_distracting_features_on_websites">
 Show me how
 </button>
 </div>
@@ -545,7 +546,7 @@ Show me how
 
 </div>
 </div>
-<div class="collapse multi-collapse-hide_distracting_features_on_websites block_or_remove_distractions strategy-type-tools">
+<div id="collapse-hide_distracting_features_on_websites" class="collapse strategy-type-tools block_or_remove_distractions" data-parent="#collapse-group">
 <div class="row strategy-tool chrome chrome-show">
 <div class="col-sm-4">
 <h5 class="tool-title">
@@ -933,7 +934,7 @@ Try it:
 </div>
 </div>
 </div>
-<div id="use_focus_mode" class="col-sm-6 col-md-4 col-lg-3 strategy-type use_focus_mode" onclick="highlightStrategyuse_focus_mode()" data-toggle="collapse" data-target=".multi-collapse-use_focus_mode">
+<div id="use_focus_mode" class="col-sm-6 col-md-4 col-lg-3 strategy-type use_focus_mode" onclick="highlightStrategyApplyuse_focus_mode()" data-toggle="collapse" data-target="#collapse-use_focus_mode">
 <div class="card">
 <img class="card-img-top" src="/images/strategy-icons/focus_mode.png" style="object-position: 0% 50%;" alt="Card image cap">
 <div class="card-body">
@@ -943,7 +944,7 @@ Use focus mode
 <p class="card-text">
 Use your laptop’s and apps’ distraction-free modes to reduce visual distraction
 </p>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-use_focus_mode">
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-use_focus_mode">
 Show me how
 </button>
 </div>
@@ -952,7 +953,7 @@ Show me how
 
 </div>
 </div>
-<div class="collapse multi-collapse-use_focus_mode block_or_remove_distractions strategy-type-tools">
+<div id="collapse-use_focus_mode" class="collapse strategy-type-tools block_or_remove_distractions" data-parent="#collapse-group">
 <div class="row strategy-tool chrome firefox chrome-show firefox-show">
 <div class="col-sm-4">
 <h5 class="tool-title">
@@ -1139,7 +1140,7 @@ Try it:
 </div>
 </div>
 </div>
-<div id="limit_notifications" class="col-sm-6 col-md-4 col-lg-3 strategy-type limit_notifications" onclick="highlightStrategylimit_notifications()" data-toggle="collapse" data-target=".multi-collapse-limit_notifications">
+<div id="limit_notifications" class="col-sm-6 col-md-4 col-lg-3 strategy-type limit_notifications" onclick="highlightStrategyApplylimit_notifications()" data-toggle="collapse" data-target="#collapse-limit_notifications">
 <div class="card">
 <img class="card-img-top" src="/images/strategy-icons/limit_notifications.jpg" style="object-position: 0% 50%;" alt="Card image cap">
 <div class="card-body">
@@ -1149,7 +1150,7 @@ Limit notifications
 <p class="card-text">
 Allow only those notifications you really need, at the times you need them
 </p>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-limit_notifications">
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-limit_notifications">
 Show me how
 </button>
 </div>
@@ -1158,7 +1159,7 @@ Show me how
 
 </div>
 </div>
-<div class="collapse multi-collapse-limit_notifications block_or_remove_distractions strategy-type-tools">
+<div id="collapse-limit_notifications" class="collapse strategy-type-tools block_or_remove_distractions" data-parent="#collapse-group">
 <div class="row strategy-tool mac pc ios android mac-show pc-show ios-show android-show">
 <div class="col-sm-4">
 <h5 class="tool-title">
@@ -1251,7 +1252,7 @@ Track yourself
 Track yourself
 </h1>
 </div>
-<div id="understand_how_you_use_your_devices" class="col-sm-6 col-md-4 col-lg-3 strategy-type understand_how_you_use_your_devices" onclick="highlightStrategyunderstand_how_you_use_your_devices()" data-toggle="collapse" data-target=".multi-collapse-understand_how_you_use_your_devices">
+<div id="understand_how_you_use_your_devices" class="col-sm-6 col-md-4 col-lg-3 strategy-type understand_how_you_use_your_devices" onclick="highlightStrategyApplyunderstand_how_you_use_your_devices()" data-toggle="collapse" data-target="#collapse-understand_how_you_use_your_devices">
 <div class="card">
 <img class="card-img-top" src="/images/strategy-icons/understand_use_icon.png" style="object-position: 0% 50%;" alt="Card image cap">
 <div class="card-body">
@@ -1261,7 +1262,7 @@ Understand how you use your devices
 <p class="card-text">
 Use a tracking tool to see how much time you spend in which apps at what times
 </p>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-understand_how_you_use_your_devices">
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-understand_how_you_use_your_devices">
 Show me how
 </button>
 </div>
@@ -1270,7 +1271,7 @@ Show me how
 
 </div>
 </div>
-<div class="collapse multi-collapse-understand_how_you_use_your_devices track_yourself strategy-type-tools">
+<div id="collapse-understand_how_you_use_your_devices" class="collapse strategy-type-tools track_yourself" data-parent="#collapse-group">
 <div class="row strategy-tool android android-show">
 <div class="col-sm-4">
 <h5 class="tool-title">
@@ -1434,7 +1435,7 @@ Try it:
 </div>
 </div>
 </div>
-<div id="focus_in_bursts_with_a_timer" class="col-sm-6 col-md-4 col-lg-3 strategy-type focus_in_bursts_with_a_timer" onclick="highlightStrategyfocus_in_bursts_with_a_timer()" data-toggle="collapse" data-target=".multi-collapse-focus_in_bursts_with_a_timer">
+<div id="focus_in_bursts_with_a_timer" class="col-sm-6 col-md-4 col-lg-3 strategy-type focus_in_bursts_with_a_timer" onclick="highlightStrategyApplyfocus_in_bursts_with_a_timer()" data-toggle="collapse" data-target="#collapse-focus_in_bursts_with_a_timer">
 <div class="card">
 <img class="card-img-top" src="/images/strategy-icons/work_in_bursts.png" style="object-position: 0% 80%;" alt="Card image cap">
 <div class="card-body">
@@ -1444,7 +1445,7 @@ Focus in bursts with a timer
 <p class="card-text">
 Use a countdown timer to help you focus – decide what you’ll do and for how long
 </p>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-focus_in_bursts_with_a_timer">
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-focus_in_bursts_with_a_timer">
 Show me how
 </button>
 </div>
@@ -1453,7 +1454,7 @@ Show me how
 
 </div>
 </div>
-<div class="collapse multi-collapse-focus_in_bursts_with_a_timer track_yourself strategy-type-tools">
+<div id="collapse-focus_in_bursts_with_a_timer" class="collapse strategy-type-tools track_yourself" data-parent="#collapse-group">
 <div class="row strategy-tool mac ios mac-show ios-show">
 <div class="col-sm-4">
 <h5 class="tool-title">
@@ -1654,7 +1655,7 @@ Keep your goals in mind
 Keep your goals in mind
 </h1>
 </div>
-<div id="put_motivational_quotes_or_to_dos_on_new_tabs" class="col-sm-6 col-md-4 col-lg-3 strategy-type put_motivational_quotes_or_to_dos_on_new_tabs" onclick="highlightStrategyput_motivational_quotes_or_to_dos_on_new_tabs()" data-toggle="collapse" data-target=".multi-collapse-put_motivational_quotes_or_to_dos_on_new_tabs">
+<div id="put_motivational_quotes_or_to_dos_on_new_tabs" class="col-sm-6 col-md-4 col-lg-3 strategy-type put_motivational_quotes_or_to_dos_on_new_tabs" onclick="highlightStrategyApplyput_motivational_quotes_or_to_dos_on_new_tabs()" data-toggle="collapse" data-target="#collapse-put_motivational_quotes_or_to_dos_on_new_tabs">
 <div class="card">
 <img class="card-img-top" src="/images/strategy-icons/motivational_quotes.png" style="object-position: 0% 50%;" alt="Card image cap">
 <div class="card-body">
@@ -1664,7 +1665,7 @@ Put motivational quotes or to-do’s on new tabs
 <p class="card-text">
 Use a browser extension to change the content of newly opened tabs
 </p>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-put_motivational_quotes_or_to_dos_on_new_tabs">
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-put_motivational_quotes_or_to_dos_on_new_tabs">
 Show me how
 </button>
 </div>
@@ -1673,7 +1674,7 @@ Show me how
 
 </div>
 </div>
-<div class="collapse multi-collapse-put_motivational_quotes_or_to_dos_on_new_tabs keep_your_goals_in_mind strategy-type-tools">
+<div id="collapse-put_motivational_quotes_or_to_dos_on_new_tabs" class="collapse strategy-type-tools keep_your_goals_in_mind" data-parent="#collapse-group">
 <div class="row strategy-tool chrome chrome-show">
 <div class="col-sm-4">
 <h5 class="tool-title">
@@ -1819,7 +1820,7 @@ Try it:
 </div>
 </div>
 </div>
-<div id="replace_distractions_on_the_web_with_a_to_do_list" class="col-sm-6 col-md-4 col-lg-3 strategy-type replace_distractions_on_the_web_with_a_to_do_list" onclick="highlightStrategyreplace_distractions_on_the_web_with_a_to_do_list()" data-toggle="collapse" data-target=".multi-collapse-replace_distractions_on_the_web_with_a_to_do_list">
+<div id="replace_distractions_on_the_web_with_a_to_do_list" class="col-sm-6 col-md-4 col-lg-3 strategy-type replace_distractions_on_the_web_with_a_to_do_list" onclick="highlightStrategyApplyreplace_distractions_on_the_web_with_a_to_do_list()" data-toggle="collapse" data-target="#collapse-replace_distractions_on_the_web_with_a_to_do_list">
 <div class="card">
 <img class="card-img-top" src="/images/strategy-icons/fb_todo.png" style="object-position: 0% 50%;" alt="Card image cap">
 <div class="card-body">
@@ -1829,7 +1830,7 @@ Replace distractions on the web with a to-do list
 <p class="card-text">
 Use a browser extension to replace recommendations and feeds with a to-do list.
 </p>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-replace_distractions_on_the_web_with_a_to_do_list">
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-replace_distractions_on_the_web_with_a_to_do_list">
 Show me how
 </button>
 </div>
@@ -1838,7 +1839,7 @@ Show me how
 
 </div>
 </div>
-<div class="collapse multi-collapse-replace_distractions_on_the_web_with_a_to_do_list keep_your_goals_in_mind strategy-type-tools">
+<div id="collapse-replace_distractions_on_the_web_with_a_to_do_list" class="collapse strategy-type-tools keep_your_goals_in_mind" data-parent="#collapse-group">
 <div class="row strategy-tool chrome chrome-show">
 <div class="col-sm-4">
 <h5 class="tool-title">
@@ -1878,7 +1879,7 @@ Try it:
 </div>
 </div>
 </div>
-<div id="redirect_yourself_away_from_distracting_sites" class="col-sm-6 col-md-4 col-lg-3 strategy-type redirect_yourself_away_from_distracting_sites" onclick="highlightStrategyredirect_yourself_away_from_distracting_sites()" data-toggle="collapse" data-target=".multi-collapse-redirect_yourself_away_from_distracting_sites">
+<div id="redirect_yourself_away_from_distracting_sites" class="col-sm-6 col-md-4 col-lg-3 strategy-type redirect_yourself_away_from_distracting_sites" onclick="highlightStrategyApplyredirect_yourself_away_from_distracting_sites()" data-toggle="collapse" data-target="#collapse-redirect_yourself_away_from_distracting_sites">
 <div class="card">
 <img class="card-img-top" src="/images/strategy-icons/redirect.png" style="object-position: 0% 50%;" alt="Card image cap">
 <div class="card-body">
@@ -1888,7 +1889,7 @@ Redirect yourself away from distracting sites
 <p class="card-text">
 Use a browser extension to send you to a useful website when you open a distracting one.
 </p>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-redirect_yourself_away_from_distracting_sites">
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-redirect_yourself_away_from_distracting_sites">
 Show me how
 </button>
 </div>
@@ -1897,7 +1898,7 @@ Show me how
 
 </div>
 </div>
-<div class="collapse multi-collapse-redirect_yourself_away_from_distracting_sites keep_your_goals_in_mind strategy-type-tools">
+<div id="collapse-redirect_yourself_away_from_distracting_sites" class="collapse strategy-type-tools keep_your_goals_in_mind" data-parent="#collapse-group">
 <div class="row strategy-tool chrome chrome-show">
 <div class="col-sm-4">
 <h5 class="tool-title">
@@ -1982,7 +1983,7 @@ Make your goals attractive
 Make your goals attractive
 </h1>
 </div>
-<div id="set_up_reward_or_punishment" class="col-sm-6 col-md-4 col-lg-3 strategy-type set_up_reward_or_punishment" onclick="highlightStrategyset_up_reward_or_punishment()" data-toggle="collapse" data-target=".multi-collapse-set_up_reward_or_punishment">
+<div id="set_up_reward_or_punishment" class="col-sm-6 col-md-4 col-lg-3 strategy-type set_up_reward_or_punishment" onclick="highlightStrategyApplyset_up_reward_or_punishment()" data-toggle="collapse" data-target="#collapse-set_up_reward_or_punishment">
 <div class="card">
 <img class="card-img-top" src="/images/strategy-icons/set_up_reward.svg" style="object-position: 50% 50%;" alt="Card image cap">
 <div class="card-body">
@@ -1992,7 +1993,7 @@ Set up reward or punishment
 <p class="card-text">
 Add a reward for staying focused, e.g. by protecting a virtual plant or animal
 </p>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-set_up_reward_or_punishment">
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-set_up_reward_or_punishment">
 Show me how
 </button>
 </div>
@@ -2001,7 +2002,7 @@ Show me how
 
 </div>
 </div>
-<div class="collapse multi-collapse-set_up_reward_or_punishment make_your_goals_attractive strategy-type-tools">
+<div id="collapse-set_up_reward_or_punishment" class="collapse strategy-type-tools make_your_goals_attractive" data-parent="#collapse-group">
 <div class="row strategy-tool ios android chrome ios-show android-show chrome-show">
 <div class="col-sm-4">
 <h5 class="tool-title">
@@ -2089,7 +2090,7 @@ Try it:
 </div>
 </div>
 </div>
-<div id="go_grey_scale" class="col-sm-6 col-md-4 col-lg-3 strategy-type go_grey_scale" onclick="highlightStrategygo_grey_scale()" data-toggle="collapse" data-target=".multi-collapse-go_grey_scale">
+<div id="go_grey_scale" class="col-sm-6 col-md-4 col-lg-3 strategy-type go_grey_scale" onclick="highlightStrategyApplygo_grey_scale()" data-toggle="collapse" data-target="#collapse-go_grey_scale">
 <div class="card">
 <img class="card-img-top" src="/images/strategy-icons/grey_scale_change.png" style="object-position: 50% 50%;" alt="Card image cap">
 <div class="card-body">
@@ -2099,7 +2100,7 @@ Go grey scale
 <p class="card-text">
 Turn your phone in grayscale mode to avoid visual distraction from shiny icons
 </p>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-go_grey_scale">
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-go_grey_scale">
 Show me how
 </button>
 </div>
@@ -2108,7 +2109,7 @@ Show me how
 
 </div>
 </div>
-<div class="collapse multi-collapse-go_grey_scale make_your_goals_attractive strategy-type-tools">
+<div id="collapse-go_grey_scale" class="collapse strategy-type-tools make_your_goals_attractive" data-parent="#collapse-group">
 <div class="row strategy-tool ios android ios-show android-show">
 <div class="col-sm-4">
 <h5 class="tool-title">
@@ -2152,7 +2153,7 @@ touch and hold the grayscale symbol, then drag to where you want it</li>
 </div>
 </div>
 </div>
-<div id="move_distracting_apps_out_of_sight" class="col-sm-6 col-md-4 col-lg-3 strategy-type move_distracting_apps_out_of_sight" onclick="highlightStrategymove_distracting_apps_out_of_sight()" data-toggle="collapse" data-target=".multi-collapse-move_distracting_apps_out_of_sight">
+<div id="move_distracting_apps_out_of_sight" class="col-sm-6 col-md-4 col-lg-3 strategy-type move_distracting_apps_out_of_sight" onclick="highlightStrategyApplymove_distracting_apps_out_of_sight()" data-toggle="collapse" data-target="#collapse-move_distracting_apps_out_of_sight">
 <div class="card">
 <img class="card-img-top" src="/images/strategy-icons/rearrange_change.png" style="object-position: 50% 50%;" alt="Card image cap">
 <div class="card-body">
@@ -2162,7 +2163,7 @@ Move distracting apps out of sight
 <p class="card-text">
 Reduce visual distraction and mindless use by moving apps off the homescreen
 </p>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-move_distracting_apps_out_of_sight">
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-move_distracting_apps_out_of_sight">
 Show me how
 </button>
 </div>
@@ -2171,7 +2172,7 @@ Show me how
 
 </div>
 </div>
-<div class="collapse multi-collapse-move_distracting_apps_out_of_sight make_your_goals_attractive strategy-type-tools">
+<div id="collapse-move_distracting_apps_out_of_sight" class="collapse strategy-type-tools make_your_goals_attractive" data-parent="#collapse-group">
 <div class="row strategy-tool ios android ios-show android-show">
 <div class="col-sm-4">
 <h5 class="tool-title">
@@ -2210,7 +2211,7 @@ Try it:
 </div>
 </div>
 </div>
-<div id="write_under_time_pressure" class="col-sm-6 col-md-4 col-lg-3 strategy-type write_under_time_pressure" onclick="highlightStrategywrite_under_time_pressure()" data-toggle="collapse" data-target=".multi-collapse-write_under_time_pressure">
+<div id="write_under_time_pressure" class="col-sm-6 col-md-4 col-lg-3 strategy-type write_under_time_pressure" onclick="highlightStrategyApplywrite_under_time_pressure()" data-toggle="collapse" data-target="#collapse-write_under_time_pressure">
 <div class="card">
 <img class="card-img-top" src="/images/strategy-icons/write_pressure.png" style="object-position: 0% 50%;" alt="Card image cap">
 <div class="card-body">
@@ -2220,7 +2221,7 @@ Write under time pressure
 <p class="card-text">
 Set a time or word goal, then begin typing – if you stop early, everything is deleted
 </p>
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse-write_under_time_pressure">
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse-write_under_time_pressure">
 Show me how
 </button>
 </div>
@@ -2229,7 +2230,7 @@ Show me how
 
 </div>
 </div>
-<div class="collapse multi-collapse-write_under_time_pressure make_your_goals_attractive strategy-type-tools">
+<div id="collapse-write_under_time_pressure" class="collapse strategy-type-tools make_your_goals_attractive" data-parent="#collapse-group">
 <div class="row strategy-tool chrome firefox safari chrome-show firefox-show safari-show">
 <div class="col-sm-4">
 <h5 class="tool-title">
@@ -2316,20 +2317,220 @@ Try it:
 </div>
 </div>
 </div>
+</div>
 <!-- end strategy page -->
 </div>
-<script>function highlightStrategyblock_distracting_websites_or_apps() { $(".strategy-type.block_distracting_websites_or_apps").toggleClass("highlight-this"); $(".arrow.block_distracting_websites_or_apps").toggleClass("highlight-this");}
-function highlightStrategyreduce_your_device_to_the_tools_you_need() { $(".strategy-type.reduce_your_device_to_the_tools_you_need").toggleClass("highlight-this"); $(".arrow.reduce_your_device_to_the_tools_you_need").toggleClass("highlight-this");}
-function highlightStrategyhide_distracting_features_on_websites() { $(".strategy-type.hide_distracting_features_on_websites").toggleClass("highlight-this"); $(".arrow.hide_distracting_features_on_websites").toggleClass("highlight-this");}
-function highlightStrategyuse_focus_mode() { $(".strategy-type.use_focus_mode").toggleClass("highlight-this"); $(".arrow.use_focus_mode").toggleClass("highlight-this");}
-function highlightStrategylimit_notifications() { $(".strategy-type.limit_notifications").toggleClass("highlight-this"); $(".arrow.limit_notifications").toggleClass("highlight-this");}
-function highlightStrategyunderstand_how_you_use_your_devices() { $(".strategy-type.understand_how_you_use_your_devices").toggleClass("highlight-this"); $(".arrow.understand_how_you_use_your_devices").toggleClass("highlight-this");}
-function highlightStrategyfocus_in_bursts_with_a_timer() { $(".strategy-type.focus_in_bursts_with_a_timer").toggleClass("highlight-this"); $(".arrow.focus_in_bursts_with_a_timer").toggleClass("highlight-this");}
-function highlightStrategyput_motivational_quotes_or_to_dos_on_new_tabs() { $(".strategy-type.put_motivational_quotes_or_to_dos_on_new_tabs").toggleClass("highlight-this"); $(".arrow.put_motivational_quotes_or_to_dos_on_new_tabs").toggleClass("highlight-this");}
-function highlightStrategyreplace_distractions_on_the_web_with_a_to_do_list() { $(".strategy-type.replace_distractions_on_the_web_with_a_to_do_list").toggleClass("highlight-this"); $(".arrow.replace_distractions_on_the_web_with_a_to_do_list").toggleClass("highlight-this");}
-function highlightStrategyredirect_yourself_away_from_distracting_sites() { $(".strategy-type.redirect_yourself_away_from_distracting_sites").toggleClass("highlight-this"); $(".arrow.redirect_yourself_away_from_distracting_sites").toggleClass("highlight-this");}
-function highlightStrategyset_up_reward_or_punishment() { $(".strategy-type.set_up_reward_or_punishment").toggleClass("highlight-this"); $(".arrow.set_up_reward_or_punishment").toggleClass("highlight-this");}
-function highlightStrategygo_grey_scale() { $(".strategy-type.go_grey_scale").toggleClass("highlight-this"); $(".arrow.go_grey_scale").toggleClass("highlight-this");}
-function highlightStrategymove_distracting_apps_out_of_sight() { $(".strategy-type.move_distracting_apps_out_of_sight").toggleClass("highlight-this"); $(".arrow.move_distracting_apps_out_of_sight").toggleClass("highlight-this");}
-function highlightStrategywrite_under_time_pressure() { $(".strategy-type.write_under_time_pressure").toggleClass("highlight-this"); $(".arrow.write_under_time_pressure").toggleClass("highlight-this");}
-</script>
+<script>function highlightStrategyRemove(){ 
+$(".strategy-type").removeClass("highlight-this"); 
+$(".arrow").removeClass("highlight-this");
+}function highlightStrategyApplyblock_distracting_websites_or_apps(){ 
+
+var element = document.querySelector(".strategy-type.block_distracting_websites_or_apps");
+wasOn = element.classList.contains("highlight-this");
+
+highlightStrategyRemove();
+
+if (wasOn) {
+$(".strategy-type.block_distracting_websites_or_apps").removeClass("highlight-this"); 
+$(".arrow.block_distracting_websites_or_apps").removeClass("highlight-this");
+} else {
+$(".strategy-type.block_distracting_websites_or_apps").addClass("highlight-this"); 
+$(".arrow.block_distracting_websites_or_apps").addClass("highlight-this");
+}
+
+}function highlightStrategyApplyreduce_your_device_to_the_tools_you_need(){ 
+
+var element = document.querySelector(".strategy-type.reduce_your_device_to_the_tools_you_need");
+wasOn = element.classList.contains("highlight-this");
+
+highlightStrategyRemove();
+
+if (wasOn) {
+$(".strategy-type.reduce_your_device_to_the_tools_you_need").removeClass("highlight-this"); 
+$(".arrow.reduce_your_device_to_the_tools_you_need").removeClass("highlight-this");
+} else {
+$(".strategy-type.reduce_your_device_to_the_tools_you_need").addClass("highlight-this"); 
+$(".arrow.reduce_your_device_to_the_tools_you_need").addClass("highlight-this");
+}
+
+}function highlightStrategyApplyhide_distracting_features_on_websites(){ 
+
+var element = document.querySelector(".strategy-type.hide_distracting_features_on_websites");
+wasOn = element.classList.contains("highlight-this");
+
+highlightStrategyRemove();
+
+if (wasOn) {
+$(".strategy-type.hide_distracting_features_on_websites").removeClass("highlight-this"); 
+$(".arrow.hide_distracting_features_on_websites").removeClass("highlight-this");
+} else {
+$(".strategy-type.hide_distracting_features_on_websites").addClass("highlight-this"); 
+$(".arrow.hide_distracting_features_on_websites").addClass("highlight-this");
+}
+
+}function highlightStrategyApplyuse_focus_mode(){ 
+
+var element = document.querySelector(".strategy-type.use_focus_mode");
+wasOn = element.classList.contains("highlight-this");
+
+highlightStrategyRemove();
+
+if (wasOn) {
+$(".strategy-type.use_focus_mode").removeClass("highlight-this"); 
+$(".arrow.use_focus_mode").removeClass("highlight-this");
+} else {
+$(".strategy-type.use_focus_mode").addClass("highlight-this"); 
+$(".arrow.use_focus_mode").addClass("highlight-this");
+}
+
+}function highlightStrategyApplylimit_notifications(){ 
+
+var element = document.querySelector(".strategy-type.limit_notifications");
+wasOn = element.classList.contains("highlight-this");
+
+highlightStrategyRemove();
+
+if (wasOn) {
+$(".strategy-type.limit_notifications").removeClass("highlight-this"); 
+$(".arrow.limit_notifications").removeClass("highlight-this");
+} else {
+$(".strategy-type.limit_notifications").addClass("highlight-this"); 
+$(".arrow.limit_notifications").addClass("highlight-this");
+}
+
+}function highlightStrategyApplyunderstand_how_you_use_your_devices(){ 
+
+var element = document.querySelector(".strategy-type.understand_how_you_use_your_devices");
+wasOn = element.classList.contains("highlight-this");
+
+highlightStrategyRemove();
+
+if (wasOn) {
+$(".strategy-type.understand_how_you_use_your_devices").removeClass("highlight-this"); 
+$(".arrow.understand_how_you_use_your_devices").removeClass("highlight-this");
+} else {
+$(".strategy-type.understand_how_you_use_your_devices").addClass("highlight-this"); 
+$(".arrow.understand_how_you_use_your_devices").addClass("highlight-this");
+}
+
+}function highlightStrategyApplyfocus_in_bursts_with_a_timer(){ 
+
+var element = document.querySelector(".strategy-type.focus_in_bursts_with_a_timer");
+wasOn = element.classList.contains("highlight-this");
+
+highlightStrategyRemove();
+
+if (wasOn) {
+$(".strategy-type.focus_in_bursts_with_a_timer").removeClass("highlight-this"); 
+$(".arrow.focus_in_bursts_with_a_timer").removeClass("highlight-this");
+} else {
+$(".strategy-type.focus_in_bursts_with_a_timer").addClass("highlight-this"); 
+$(".arrow.focus_in_bursts_with_a_timer").addClass("highlight-this");
+}
+
+}function highlightStrategyApplyput_motivational_quotes_or_to_dos_on_new_tabs(){ 
+
+var element = document.querySelector(".strategy-type.put_motivational_quotes_or_to_dos_on_new_tabs");
+wasOn = element.classList.contains("highlight-this");
+
+highlightStrategyRemove();
+
+if (wasOn) {
+$(".strategy-type.put_motivational_quotes_or_to_dos_on_new_tabs").removeClass("highlight-this"); 
+$(".arrow.put_motivational_quotes_or_to_dos_on_new_tabs").removeClass("highlight-this");
+} else {
+$(".strategy-type.put_motivational_quotes_or_to_dos_on_new_tabs").addClass("highlight-this"); 
+$(".arrow.put_motivational_quotes_or_to_dos_on_new_tabs").addClass("highlight-this");
+}
+
+}function highlightStrategyApplyreplace_distractions_on_the_web_with_a_to_do_list(){ 
+
+var element = document.querySelector(".strategy-type.replace_distractions_on_the_web_with_a_to_do_list");
+wasOn = element.classList.contains("highlight-this");
+
+highlightStrategyRemove();
+
+if (wasOn) {
+$(".strategy-type.replace_distractions_on_the_web_with_a_to_do_list").removeClass("highlight-this"); 
+$(".arrow.replace_distractions_on_the_web_with_a_to_do_list").removeClass("highlight-this");
+} else {
+$(".strategy-type.replace_distractions_on_the_web_with_a_to_do_list").addClass("highlight-this"); 
+$(".arrow.replace_distractions_on_the_web_with_a_to_do_list").addClass("highlight-this");
+}
+
+}function highlightStrategyApplyredirect_yourself_away_from_distracting_sites(){ 
+
+var element = document.querySelector(".strategy-type.redirect_yourself_away_from_distracting_sites");
+wasOn = element.classList.contains("highlight-this");
+
+highlightStrategyRemove();
+
+if (wasOn) {
+$(".strategy-type.redirect_yourself_away_from_distracting_sites").removeClass("highlight-this"); 
+$(".arrow.redirect_yourself_away_from_distracting_sites").removeClass("highlight-this");
+} else {
+$(".strategy-type.redirect_yourself_away_from_distracting_sites").addClass("highlight-this"); 
+$(".arrow.redirect_yourself_away_from_distracting_sites").addClass("highlight-this");
+}
+
+}function highlightStrategyApplyset_up_reward_or_punishment(){ 
+
+var element = document.querySelector(".strategy-type.set_up_reward_or_punishment");
+wasOn = element.classList.contains("highlight-this");
+
+highlightStrategyRemove();
+
+if (wasOn) {
+$(".strategy-type.set_up_reward_or_punishment").removeClass("highlight-this"); 
+$(".arrow.set_up_reward_or_punishment").removeClass("highlight-this");
+} else {
+$(".strategy-type.set_up_reward_or_punishment").addClass("highlight-this"); 
+$(".arrow.set_up_reward_or_punishment").addClass("highlight-this");
+}
+
+}function highlightStrategyApplygo_grey_scale(){ 
+
+var element = document.querySelector(".strategy-type.go_grey_scale");
+wasOn = element.classList.contains("highlight-this");
+
+highlightStrategyRemove();
+
+if (wasOn) {
+$(".strategy-type.go_grey_scale").removeClass("highlight-this"); 
+$(".arrow.go_grey_scale").removeClass("highlight-this");
+} else {
+$(".strategy-type.go_grey_scale").addClass("highlight-this"); 
+$(".arrow.go_grey_scale").addClass("highlight-this");
+}
+
+}function highlightStrategyApplymove_distracting_apps_out_of_sight(){ 
+
+var element = document.querySelector(".strategy-type.move_distracting_apps_out_of_sight");
+wasOn = element.classList.contains("highlight-this");
+
+highlightStrategyRemove();
+
+if (wasOn) {
+$(".strategy-type.move_distracting_apps_out_of_sight").removeClass("highlight-this"); 
+$(".arrow.move_distracting_apps_out_of_sight").removeClass("highlight-this");
+} else {
+$(".strategy-type.move_distracting_apps_out_of_sight").addClass("highlight-this"); 
+$(".arrow.move_distracting_apps_out_of_sight").addClass("highlight-this");
+}
+
+}function highlightStrategyApplywrite_under_time_pressure(){ 
+
+var element = document.querySelector(".strategy-type.write_under_time_pressure");
+wasOn = element.classList.contains("highlight-this");
+
+highlightStrategyRemove();
+
+if (wasOn) {
+$(".strategy-type.write_under_time_pressure").removeClass("highlight-this"); 
+$(".arrow.write_under_time_pressure").removeClass("highlight-this");
+} else {
+$(".strategy-type.write_under_time_pressure").addClass("highlight-this"); 
+$(".arrow.write_under_time_pressure").addClass("highlight-this");
+}
+
+}</script>
