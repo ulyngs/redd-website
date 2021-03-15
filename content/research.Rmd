@@ -14,43 +14,55 @@ publications <- read_csv(here::here("data", "publications.csv"))
 ```
 
 <div class="research-page">
-
+<!--
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-::: {.take-part}
+::::::::: {.take-part}
 
 # How can I take part?
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-::: {.row .take-part-buttons}
+:::::: {.row .take-part-buttons}
 ::: {.col-sm-4}
 <button type="button" class="btn btn-primary">Take the "How am I doing?" quiz</button>
 :::
 
 ::: {.col-sm-4}
-<button type="button" class="btn btn-primary">Sign up for a workshop</button>
+<a type="button" class="btn btn-primary">Sign up for a workshop</button>
 :::
 
 ::: {.col-sm-4}
 <button type="button" class="btn btn-primary">Take part in a research study</button>
 :::
-:::
+::::::
 
-<!-- end 'take-part' div -->
-:::
+
+:::::::::
+-->
 
 <div class="research-so-far">
-# Our research so far
+
+<h1> Our research </h1>
 
 ```{r, results='asis'}
-insert_publications <- function(publication_title, publication_authors, publication_place, talk_video, pdf_url){
+insert_publications <- function(publication_title, publication_authors, publication_place, talk_video, pdf_url, html_url){
   
   cat('<div class="research-topic-publications">')
-  cat(str_c('<p class="publication-title"><a href="', pdf_url, '">', publication_title, '</a></p>'))
+  if(!is.na(pdf_url)){
+    cat(str_c('<p class="publication-title"><a href="', pdf_url, '">', publication_title, '</a></p>'))
+  } else if (!is.na(html_url)){
+    cat(str_c('<p class="publication-title"><a href="', html_url, '">', publication_title, '</a></p>'))
+  }
   cat(str_c('<p class="publication-authors">', publication_authors, '</p>'))
   cat(str_c('<p class="publication-place">', publication_place, '</p>'))
-  cat(str_c('<p class="publication-links"><a href=', pdf_url, '">PDF</a>'))
+  cat(str_c('<p class="publication-links">'))
+  if(!is.na(pdf_url)){
+    cat(str_c('<a href=', pdf_url, '">PDF</a>'))
+  }
+  if(!is.na(html_url)){
+    cat(str_c('<a href=', html_url, '">HTML</a>'))
+  }
   if(!is.na(talk_video)){
     cat(str_c(' | <a href=', talk_video, '">Video of talk</a>'))
   }
@@ -64,7 +76,7 @@ generate_research_info <- function(id, heading, description, illustration_type, 
 
   cat('<div class="col-sm-9">')
   cat(str_c('<h3 class="research-title">', heading, '</h2>'))
-  cat(str_c('<p>', description, '</p>'))
+  # cat(str_c('<p>', description, '</p>'))
   cat("</div>")
 
   cat('<div class="col-sm-3">')
