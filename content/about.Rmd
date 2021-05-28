@@ -1,6 +1,7 @@
 ---
 #title: "About / FAQ"
 menu: main
+draft: true
 ---
 
 ```{r, include=FALSE}

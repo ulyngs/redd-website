@@ -29,9 +29,10 @@ content <- read_csv(here::here("data", "frontpage.csv"))
 ::::::
 
 
-::: {.project-info}
+
+<!-- ::: {.project-info} --> 
 <!-- ####### create information cards ######### -->
-```{r, results='asis'}
+```{r, results='asis', eval=FALSE}
 generate_project_info <- function(heading, description){
   cat('<div class="col-sm-6">')
   cat('<div class="card">')
@@ -52,11 +53,11 @@ content %>%
   pwalk(generate_project_info)
 cat("</div>")
 ```
-:::
+<!-- ::: -->
 
 <!-- ####### create solution packages ####### -->
-::: {.solution-packages}
-```{r, results='asis'}
+<!-- ::: {.solution-packages} -->
+```{r, results='asis', eval=FALSE}
 generate_solution_packages <- function(illustration, heading, description){
   cat('<div class="col-md-3 col-sm-4">')
   cat('<div class="card">')
@@ -81,15 +82,17 @@ content %>%
   pwalk(generate_solution_packages)
 cat("</div>")
 ```
-:::
+<!-- ::: -->
 
 <!-- ####### create 'what people say' section ######### -->
+<!--
 :::::: {.row .what-people-say}
 ::: {.col-sm-12}
 # What people say
 :::
+-->
 
-```{r results='asis'}
+```{r results='asis', eval=FALSE}
 generate_quotes <- function(description, source) {
   cat('<div class="col-sm-6">')
   cat(str_c('<p class="mb-0">', description, '</p>'))
@@ -106,7 +109,7 @@ content %>%
 
 
 <!-- end row -->
-::::::
+<!-- :::::: -->
 
 
 <!-- ####### create 'our team' section ######### -->

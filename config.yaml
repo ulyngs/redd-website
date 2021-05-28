@@ -15,15 +15,15 @@ menu:
     - name: "Strategies"
       url: "/strategies/"
       weight: 1
-    - name: "Research"
-      url: "/research/"
-      weight: 2
-    - name: "Resources"
-      url: "/resources/"
-      weight: 3
-    - name: "About / FAQ"
-      url: "/about/"
-      weight: 4
+    # - name: "Research"
+    #   url: "/research/"
+    #   weight: 2
+    # - name: "Resources"
+    #   url: "/resources/"
+    #   weight: 3
+    # - name: "About / FAQ"
+    #   url: "/about/"
+    #   weight: 4
 
 params:
     description: "Reducing Digital Distraction project website."
